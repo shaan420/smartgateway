@@ -1,0 +1,68 @@
+#ifndef __?<allcapital>_OBJECT_H__
+#define __?<allcapital>_OBJECT_H__
+#include "../common/include/common-defs.h"
+
+extern "C" {
+
+#include <glib.h>
+#include <dbus/dbus-glib.h>
+
+typedef enum {
+	E_?<allcapital>_OBJECT_SIGNAL_CHANGED_STATUS = 0,
+	E_?<allcapital>_OBJECT_SIGNAL_ERROR,
+	E_?<allcapital>_OBJECT_SIGNAL_COUNT
+} ?<firstcapital>ObjectSignalNumber;
+
+typedef struct {
+	/* The parent class object state. */
+	GObject m_parent;
+	/* Our first per-object state variable. */
+	?<structargs>
+	void *m_dev_ptr;
+} ?<firstcapital>Object;
+
+typedef struct {
+	/* The parent class state. */
+	GObjectClass m_parent;
+	/* Signals created for this class. */
+	guint signals[E_?<allcapital>_OBJECT_SIGNAL_COUNT];
+} ?<firstcapital>ObjectClass;
+
+/* Forward declaration of the function that will return the GType of
+   the Value implementation. Not used in this program. */
+GType ?<nocapital>_object_get_type(void);
+
+/* Macro for the above. It is common to define macros using the
+   naming convention (seen below) for all GType implementations,
+   and that's why we're going to do that here as well. */
+#define ?<allcapital>_TYPE_OBJECT              (?<nocapital>_object_get_type())
+
+#define ?<allcapital>_OBJECT(object) \
+	(G_TYPE_CHECK_INSTANCE_CAST ((object), \
+								 ?<allcapital>_TYPE_OBJECT, ?<firstcapital>Object))
+#define ?<allcapital>_OBJECT_CLASS(klass) \
+	(G_TYPE_CHECK_CLASS_CAST ((klass), \
+							  ?<allcapital>_TYPE_OBJECT, ?<firstcapital>ObjectClass))
+#define ?<allcapital>_IS_OBJECT(object) \
+	(G_TYPE_CHECK_INSTANCE_TYPE ((object), \
+								 ?<allcapital>_TYPE_OBJECT))
+#define ?<allcapital>_IS_OBJECT_CLASS(klass) \
+	(G_TYPE_CHECK_CLASS_TYPE ((klass), \
+							  ?<allcapital>_TYPE_OBJECT))
+#define ?<allcapital>_OBJECT_GET_CLASS(obj) \
+	(G_TYPE_INSTANCE_GET_CLASS ((obj), \
+								?<allcapital>_TYPE_OBJECT, ?<firstcapital>ObjectClass))
+
+/**
+ * Since the stub generator will reference the functions from a call
+ * table, the functions must be declared before the stub is included.
+ */
+?<methoddecls>
+
+void ?<nocapital>_object_emitSignal(?<firstcapital>Object* obj, 
+                                ?<firstcapital>ObjectSignalNumber num, 
+								const gchar* message);
+
+} /* extern "C" */
+
+#endif

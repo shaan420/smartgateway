@@ -1,0 +1,248 @@
+#include "?<firstcapital>Device.hpp"
+
+extern "C" {
+#include "?<firstcapital>Object.h"
+/**
+ * Pull in the stub for the server side.
+ */
+#include "?<nocapital>-server-stub.h"
+
+/**
+ * Per object initializer
+ *
+ * Only sets up internal state (both values set to zero)
+ */
+static void ?<nocapital>_object_init(?<firstcapital>Object* obj) {
+	printf("Called");
+	g_assert(obj != NULL);
+	obj->m_status = DEVICE_STATUS_OFF;
+}
+
+/**
+ * Per class initializer
+ *
+ * Sets up the thresholds (-100 .. 100), creates the signals that we
+ * can emit from any object of this class and finally registers the
+ * type into the GLib/D-Bus wrapper so that it may add its own magic.
+ */
+static void ?<nocapital>_object_class_init(?<firstcapital>ObjectClass* klass) {
+
+	/* Since all signals have the same prototype (each will get one
+	   string as a parameter), we create them in a loop below. The only
+	   difference between them is the index into the klass->signals
+	   array, and the signal name.
+
+	   Since the index goes from 0 to E_SIGNAL_COUNT-1, we just specify
+	   the signal names into an array and iterate over it.
+
+	   Note that the order here must correspond to the order of the
+	   enumerations before. */
+	const gchar* signalNames[E_SIGNAL_COUNT] = {
+		SIGNAL_CHANGED_STATUS,
+		SIGNAL_ERROR };
+	/* Loop variable */
+	int i;
+
+	printf("Called");
+	g_assert(klass != NULL);
+
+	printf("Creating signals");
+
+	/* Create the signals in one loop, since they all are similar
+	   (except for the names). */
+	for (i = 0; i < E_SIGNAL_COUNT; i++) {
+		guint signalId;
+
+		/* Most of the time you will encounter the following code without
+		   comments. This is why all the parameters are documented
+		   directly below. */
+		signalId =
+					/* str name of the signal */
+					g_signal_new(signalNames[i],
+					/* GType to which signal is bound to */
+					G_OBJECT_CLASS_TYPE(klass),
+					/* Combination of GSignalFlags which tell the
+					   signal dispatch machinery how and when to
+					   dispatch this signal. The most common is the
+					   G_SIGNAL_RUN_LAST specification. */
+					G_SIGNAL_RUN_LAST,
+					/* Offset into the class structure for the type
+					   function pointer. Since we're implementing a
+					   simple class/type, we'll leave this at zero. */
+					0,
+					/* GSignalAccumulator to use. We don't need one. */
+					NULL,
+					/* User-data to pass to the accumulator. */
+					NULL,
+					/* Function to use to marshal the signal data into
+					   the parameters of the signal call. Luckily for
+					   us, GLib (GCClosure) already defines just the
+					   function that we want for a signal handler that
+					   we don't expect any return values (void) and
+					   one that will accept one string as parameter
+					   (besides the instance pointer and pointer to
+					   user-data).
+
+					   If no such function would exist, you would need
+					   to create a new one (by using glib-genmarshal
+					   tool). */
+					g_cclosure_marshal_VOID__STRING,
+					/* Return GType of the return value. The handler
+			   		   does not return anything, so we use G_TYPE_NONE
+			   		   to mark that. */
+					G_TYPE_NONE,
+					/* Number of parameter GTypes to follow. */
+					1,
+					/* GType(s) of the parameters. We only have one. */
+					G_TYPE_STRING);
+
+		/* Store the signal Id into the class state, so that we can use
+		   it later. */
+		klass->signals[i] = signalId;
+
+		/* Proceed with the next signal creation. */
+	}
+	/* All signals created. */
+
+	printf("Binding to GLib/D-Bus");
+
+	/* Time to bind this GType into the GLib/D-Bus wrappers.
+	 * NOTE: This is not yet "publishing" the object on the D-Bus, but
+	 * since it is only allowed to do this once per class
+	 * creation, the safest place to put it is in the class
+	 * initializer.
+	 * Specifically, this function adds "method introspection
+	 * data" to the class so that methods can be called over
+	 * the D-Bus. */
+	dbus_g_object_type_install_info(?<allcapital>_TYPE_OBJECT,
+			&dbus_glib_?<nocapital>_object_object_info);
+
+	printf("Done");
+	/* All done. Class is ready to be used for instantiating objects */
+}
+
+
+G_DEFINE_TYPE(?<firstcapital>Object, ?<nocapital>_object, G_TYPE_OBJECT)
+/**
+ * Utility helper to emit a signal given with internal enumeration and
+ * the passed string as the signal data.
+ *
+ * Used in the setter functions below.
+ */
+void ?<nocapital>_object_emitSignal(?<firstcapital>Object* obj,
+		SignalNumber num,
+		const gchar* message) {
+
+	/* In order to access the signal identifiers, we need to get a hold
+	   of the class structure first. */
+	?<firstcapital>ObjectClass* klass = ?<allcapital>_OBJECT_GET_CLASS(obj);
+
+	/* Check that the given num is valid (abort if not).
+	   Given that this file is the module actually using this utility,
+	   you can consider this check superfluous (but useful for
+	   development work). */
+	g_assert((num < E_SIGNAL_COUNT) && (num >= 0));
+
+	printf("Emitting signal id %d, with message '%s'", num, message);
+
+	/* This is the simplest way of emitting signals. */
+	g_signal_emit(/* Instance of the object that is generating this
+					 signal. This will be passed as the first parameter
+					 to the signal handler (eventually). But obviously
+					 when speaking about D-Bus, a signal caught on the
+					 other side of D-Bus will be first processed by
+					 the GLib-wrappers (the object proxy) and only then
+					 processed by the signal handler. */
+			obj,
+			/* Signal id for the signal to generate. These are
+			   stored inside the class state structure. */
+			klass->signals[num],
+			/* Detail of signal. Since we are not using detailed
+			   signals, we leave this at zero (default). */
+			0,
+			/* Data to marshal into the signal. In our case it's
+			   just one string. */
+			message);
+	/* g_signal_emit returns void, so we cannot check for success. */
+
+	/* Done emitting signal. */
+}
+
+/**
+ * Function that gets called when someone tries to execute "set?<nocapital>1"
+ * over the D-Bus. (Actually the marshaling code from the stubs gets
+ * executed first, but they will eventually execute this function.)
+ *
+ * NOTE: If you change the name of this function, the generated
+ *       stubs will no longer find it! On the other hand, if you
+ *       decide to modify the interface XML, this is one of the places
+ *       that you'll have to modify as well.
+ *       This applies to the next four functions (including this one).
+ */
+
+gboolean ?<nocapital>_object_set_status(?<firstcapital>Object* obj, gint status,
+		GError** error) {
+
+	printf("Called (status=%d)", status);
+	printf("?<nocapital>1: set_status=%d called.\n", status);
+	g_assert(obj != NULL);
+
+	/* Compare the current ?<nocapital> against old one. If they're the same,
+	   we don't need to do anything (except return success). */
+	if (obj->m_status != status) {
+		/* Change the ?<nocapital>. */
+		obj->m_status = status;
+
+		?<firstcapital>Device *dev = static_cast<?<firstcapital>Device *>(obj->m_dev_ptr);
+		if (NULL != dev)
+		{
+			printf("Writing to physical device\n");
+			dev->Write(&status, sizeof(status));
+
+			/* Emit the "changed_?<nocapital>1" signal. */
+			printf("Publishing new status\n");
+			?<nocapital>_object_emitSignal(obj, E_SIGNAL_CHANGED_STATUS, "status");
+		}
+		else
+		{
+			printf("Error contacting physical device\n");
+		}
+	}
+	/* Return success to GLib/D-Bus wrappers. In this case we don't need
+	   to touch the supplied error pointer-pointer. */
+	return TRUE;
+}
+
+/**
+ * Function that gets executed on "getStatus".
+ * We don't signal the get operations, so this will be simple.
+ */
+gboolean ?<nocapital>_object_get_status(?<firstcapital>Object* obj, gint* status,
+		GError** error) {
+
+	printf("Called (internal ?<nocapital>1 is %d)", obj->m_status);
+	g_assert(obj != NULL);
+
+	printf("Delaying operation");
+	/* Check that the target pointer is not NULL.
+	   Even is the only caller for this will be the GLib-wrapper code,
+	   we cannot trust the stub generated code and should handle the
+	   situation. We will terminate with an error in this case.
+
+	   Another option would be to create a new GError, and store
+	   the error condition there. */
+	g_assert(status != NULL);
+
+	/* Copy the current first ?<nocapital> to caller specified memory. */
+
+	if (obj->m_status == DEVICE_STATUS_ERROR)
+	{
+		?<nocapital>_object_emitSignal(obj, E_SIGNAL_ERROR, "error");
+	}
+	*status = obj->m_status;
+
+	/* Return success. */
+	return TRUE;
+}
+} /* extern "C" */
+

@@ -1,0 +1,1 @@
+g++ smartobject_codegen.cpp -L/home/ayanami-dummy/boost_1_55_0/stage/lib/ -lboost_filesystem -lboost_regex -lboost_system

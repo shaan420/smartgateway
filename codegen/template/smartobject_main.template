@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+
+#include "DeviceAgent.hpp"
+?<deviceincludes>
+#include "DeviceFactory.hpp"
+
+DeviceFactory g_factory;
+
+int main()
+{
+	GMainLoop *mainloop = NULL;
+	DEV_AGENT->Init();
+
+	mainloop = g_main_loop_new(NULL, FALSE);
+
+	?<registerdevices>
+
+	g_print("starting main-loop.\n");
+ 	g_main_loop_run(mainloop);
+	return 0;
+}

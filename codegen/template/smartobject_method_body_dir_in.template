@@ -1,0 +1,19 @@
+	if (obj->m_?<argname> != ?<argname>) {
+		/* Change the ?<nocapital>. */
+		obj->m_?<argname> = ?<argname>;
+
+		?<firstcapital>Device *dev = static_cast<?<firstcapital>Device *>(obj->m_dev_ptr);
+		if (NULL != dev)
+		{
+			printf("Writing to physical device\n");
+			dev->Write(&?<argname>, sizeof(?<argname>));
+
+			/* Emit the "changed_?<nocapital>1" signal. */
+			printf("Publishing new ?<argname>\n");
+			?<nocapital>_object_emitSignal(obj, E_?<allcapital>_OBJECT_SIGNAL_CHANGED_STATUS, "?<argname>");
+		}
+		else
+		{
+			printf("Error contacting physical device\n");
+		}
+	}

@@ -1,0 +1,2 @@
+gboolean ?<nocapital>_object_?<methodname>(?<firstcapital>Object* obj, ?<arglist> GError** error); 
+

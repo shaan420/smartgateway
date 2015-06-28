@@ -1,0 +1,8 @@
+	/* Copy the current first ?<nocapital> to caller specified memory. */
+	if (obj->m_?<argname> == DEVICE_STATUS_ERROR)
+	{
+		?<nocapital>_object_emitSignal(obj, E_?<allcapital>_OBJECT_SIGNAL_ERROR, "error");
+	}
+	*?<argname> = obj->m_?<argname>;
+
+

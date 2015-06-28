@@ -1,0 +1,12 @@
+gboolean ?<nocapital>_object_?<methodname>(?<firstcapital>Object* obj, ?<arglist> GError** error) 
+{
+	printf("?<nocapital>1: ?<methodname> called.\n");
+	g_assert(obj != NULL);
+
+	?<methodbody>
+
+	/* Return success to GLib/D-Bus wrappers. In this case we don't need
+	   to touch the supplied error pointer-pointer. */
+	return TRUE;
+}
+
