@@ -1,0 +1,1 @@
+g++ -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/local/include/rasqal/ -I/usr/local/include/raptor2/ main.cpp DataManager.cpp DataManagerObject.c RdfStorage.cpp -lrdf -ldbus-glib-1 -ldbus-1 -lpthread -lrt -lgobject-2.0 -lglib-2.0

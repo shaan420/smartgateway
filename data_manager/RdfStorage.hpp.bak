@@ -1,0 +1,108 @@
+#ifndef __RDF_STORAGE_HPP__
+#define __RDF_STORAGE_HPP__
+#include <redland.h>
+#include "StorageSlot.hpp"
+
+class RdfStorage : public StorageSlot<librdf_stream>
+{
+	private:
+		librdf_model *m_model;
+		librdf_storage *m_storage;
+
+		RdfStorage() {}
+
+	public:
+		static librdf_world *sm_world;
+		static librdf_parser *sm_parser;
+
+		RdfStorage(const char *name) : StorageSlot(name, STORAGE_SLOT_TYPE_RDF), 
+				m_model(NULL), 
+				m_storage(NULL) 
+		{
+		}
+
+		~RdfStorage() 
+		{
+			librdf_free_model(m_model);
+			librdf_free_storage(m_storage);
+		}
+
+		class Iterator : public StorageSlot<librdf_stream>::Iterator
+		{
+			public:
+				Iterator(librdf_stream *stream) : StorageSlot<librdf_stream>::Iterator(stream) {}
+				~Iterator() {}
+
+				Iterator& operator=(const Iterator& other)
+				{
+					SetElem(other.GetElem());
+					return *this;
+				}
+
+				bool operator==(const Iterator& other)
+				{
+					librdf_statement *s1, *s2;
+					s1 = librdf_stream_get_object(GetElem());
+					s2 = librdf_stream_get_object(other.GetElem());
+					return librdf_statement_equals(s1, s2);
+				}
+
+				bool operator!=(const Iterator& other)
+				{
+					librdf_statement *s1, *s2;
+					s1 = librdf_stream_get_object(GetElem());
+					s2 = librdf_stream_get_object(other.GetElem());
+					return !librdf_statement_equals(s1, s2);
+				}
+
+				Iterator& operator++()
+				{
+					librdf_stream_next(GetElem());
+					return *this;
+				}
+
+				Iterator& operator++(int)
+				{
+					//Iterator tmp(*this);
+					//++(*this);
+					librdf_stream_next(GetElem());
+					return *this;
+				}
+
+				/*
+				 * Use this to directly get the value of the object in the 
+				 * statement pointed to by this iterator.
+				 */
+				string operator*()
+				{
+					string str;
+					librdf_statement *s = librdf_stream_get_object(GetElem());
+					if (NULL == s)
+					{
+						return NULL;
+					}
+
+					librdf_node *node = librdf_statement_get_object(s);
+					str.assign((const char *)librdf_node_get_literal_value(node));
+					return str;
+				}
+
+				/*
+				 * Use this instead of the above, to get values of the subject 
+				 * or the object, as this will return the librdf_statement* pointed to by 
+				 * this iterator.
+				 */
+				void *operator->()
+				{
+					librdf_statement *s;
+					s = librdf_stream_get_object(GetElem());
+					return s;
+				}
+		};
+		
+		int Init();
+		int Insert(const char *data, int data_len);
+		Iterator Find(string& query);
+};
+
+#endif

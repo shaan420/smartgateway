@@ -1,0 +1,34 @@
+1. http server will contain code for fetching the url.
+http://localhost:8080/tempData1?start_ts=400&end_ts=800&op_type=IND
+OR
+http://localhost:8080/tempSensor1?get_data&start_ts=400&end_ts=800&op_type=IND ...if tempSensor1 produces tempData1 as specified in the ontology
+
+start_ts: start timestamp
+end_ts: end timestamp
+op_type: output type can be one of 
+         IND (individual values in CSV string format)
+		 SUM (sum of values within specified ts range)
+		 AVG (average of values within specified ts range)
+
+2. HttpServer will send "tempSensor1" as key and "start_ts=400&end_ts=800&op_type=IND" as value (query params)
+   to the DataManager.
+
+3. DataManager maintains a separate graph per device.
+   <TS-msec | hasValue | Value> with-context-node <TS-bucket-number>
+
+   eg. <403 | hasValue | 78> with-context-node <31>
+
+   TS-msec: This ts has the granularity of a milli second.
+   TS-bucket-number: This is the ts with the granularity of a minute.
+   Therefore, the example above shows the data from minute 31 and 
+   403 msec within that minute.
+   The context node basically (which is a feature of the Redland libraries) can be used 
+   to combine/merge/lookup multiple graphs with matching timestamps.
+
+   We will have <num_buckets> buckets, each of which will contain <num_sec_per_bucket> worth of 
+   seconds.
+
+4. After receiving the key and value from the HttpServer, the DataManager will
+   lookup the particular storageSlot and then based on IND/AVG/SUM call appropriate 
+   functions.
+
