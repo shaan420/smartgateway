@@ -1,0 +1,17 @@
+1. DataManager
+This is a standalone process
+
+2. DeviceAgent
+This communicates with DataManager only
+
+3. RuleManager
+This communicates with DataManager and QueryAgent
+
+4. QueryAgent
+This communicates with DM, RM, DA
+
+5. HTTPServ
+This communicates with QA.
+
+Basically we see a deadlock between RM and QA.
+Need to resolve this dependency.
