@@ -1,0 +1,6 @@
+gcc -o rule rule.c -lcurl
+gcc -o event event.c -lcurl
+gcc -o add_sub add_sub.c -lcurl
+gcc -o command command.c -lcurl
+gcc -o ont ont.c -lcurl
+gcc -o data data.c -lcurl
