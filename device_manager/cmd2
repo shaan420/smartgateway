@@ -1,0 +1,2 @@
+source /opt/clanton-full/1.4.2/environment-setup-i586-poky-linux
+CC=i586-poky-linux-g++ ./configure --build x86_64-unknown-linux-gnu --host i586-poky-linux

@@ -1,0 +1,5 @@
+g++ `pkg-config opencv --cflags` DeviceBase.cpp DeviceAgent.cpp CamFaceDetectionSensor.cpp main.cpp -o video `pkg-config opencv --libs` -lpthread
+
+g++ `pkg-config opencv --cflags` `pkg-config glib-2.0 --cflags` DeviceBase.cpp DeviceAgent.cpp CamFaceDetectionSensor.cpp main.cpp -o video `pkg-config opencv --libs` `pkg-config glib-2.0 --libs`
+
+g++ `pkg-config --cflags dbus-glib-1` DeviceBase.cpp Device.hpp LightingObject.c Device2GType.cpp DeviceAgent.cpp LightingDevice.cpp mainLighting.cpp `pkg-config --libs dbus-glib-1`
