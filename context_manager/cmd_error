@@ -1,0 +1,1 @@
+g++ -Wall -I/opt/clanton-full/1.4.2/sysroots/i586-poky-linux//usr/include/dbus-1.0 -I/opt/clanton-full/1.4.2/sysroots/i586-poky-linux//usr/lib/dbus-1.0/include -I/opt/clanton-full/1.4.2/sysroots/i586-poky-linux//usr/include/glib-2.0 -I/opt/clanton-full/1.4.2/sysroots/i586-poky-linux//usr/lib/glib-2.0/include -c -o QueryAgentObject.o QueryAgentObject.c

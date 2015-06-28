@@ -1,0 +1,19 @@
+CC=g++
+CFLAGS=-I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+DEPS = QueryAgent.hpp QueryAgentObject.h
+OBJ = QueryAgent.o QueryAgentObject.o main.o
+LIBS=-ldbus-glib-1 -ldbus-1 -lpthread -lrt -lgobject-2.0 -lglib-2.0 -lm -ldl
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+query_agent: $(OBJ)
+	g++ -o $@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+	rm -f *.o query_agent
