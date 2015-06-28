@@ -1,0 +1,61 @@
+1. Smartgateway has two basic components.
+	a. device_manager
+	b. http_rest_server
+
+2. device_manager
+	Main purpose
+	a. Handle communication with physical devices
+	b. Publish device-status changes to higher-layers
+	c. Receive commands from the higher-layers that must 
+	   be run on the physical device.
+
+3. device_manager architecture
+	a. DeviceBase
+	This is an abstract class that models the communication with a physical device
+	such as its read/write frequency, and lays out a framework so that upper layers 
+	need only implement device-specific functionality and do not care about the actual
+	communication with the device (takes care of multithreading and error handling)
+
+	b. Device
+	This template class inherits from the DeviceBase and add a capability of adding a 
+	custom handler. For instance it could be a file descriptor (i.e. "int") or "CvCapture"
+	in case of OpenCV based devices drivers such as the WebCam.
+	The actual device should specilize this template class based on its requirements.
+
+	c. DBusObject
+	Till now we have communicated with the actual device, but data needs to be communicated
+	to and from other components such as the web-server, the database and the event-processor.
+	For this purpose we use the Dbus framework where every dbusObject represents a physical
+	device. Other components can acquire access to this object by means of the dbus-proxy
+	framework. 
+
+4. http_rest_server
+	Main purpose 
+	a. Expose RESTful web interface.
+	b. Maintains catalog of devices.
+	c. Provides framework to access functionality of devices.
+	d. Provides basic query capabilities to lookup particular device.
+
+5. http_rest_server architecture
+	a. httphandler
+	This module uses the microhttpd library to provide lightweight handling of HTTP requests.
+	The URL structure and the design of this component make the HTTP server RESTful.
+
+	b. RestAPI
+	This class contains the necessary APIs that can be invoked by the HTTP server.
+
+	c. Executor
+	This class contains the implementations of the Restful APIs and it also takes care of 
+	formatting the response into a suitable format (JSON/XML).
+
+	d. OntologyManager
+	Takes as input, the Ontology file and provides a list of all the instantiated devices.
+	It also provides the necessary APIs to support querying of devices.
+	
+	e. DeviceCatalog
+	This component maintains a map of all active devices and provides APIs for invoking 
+	methods on those devices through the dbus-client interface.
+	It initially reads the interface files and extracts the methods that can be invoked 
+	on that interface. Then based on the physical devices in the Ontology file it associates 
+	the device to the appropriate interface description.
+
