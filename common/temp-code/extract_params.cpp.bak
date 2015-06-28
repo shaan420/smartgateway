@@ -1,0 +1,50 @@
+#define ATTR_SET ".<xmlattr>"
+#define XML_PATH1 "./lighting-dbus-interface.xml"
+
+#include <iostream>
+#include <string>
+#include <boost/foreach.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+
+using namespace std;
+using namespace boost;
+using namespace boost::property_tree;
+
+const ptree& empty_ptree()
+{
+	static ptree t;
+	return t;
+}
+
+int main() 
+{
+	ptree tree;
+	read_xml(XML_PATH1, tree);
+	const ptree& interfaces = tree.get_child("node.interface", empty_ptree());
+	BOOST_FOREACH(const ptree::value_type &iface, interfaces)
+	{
+		string at = iface.first;
+		const ptree& methods = iface.second.get_child("<xmlattr>", empty_ptree());
+		cout << "Extracting attributes from " << at << ":" << endl;
+		BOOST_FOREACH(const ptree::value_type &method, methods)
+		{
+			cout << "Firstm: " << method.first.data() << " Secondm: " << method.second.data() << endl;
+			string child = "node.interface." + at + ".arg";
+			cout << child << endl;
+			const ptree& args = method.second.get_child("arg", empty_ptree());
+			//cout << "Extracting attributes from " << at << ":" << endl;
+			BOOST_FOREACH(const ptree::value_type &arg, args)
+			{
+				cout << "Firsta: " << arg.first.data() << " Seconda: " << arg.second.data() << endl;
+				const ptree& arg_descs = arg.second.get_child("<xmlattr>", empty_ptree());
+				cout << "Extracting arg_desc" << endl;
+				BOOST_FOREACH(const ptree::value_type& arg_desc, arg_descs)
+				{
+					cout << "Desc_name: " << arg_desc.first.data() << "Desc_val: " << arg_desc.second.data() << endl;
+				}
+			}
+
+		}
+	}
+}
