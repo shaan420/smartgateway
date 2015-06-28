@@ -1,0 +1,84 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.68])
+AC_INIT([http_rest_server], [0.1], [svnair2@asu.edu])
+AC_CONFIG_SRCDIR([strutil.cpp])
+AC_CONFIG_FILES([Makefile])
+AM_INIT_AUTOMAKE([http_rest_server], [0.1])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+
+# Checks for libraries.
+AC_CHECK_LIB([dbus-glib-1],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([dbus-1],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([pthread],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([rt],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([gobject-2.0],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([glib-2.0],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([microhttpd],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([factpp_kernel],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([owlcpp_io],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([owlcpp_logic],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([owlcpp_rdf],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([raptor],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([xml2],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([boost_filesystem],[],[],[
+				echo "library missing"
+				exit -1])
+AC_CHECK_LIB([boost_program_options],[],[],[
+				echo "library missing"
+				exit -1])
+
+AC_CHECK_LIB([boost_system],[],[],[
+				echo "library missing"
+				exit -1])
+
+# Checks for header files.
+AC_CHECK_HEADERS([arpa/inet.h fcntl.h netdb.h netinet/in.h stddef.h stdint.h stdlib.h string.h sys/socket.h sys/time.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_TYPE_INT32_T
+AC_TYPE_MODE_T
+AC_TYPE_OFF_T
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_CHECK_MEMBERS([struct stat.st_rdev])
+AC_TYPE_UINT64_T
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_FUNC_STRNLEN
+AC_CHECK_FUNCS([realpath stpcpy strcasecmp strncasecmp strndup sysinfo])
+
+AC_OUTPUT

@@ -1,0 +1,1489 @@
+RestAPI.o: RestAPI.cpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/string.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/features.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdc-predef.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/predefs.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/cdefs.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/wordsize.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/gnu/stubs.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/gnu/stubs-32.h \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stddef.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/xlocale.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/foreach.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstddef \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++config.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/os_defines.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/cpu_defines.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/utility \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_relops.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_pair.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/move.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/concept_check.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/user.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_compiler_config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/compiler/gcc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_stdlib_config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/no_tr1/utility.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/stdlib/libstdcpp3.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/unistd.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix_opt.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/environments.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/types.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/typesizes.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/confname.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/getopt.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_platform_config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/platform/linux.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdlib \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdlib.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/waitflags.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/waitstatus.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/endian.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/endian.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/byteswap.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/byteswap-16.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/types.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/time.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/select.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/select.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigset.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/time.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/sysmacros.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/pthreadtypes.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/alloca.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdlib-float.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/posix_features.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/suffix.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/workaround.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/static_cast.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/workaround.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/integral.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/msvc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/eti.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_spec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/lambda_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/void_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/adl_barrier.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/adl.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/intel.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/gcc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bool.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bool_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c_tag.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/static_constant.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/ctps.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/lambda.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/ttp.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/int.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/int_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/nttp_decl.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/nttp.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/integral_wrapper.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/cat.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/config/config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/lambda_arity_param.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/template_arity_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/dtp.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/params.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/preprocessor.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/comma_if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/punctuation/comma_if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/iif.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/bool.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/empty.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/punctuation/comma.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repeat.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/repeat.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/debug/error.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/eat.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/inc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/enum.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/limits/arity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/and.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/bitand.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/identity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/identity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/empty.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/add.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/while.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/fold_left.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/detail/fold_left.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/adt.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/is_binary.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/check.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/compl.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/fold_right.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/detail/fold_right.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/reverse.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/detail/while.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/elem.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/overload.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/variadic/size.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/rem.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/variadic/elem.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/sub.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/overload_resolution.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/lambda_support.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/assert.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/not.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/yes_no.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/arrays.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/pp_counter.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/logical.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/or.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/include_preprocessed.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/compiler.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/stringize.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/and.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/eval_if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/noncopyable.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/end.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/implementation_help.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/common.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/sfinae.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_array.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/bool_trait_def.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/template_arity_spec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/integral_constant.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/bool_trait_undef.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_void.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_or.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_same.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/wchar.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdio.h \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdarg.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/wchar.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/mutable_iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/extract_optional_type.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_traits.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iterator \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator_base_types.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator_base_funcs.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/cpp_type_traits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/type_traits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ostream \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ios \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iosfwd \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stringfwd.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/postypes.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cwchar \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/exception \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/atomic_lockfree_defines.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/char_traits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_algobase.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/functexcept.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/exception_defines.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/numeric_traits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/debug/debug.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/localefwd.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++locale.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/clocale \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/locale.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/locale.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cctype \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/ctype.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ios_base.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/atomicity.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/gthr.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/gthr-default.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/pthread.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sched.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sched.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/timex.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/setjmp.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/atomic_word.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_classes.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/string \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/allocator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++allocator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/new_allocator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/new \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ostream_insert.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/cxxabi_forced.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_function.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/binders.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/range_access.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_string.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_string.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_classes.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/streambuf \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/streambuf.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_ios.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cwctype \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/wctype.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/ctype_base.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/streambuf_iterator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/ctype_inline.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_ios.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ostream.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/istream \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/istream.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stream_iterator.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/const_iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_const.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_volatile.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/cv_traits_impl.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/broken_compiler_spec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/type_trait_def.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/type_trait_undef.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_const.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/ice.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_and.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_not.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_eq.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/begin.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/rend.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/reverse_iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/reverse_iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/next_prior.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_adaptor.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/static_assert.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_categories.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/config_def.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/identity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/placeholders.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/arg.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/arg_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_assert.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arity_spec.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arg_typedef.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_convertible.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/intrinsics.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_arithmetic.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_integral.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_float.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_abstract.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_lvalue_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_function.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/false_result.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/config_undef.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_facade.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/interoperable.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/facade_iterator_category.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/indirect_traits.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_pointer.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_member_pointer.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_cv.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_class.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_reference.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_pointer.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/enable_if.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/utility/addressof.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_const.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_pointer.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_pod.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_scalar.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_enum.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/always.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply_wrap.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/has_apply.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/has_xxx.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/type_wrapper.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/has_xxx.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/msvc_typename.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/elem.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/data.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/size.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/enum_params.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/has_apply.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/msvc_never_true.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/lambda.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bind.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bind_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/bind.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/next.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/next_prior.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/common_name_wknd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/protect.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/full_lambda.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/quote.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/void.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/has_type.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/bcc.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/template_arity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/rbegin.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_base_and_derived.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/foreach_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/aligned_storage.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/alignment_of.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/size_t_trait_def.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/size_t.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/size_t_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/size_t_trait_undef.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/type_with_alignment.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/for_each_i.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/for.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/detail/for.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/to_list.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/transform.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/append.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/utility/enable_if.hpp \
+ RestAPI.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/map \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_tree.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_map.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_multimap.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/set \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_set.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_multiset.h \
+ Executor.hpp /usr/include/dbus-1.0/dbus/dbus-glib.h \
+ /usr/include/glib-2.0/glib-object.h \
+ /usr/include/glib-2.0/gobject/gbinding.h /usr/include/glib-2.0/glib.h \
+ /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
+ /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
+ /usr/include/glib-2.0/glib/gmacros.h \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/limits.h \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/syslimits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/limits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix1_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/local_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/linux/limits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix2_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/xopen_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdio_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h \
+ /usr/include/glib-2.0/glib/gversionmacros.h \
+ /usr/include/glib-2.0/glib/garray.h \
+ /usr/include/glib-2.0/glib/gasyncqueue.h \
+ /usr/include/glib-2.0/glib/gthread.h \
+ /usr/include/glib-2.0/glib/gatomic.h /usr/include/glib-2.0/glib/gerror.h \
+ /usr/include/glib-2.0/glib/gquark.h \
+ /usr/include/glib-2.0/glib/gbacktrace.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/signal.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/signum.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/siginfo.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigaction.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigcontext.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigstack.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/ucontext.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigthread.h \
+ /usr/include/glib-2.0/glib/gbase64.h \
+ /usr/include/glib-2.0/glib/gbitlock.h \
+ /usr/include/glib-2.0/glib/gbookmarkfile.h \
+ /usr/include/glib-2.0/glib/gbytes.h \
+ /usr/include/glib-2.0/glib/gcharset.h \
+ /usr/include/glib-2.0/glib/gchecksum.h \
+ /usr/include/glib-2.0/glib/gconvert.h \
+ /usr/include/glib-2.0/glib/gdataset.h /usr/include/glib-2.0/glib/gdate.h \
+ /usr/include/glib-2.0/glib/gdatetime.h \
+ /usr/include/glib-2.0/glib/gtimezone.h /usr/include/glib-2.0/glib/gdir.h \
+ /usr/include/glib-2.0/glib/genviron.h \
+ /usr/include/glib-2.0/glib/gfileutils.h \
+ /usr/include/glib-2.0/glib/ggettext.h /usr/include/glib-2.0/glib/ghash.h \
+ /usr/include/glib-2.0/glib/glist.h /usr/include/glib-2.0/glib/gmem.h \
+ /usr/include/glib-2.0/glib/ghmac.h \
+ /usr/include/glib-2.0/glib/gchecksum.h \
+ /usr/include/glib-2.0/glib/ghook.h \
+ /usr/include/glib-2.0/glib/ghostutils.h \
+ /usr/include/glib-2.0/glib/giochannel.h \
+ /usr/include/glib-2.0/glib/gmain.h /usr/include/glib-2.0/glib/gpoll.h \
+ /usr/include/glib-2.0/glib/gslist.h /usr/include/glib-2.0/glib/gstring.h \
+ /usr/include/glib-2.0/glib/gunicode.h \
+ /usr/include/glib-2.0/glib/gutils.h \
+ /usr/include/glib-2.0/glib/gkeyfile.h \
+ /usr/include/glib-2.0/glib/gmappedfile.h \
+ /usr/include/glib-2.0/glib/gmarkup.h \
+ /usr/include/glib-2.0/glib/gmessages.h \
+ /usr/include/glib-2.0/glib/gnode.h /usr/include/glib-2.0/glib/goption.h \
+ /usr/include/glib-2.0/glib/gpattern.h \
+ /usr/include/glib-2.0/glib/gprimes.h /usr/include/glib-2.0/glib/gqsort.h \
+ /usr/include/glib-2.0/glib/gqueue.h /usr/include/glib-2.0/glib/grand.h \
+ /usr/include/glib-2.0/glib/gregex.h \
+ /usr/include/glib-2.0/glib/gscanner.h \
+ /usr/include/glib-2.0/glib/gsequence.h \
+ /usr/include/glib-2.0/glib/gshell.h /usr/include/glib-2.0/glib/gslice.h \
+ /usr/include/glib-2.0/glib/gspawn.h \
+ /usr/include/glib-2.0/glib/gstrfuncs.h \
+ /usr/include/glib-2.0/glib/gstringchunk.h \
+ /usr/include/glib-2.0/glib/gtestutils.h \
+ /usr/include/glib-2.0/glib/gthreadpool.h \
+ /usr/include/glib-2.0/glib/gtimer.h \
+ /usr/include/glib-2.0/glib/gtrashstack.h \
+ /usr/include/glib-2.0/glib/gtree.h \
+ /usr/include/glib-2.0/glib/gurifuncs.h \
+ /usr/include/glib-2.0/glib/gvarianttype.h \
+ /usr/include/glib-2.0/glib/gvariant.h \
+ /usr/include/glib-2.0/glib/gversion.h \
+ /usr/include/glib-2.0/glib/deprecated/gallocator.h \
+ /usr/include/glib-2.0/glib/deprecated/gcache.h \
+ /usr/include/glib-2.0/glib/deprecated/gcompletion.h \
+ /usr/include/glib-2.0/glib/deprecated/gmain.h \
+ /usr/include/glib-2.0/glib/deprecated/grel.h \
+ /usr/include/glib-2.0/glib/deprecated/gthread.h \
+ /usr/include/glib-2.0/gobject/gobject.h \
+ /usr/include/glib-2.0/gobject/gtype.h \
+ /usr/include/glib-2.0/gobject/gvalue.h \
+ /usr/include/glib-2.0/gobject/gparam.h \
+ /usr/include/glib-2.0/gobject/gclosure.h \
+ /usr/include/glib-2.0/gobject/gsignal.h \
+ /usr/include/glib-2.0/gobject/gmarshal.h \
+ /usr/include/glib-2.0/gobject/gboxed.h \
+ /usr/include/glib-2.0/gobject/glib-types.h \
+ /usr/include/glib-2.0/gobject/genums.h \
+ /usr/include/glib-2.0/gobject/gparamspecs.h \
+ /usr/include/glib-2.0/gobject/gsourceclosure.h \
+ /usr/include/glib-2.0/gobject/gtypemodule.h \
+ /usr/include/glib-2.0/gobject/gtypeplugin.h \
+ /usr/include/glib-2.0/gobject/gvaluearray.h \
+ /usr/include/glib-2.0/gobject/gvaluetypes.h \
+ /usr/include/dbus-1.0/dbus/dbus-shared.h \
+ /usr/include/dbus-1.0/dbus/dbus-gtype-specialized.h \
+ /usr/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h \
+ ../common/include/common-defs.h strutil.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_construct.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/alloc_traits.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_uninitialized.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/string.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/features.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdc-predef.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/predefs.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/cdefs.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/wordsize.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/gnu/stubs.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/gnu/stubs-32.h:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stddef.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/xlocale.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/foreach.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstddef:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++config.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/os_defines.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/cpu_defines.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/utility:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_relops.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_pair.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/move.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/concept_check.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/user.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_compiler_config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/compiler/gcc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_stdlib_config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/no_tr1/utility.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/stdlib/libstdcpp3.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/unistd.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix_opt.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/environments.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/types.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/typesizes.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/confname.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/getopt.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/select_platform_config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/platform/linux.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdlib:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdlib.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/waitflags.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/waitstatus.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/endian.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/endian.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/byteswap.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/byteswap-16.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/types.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/time.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/select.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/select.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigset.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/time.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/sysmacros.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/pthreadtypes.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/alloca.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdlib-float.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/posix_features.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/config/suffix.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/workaround.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/value_wknd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/workaround.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/integral.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/msvc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/eti.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_spec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/lambda_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/void_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/adl_barrier.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/adl.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/intel.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bool.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bool_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c_tag.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/static_constant.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/ctps.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/lambda.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/ttp.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/int.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/int_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/nttp_decl.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/nttp.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/cat.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/config/config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/comma_if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/iif.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/bool.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/empty.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/punctuation/comma.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repeat.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/repeat.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/debug/error.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/auto_rec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/eat.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/inc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/inc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/limits/arity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/and.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/bitand.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/identity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/identity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/empty.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/dec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/while.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/fold_left.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/expr_iif.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/adt.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/is_binary.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/detail/check.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/logical/compl.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/fold_right.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/reverse.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/control/detail/while.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/elem.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/facilities/overload.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/variadic/size.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/rem.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/variadic/elem.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/lambda_support.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/assert.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/not.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/yes_no.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/arrays.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/pp_counter.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/logical.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/or.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/compiler.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/stringize.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/and.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/eval_if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/noncopyable.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/end.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/implementation_help.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/common.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/sfinae.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_array.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/bool_trait_def.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/template_arity_spec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/integral_constant.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/integral_c_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_void.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_or.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_same.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/wchar.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdio.h:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdarg.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/wchar.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/mutable_iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/detail/extract_optional_type.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_traits.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iterator:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator_base_types.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator_base_funcs.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_iterator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/cpp_type_traits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/type_traits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ostream:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ios:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iosfwd:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stringfwd.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/postypes.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cwchar:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/exception:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/atomic_lockfree_defines.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/char_traits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_algobase.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/functexcept.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/exception_defines.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/numeric_traits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/debug/debug.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/localefwd.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++locale.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/clocale:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/locale.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/locale.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cctype:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/ctype.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ios_base.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/atomicity.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/gthr.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/gthr-default.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/pthread.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sched.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sched.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/timex.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/setjmp.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/atomic_word.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_classes.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/string:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/allocator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++allocator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/new_allocator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/new:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ostream_insert.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/cxxabi_forced.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_function.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/binders.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/range_access.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_string.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_string.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_classes.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/streambuf:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/streambuf.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_ios.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cwctype:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/wctype.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/ctype_base.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/streambuf_iterator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/ctype_inline.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/basic_ios.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/ostream.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/istream:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/istream.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stream_iterator.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/const_iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_const.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_volatile.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/broken_compiler_spec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/type_trait_def.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/type_trait_undef.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_const.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_rvalue_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/ice.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_and.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_not.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/ice_eq.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/begin.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/rend.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/reverse_iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/reverse_iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/next_prior.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_adaptor.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/static_assert.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_categories.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/config_def.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/identity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/placeholders.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/arg.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/arg_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/na_assert.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arity_spec.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/arg_typedef.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_convertible.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/intrinsics.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_arithmetic.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_integral.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_float.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_abstract.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_lvalue_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_rvalue_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_function.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/false_result.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/config_undef.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/iterator_facade.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/interoperable.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/facade_iterator_category.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/detail/indirect_traits.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_pointer.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_member_pointer.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_member_function_pointer.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_cv.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_class.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_reference.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/remove_pointer.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/iterator/detail/enable_if.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/utility/addressof.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_const.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/add_pointer.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_pod.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_scalar.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_enum.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/always.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/apply_wrap.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/has_apply.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/has_xxx.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/type_wrapper.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/has_xxx.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/elem.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/data.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/array/size.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/has_apply.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/lambda.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bind.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/bind_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/bind.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/next.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/next_prior.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/common_name_wknd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/protect.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/full_lambda.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/quote.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/void.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/has_type.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/template_arity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/range/rbegin.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/is_base_and_derived.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/foreach_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/aligned_storage.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/alignment_of.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/size_t_trait_def.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/size_t.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/mpl/size_t_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/detail/size_t_trait_undef.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/type_traits/type_with_alignment.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/for_each_i.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/for.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/repetition/detail/for.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/tuple/to_list.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/transform.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/preprocessor/list/append.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/boost/utility/enable_if.hpp:
+
+RestAPI.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/map:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_tree.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_map.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_multimap.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/set:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_set.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_multiset.h:
+
+Executor.hpp:
+
+/usr/include/dbus-1.0/dbus/dbus-glib.h:
+
+/usr/include/glib-2.0/glib-object.h:
+
+/usr/include/glib-2.0/gobject/gbinding.h:
+
+/usr/include/glib-2.0/glib.h:
+
+/usr/include/glib-2.0/glib/galloca.h:
+
+/usr/include/glib-2.0/glib/gtypes.h:
+
+/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h:
+
+/usr/include/glib-2.0/glib/gmacros.h:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/limits.h:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/syslimits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/limits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix1_lim.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/local_lim.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/linux/limits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix2_lim.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/xopen_lim.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdio_lim.h:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h:
+
+/usr/include/glib-2.0/glib/gversionmacros.h:
+
+/usr/include/glib-2.0/glib/garray.h:
+
+/usr/include/glib-2.0/glib/gasyncqueue.h:
+
+/usr/include/glib-2.0/glib/gthread.h:
+
+/usr/include/glib-2.0/glib/gatomic.h:
+
+/usr/include/glib-2.0/glib/gerror.h:
+
+/usr/include/glib-2.0/glib/gquark.h:
+
+/usr/include/glib-2.0/glib/gbacktrace.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/signal.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/signum.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/siginfo.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigaction.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigcontext.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigstack.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/ucontext.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sigthread.h:
+
+/usr/include/glib-2.0/glib/gbase64.h:
+
+/usr/include/glib-2.0/glib/gbitlock.h:
+
+/usr/include/glib-2.0/glib/gbookmarkfile.h:
+
+/usr/include/glib-2.0/glib/gbytes.h:
+
+/usr/include/glib-2.0/glib/gcharset.h:
+
+/usr/include/glib-2.0/glib/gchecksum.h:
+
+/usr/include/glib-2.0/glib/gconvert.h:
+
+/usr/include/glib-2.0/glib/gdataset.h:
+
+/usr/include/glib-2.0/glib/gdate.h:
+
+/usr/include/glib-2.0/glib/gdatetime.h:
+
+/usr/include/glib-2.0/glib/gtimezone.h:
+
+/usr/include/glib-2.0/glib/gdir.h:
+
+/usr/include/glib-2.0/glib/genviron.h:
+
+/usr/include/glib-2.0/glib/gfileutils.h:
+
+/usr/include/glib-2.0/glib/ggettext.h:
+
+/usr/include/glib-2.0/glib/ghash.h:
+
+/usr/include/glib-2.0/glib/glist.h:
+
+/usr/include/glib-2.0/glib/gmem.h:
+
+/usr/include/glib-2.0/glib/ghmac.h:
+
+/usr/include/glib-2.0/glib/gchecksum.h:
+
+/usr/include/glib-2.0/glib/ghook.h:
+
+/usr/include/glib-2.0/glib/ghostutils.h:
+
+/usr/include/glib-2.0/glib/giochannel.h:
+
+/usr/include/glib-2.0/glib/gmain.h:
+
+/usr/include/glib-2.0/glib/gpoll.h:
+
+/usr/include/glib-2.0/glib/gslist.h:
+
+/usr/include/glib-2.0/glib/gstring.h:
+
+/usr/include/glib-2.0/glib/gunicode.h:
+
+/usr/include/glib-2.0/glib/gutils.h:
+
+/usr/include/glib-2.0/glib/gkeyfile.h:
+
+/usr/include/glib-2.0/glib/gmappedfile.h:
+
+/usr/include/glib-2.0/glib/gmarkup.h:
+
+/usr/include/glib-2.0/glib/gmessages.h:
+
+/usr/include/glib-2.0/glib/gnode.h:
+
+/usr/include/glib-2.0/glib/goption.h:
+
+/usr/include/glib-2.0/glib/gpattern.h:
+
+/usr/include/glib-2.0/glib/gprimes.h:
+
+/usr/include/glib-2.0/glib/gqsort.h:
+
+/usr/include/glib-2.0/glib/gqueue.h:
+
+/usr/include/glib-2.0/glib/grand.h:
+
+/usr/include/glib-2.0/glib/gregex.h:
+
+/usr/include/glib-2.0/glib/gscanner.h:
+
+/usr/include/glib-2.0/glib/gsequence.h:
+
+/usr/include/glib-2.0/glib/gshell.h:
+
+/usr/include/glib-2.0/glib/gslice.h:
+
+/usr/include/glib-2.0/glib/gspawn.h:
+
+/usr/include/glib-2.0/glib/gstrfuncs.h:
+
+/usr/include/glib-2.0/glib/gstringchunk.h:
+
+/usr/include/glib-2.0/glib/gtestutils.h:
+
+/usr/include/glib-2.0/glib/gthreadpool.h:
+
+/usr/include/glib-2.0/glib/gtimer.h:
+
+/usr/include/glib-2.0/glib/gtrashstack.h:
+
+/usr/include/glib-2.0/glib/gtree.h:
+
+/usr/include/glib-2.0/glib/gurifuncs.h:
+
+/usr/include/glib-2.0/glib/gvarianttype.h:
+
+/usr/include/glib-2.0/glib/gvariant.h:
+
+/usr/include/glib-2.0/glib/gversion.h:
+
+/usr/include/glib-2.0/glib/deprecated/gallocator.h:
+
+/usr/include/glib-2.0/glib/deprecated/gcache.h:
+
+/usr/include/glib-2.0/glib/deprecated/gcompletion.h:
+
+/usr/include/glib-2.0/glib/deprecated/gmain.h:
+
+/usr/include/glib-2.0/glib/deprecated/grel.h:
+
+/usr/include/glib-2.0/glib/deprecated/gthread.h:
+
+/usr/include/glib-2.0/gobject/gobject.h:
+
+/usr/include/glib-2.0/gobject/gtype.h:
+
+/usr/include/glib-2.0/gobject/gvalue.h:
+
+/usr/include/glib-2.0/gobject/gparam.h:
+
+/usr/include/glib-2.0/gobject/gclosure.h:
+
+/usr/include/glib-2.0/gobject/gsignal.h:
+
+/usr/include/glib-2.0/gobject/gmarshal.h:
+
+/usr/include/glib-2.0/gobject/gboxed.h:
+
+/usr/include/glib-2.0/gobject/glib-types.h:
+
+/usr/include/glib-2.0/gobject/genums.h:
+
+/usr/include/glib-2.0/gobject/gparamspecs.h:
+
+/usr/include/glib-2.0/gobject/gsourceclosure.h:
+
+/usr/include/glib-2.0/gobject/gtypemodule.h:
+
+/usr/include/glib-2.0/gobject/gtypeplugin.h:
+
+/usr/include/glib-2.0/gobject/gvaluearray.h:
+
+/usr/include/glib-2.0/gobject/gvaluetypes.h:
+
+/usr/include/dbus-1.0/dbus/dbus-shared.h:
+
+/usr/include/dbus-1.0/dbus/dbus-gtype-specialized.h:
+
+/usr/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h:
+
+../common/include/common-defs.h:
+
+strutil.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_construct.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ext/alloc_traits.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_uninitialized.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc:
