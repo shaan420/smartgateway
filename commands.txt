@@ -1,0 +1,4 @@
+http://10.218.100.121:8080/executeCommand?DeviceName=lighting1&set_status=1
+http://10.218.100.121:8080/getDevData?DeviceName=lighting1&Command=get_status&Ts=0
+http://10.218.100.121:8080/getOntData?DeviceClass=Lighting&hasLocation=room1
+http://192.168.0.33:8080/event?Action=add_subscriber&EventName=lightOn&Name=Shankar&Type=email&Params=shaan121.420@gmail.com
