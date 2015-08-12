@@ -635,47 +635,47 @@ main.o: main.cpp RuleManager.hpp \
  /usr/local/include/boost/preprocessor/detail/is_nullary.hpp \
  /usr/local/include/boost/lockfree/detail/prefix.hpp Rule.hpp \
  Condition.hpp RuleManagerObject.h \
- /home/ayanami-dummy/XSB_galileo/emu/cinterf.h \
- /home/ayanami-dummy/XSB_galileo/emu/context.h \
- /home/ayanami-dummy/XSB_galileo/emu/cell_def_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/basictypes.h \
- /home/ayanami-dummy/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h \
- /home/ayanami-dummy/XSB_galileo/emu/basicdefs.h \
- /home/ayanami-dummy/XSB_galileo/emu/setjmp_xsb.h \
+ /home/shankar/XSB_galileo/emu/cinterf.h \
+ /home/shankar/XSB_galileo/emu/context.h \
+ /home/shankar/XSB_galileo/emu/cell_def_xsb.h \
+ /home/shankar/XSB_galileo/emu/basictypes.h \
+ /home/shankar/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h \
+ /home/shankar/XSB_galileo/emu/basicdefs.h \
+ /home/shankar/XSB_galileo/emu/setjmp_xsb.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/setjmp.h \
- /home/ayanami-dummy/XSB_galileo/emu/flag_defs_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/hashtable_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/conc_compl.h \
- /home/ayanami-dummy/XSB_galileo/emu/debugs/debug_attv.h \
- /home/ayanami-dummy/XSB_galileo/emu/memory_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/memory_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/export.h \
- /home/ayanami-dummy/XSB_galileo/emu/varstring_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/dynamic_stack.h \
- /home/ayanami-dummy/XSB_galileo/emu/psc_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/psc_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/incr_xsb_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/tries.h \
- /home/ayanami-dummy/XSB_galileo/emu/struct_manager.h \
- /home/ayanami-dummy/XSB_galileo/emu/choice.h \
- /home/ayanami-dummy/XSB_galileo/emu/tab_structs.h \
- /home/ayanami-dummy/XSB_galileo/emu/debug_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/table_status_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/slgdelay.h \
- /home/ayanami-dummy/XSB_galileo/emu/debugs/debug_delay.h \
- /home/ayanami-dummy/XSB_galileo/emu/token_defs_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/odbc_def_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/findall.h \
- /home/ayanami-dummy/XSB_galileo/emu/cinterf_defs.h \
+ /home/shankar/XSB_galileo/emu/flag_defs_xsb.h \
+ /home/shankar/XSB_galileo/emu/hashtable_xsb.h \
+ /home/shankar/XSB_galileo/emu/conc_compl.h \
+ /home/shankar/XSB_galileo/emu/debugs/debug_attv.h \
+ /home/shankar/XSB_galileo/emu/memory_xsb.h \
+ /home/shankar/XSB_galileo/emu/memory_defs.h \
+ /home/shankar/XSB_galileo/emu/export.h \
+ /home/shankar/XSB_galileo/emu/varstring_xsb.h \
+ /home/shankar/XSB_galileo/emu/dynamic_stack.h \
+ /home/shankar/XSB_galileo/emu/psc_xsb.h \
+ /home/shankar/XSB_galileo/emu/psc_defs.h \
+ /home/shankar/XSB_galileo/emu/incr_xsb_defs.h \
+ /home/shankar/XSB_galileo/emu/tries.h \
+ /home/shankar/XSB_galileo/emu/struct_manager.h \
+ /home/shankar/XSB_galileo/emu/choice.h \
+ /home/shankar/XSB_galileo/emu/tab_structs.h \
+ /home/shankar/XSB_galileo/emu/debug_xsb.h \
+ /home/shankar/XSB_galileo/emu/table_status_defs.h \
+ /home/shankar/XSB_galileo/emu/slgdelay.h \
+ /home/shankar/XSB_galileo/emu/debugs/debug_delay.h \
+ /home/shankar/XSB_galileo/emu/token_defs_xsb.h \
+ /home/shankar/XSB_galileo/emu/odbc_def_xsb.h \
+ /home/shankar/XSB_galileo/emu/findall.h \
+ /home/shankar/XSB_galileo/emu/cinterf_defs.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/linux/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno-base.h \
- /home/ayanami-dummy/XSB_galileo/emu/context.h \
- /home/ayanami-dummy/XSB_galileo/emu/thread_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/thread_defs_xsb.h
+ /home/shankar/XSB_galileo/emu/context.h \
+ /home/shankar/XSB_galileo/emu/thread_xsb.h \
+ /home/shankar/XSB_galileo/emu/thread_defs_xsb.h
 
 RuleManager.hpp:
 
@@ -1979,69 +1979,69 @@ Condition.hpp:
 
 RuleManagerObject.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cinterf.h:
+/home/shankar/XSB_galileo/emu/cinterf.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/context.h:
+/home/shankar/XSB_galileo/emu/context.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cell_def_xsb.h:
+/home/shankar/XSB_galileo/emu/cell_def_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/basictypes.h:
+/home/shankar/XSB_galileo/emu/basictypes.h:
 
-/home/ayanami-dummy/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h:
+/home/shankar/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/basicdefs.h:
+/home/shankar/XSB_galileo/emu/basicdefs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/setjmp_xsb.h:
+/home/shankar/XSB_galileo/emu/setjmp_xsb.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/setjmp.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/flag_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/flag_defs_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/hashtable_xsb.h:
+/home/shankar/XSB_galileo/emu/hashtable_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/conc_compl.h:
+/home/shankar/XSB_galileo/emu/conc_compl.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debugs/debug_attv.h:
+/home/shankar/XSB_galileo/emu/debugs/debug_attv.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/memory_xsb.h:
+/home/shankar/XSB_galileo/emu/memory_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/memory_defs.h:
+/home/shankar/XSB_galileo/emu/memory_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/export.h:
+/home/shankar/XSB_galileo/emu/export.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/varstring_xsb.h:
+/home/shankar/XSB_galileo/emu/varstring_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/dynamic_stack.h:
+/home/shankar/XSB_galileo/emu/dynamic_stack.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/psc_xsb.h:
+/home/shankar/XSB_galileo/emu/psc_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/psc_defs.h:
+/home/shankar/XSB_galileo/emu/psc_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/incr_xsb_defs.h:
+/home/shankar/XSB_galileo/emu/incr_xsb_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/tries.h:
+/home/shankar/XSB_galileo/emu/tries.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/struct_manager.h:
+/home/shankar/XSB_galileo/emu/struct_manager.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/choice.h:
+/home/shankar/XSB_galileo/emu/choice.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/tab_structs.h:
+/home/shankar/XSB_galileo/emu/tab_structs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debug_xsb.h:
+/home/shankar/XSB_galileo/emu/debug_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/table_status_defs.h:
+/home/shankar/XSB_galileo/emu/table_status_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/slgdelay.h:
+/home/shankar/XSB_galileo/emu/slgdelay.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debugs/debug_delay.h:
+/home/shankar/XSB_galileo/emu/debugs/debug_delay.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/token_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/token_defs_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/odbc_def_xsb.h:
+/home/shankar/XSB_galileo/emu/odbc_def_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/findall.h:
+/home/shankar/XSB_galileo/emu/findall.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cinterf_defs.h:
+/home/shankar/XSB_galileo/emu/cinterf_defs.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/errno.h:
 
@@ -2055,8 +2055,8 @@ RuleManagerObject.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno-base.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/context.h:
+/home/shankar/XSB_galileo/emu/context.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/thread_xsb.h:
+/home/shankar/XSB_galileo/emu/thread_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/thread_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/thread_defs_xsb.h:

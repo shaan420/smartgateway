@@ -1,0 +1,169 @@
+#include "LightingDevice.hpp"
+
+#define GPIO 6
+
+int LightingDevice::RecvFromDevice()
+{
+	char value;
+	m_prev_value = m_cur_value;
+	read((int)m_handler, &value, 1);
+
+	if('0' == value)
+	{
+		/* Current GPIO status low */
+		m_cur_value = 0;
+	}
+	else
+	{
+		/* Current GPIO status high */
+		m_cur_value = 1;
+	}
+
+	return 0;
+}
+
+int LightingDevice::SendToDevice()
+{
+	if (*(int *)m_writeBuf == 0)
+	{
+		write((int)m_handler, "0", 1);
+	}
+	else
+	{
+		write((int)m_handler, "1", 1);
+	}
+	
+	delete m_writeBuf;
+	return 0;
+}
+
+int LightingDevice::Read(void *mem, int len)
+{
+	return 0;
+}
+
+int LightingDevice::Write(void *mem, int len)
+{
+	/* Allocate for writeBuf here */
+	m_writeBuf = new int;
+	*(int *)m_writeBuf = *(int *)mem;
+
+	/* 
+	 * The following call is important as it notifies the sender thread
+	 * that the write-data is ready to be written
+	 */
+	DeviceBase::Write(mem, len);
+	return 0;
+}
+
+int LightingDevice::ReadShared(void **data)
+{
+	*data = m_readBuf;
+	return 0;
+}
+
+void LightingDevice::SetDeviceParams()
+{
+	return;
+}
+
+void LightingDevice::GetDeviceParams()
+{
+	return;
+}
+
+int LightingDevice::OnInit()
+{
+	char buffer[256];
+	int fileHandle;
+
+	/* Export GPIO */
+	fileHandle = open("/sys/class/gpio/export", O_WRONLY);
+
+	if(-1 == fileHandle)
+
+	{
+		puts("Error: cannot open /sys/class/gpio/export");
+		return(-1);
+	}
+	sprintf(buffer, "%d", GPIO);
+	write(fileHandle, buffer, strlen(buffer));
+	close(fileHandle);
+
+	/* Direction GPIO */
+	sprintf(buffer, "/sys/class/gpio/gpio%d/direction", GPIO);
+	fileHandle = open(buffer, O_WRONLY);
+	if(-1 == fileHandle)
+	{
+		puts("Unable to open file:");
+		puts(buffer);
+		return(-1);
+	}
+
+	/* Set out direction */
+	write(fileHandle, "out", 3);
+
+	sprintf(buffer, "/sys/class/gpio/gpio%d/value", GPIO);
+
+	fileHandle = open(buffer, O_RDWR);
+
+	if(-1 == fileHandle)
+	{
+		puts("Unable to open file:");
+		puts(buffer);
+		return(-1);
+	}
+
+	/* Set the device handler */
+	m_handler = (int *)fileHandle;
+
+	/* Clear the data holders */
+	m_readBuf = NULL;
+	m_writeBuf = NULL;
+
+	return 0;
+}
+
+bool LightingDevice::HasChanged()
+{
+	if (m_prev_value != m_cur_value)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+	return true;
+}
+
+void LightingDevice::OnChange()
+{
+	cout << "New Value: " << m_cur_value << endl;
+
+	/* Update the D-Bus LightingObject */
+	SetLightingStatus(m_cur_value);
+
+	/* Notify status change */
+	lighting_obqweject_emitSignal(GetObj(), E_SIGNAL_CHANGED_STATUS, "status");
+}
+
+void LightingDevice::OnError()
+{
+	return;
+}
+
+void LightingDevice::OnSendDone()
+{
+	return;
+}
+
+void LightingDevice::CreateDevHandler()
+{
+}
+
+void LightingDevice::DestroyDevHandler()
+{
+}
+

@@ -84,6 +84,7 @@ int LightingDevice::OnInit()
 {
 	char buffer[256];
 	int fileHandle;
+	int pin = -1;
 
 	/* Export GPIO */
 	fileHandle = open("/sys/class/gpio/export", O_WRONLY);
@@ -94,12 +95,26 @@ int LightingDevice::OnInit()
 		puts("Error: cannot open /sys/class/gpio/export");
 		return(-1);
 	}
-	sprintf(buffer, "%d", GPIO);
+
+	/* 
+     * TODO: Get the GPIO Pin number from the m_commParams 
+	 * The m_commParams should ideally be populated from the ontology.
+	 */
+
+	pin = strtol((m_deviceConf.m_commParams.c_str()+1), NULL, 10);
+
+	if (pin == -1)
+	{
+		cout << "Error: Could not initialize GPIO device\n";
+		return -1;
+	}
+
+	sprintf(buffer, "%d", pin);
 	write(fileHandle, buffer, strlen(buffer));
 	close(fileHandle);
 
 	/* Direction GPIO */
-	sprintf(buffer, "/sys/class/gpio/gpio%d/direction", GPIO);
+	sprintf(buffer, "/sys/class/gpio/gpio%d/direction", pin);
 	fileHandle = open(buffer, O_WRONLY);
 	if(-1 == fileHandle)
 	{
@@ -111,7 +126,7 @@ int LightingDevice::OnInit()
 	/* Set out direction */
 	write(fileHandle, "out", 3);
 
-	sprintf(buffer, "/sys/class/gpio/gpio%d/value", GPIO);
+	sprintf(buffer, "/sys/class/gpio/gpio%d/value", pin);
 
 	fileHandle = open(buffer, O_RDWR);
 

@@ -163,13 +163,14 @@ G_END_DECLS
 static const DBusGMethodInfo dbus_glib_contextManager_object_methods[] = {
   { (GCallback) contextManager_object_new_query_url, dbus_glib_marshal_contextManager_object_BOOLEAN__STRING_STRING_POINTER_POINTER, 0 },
   { (GCallback) contextManager_object_dev_command, dbus_glib_marshal_contextManager_object_BOOLEAN__STRING_POINTER_POINTER, 106 },
-  { (GCallback) contextManager_object_device_info, dbus_glib_marshal_contextManager_object_BOOLEAN__STRING_POINTER_POINTER, 196 },
+  { (GCallback) contextManager_object_ont_update, dbus_glib_marshal_contextManager_object_BOOLEAN__STRING_POINTER_POINTER, 196 },
+  { (GCallback) contextManager_object_device_info, dbus_glib_marshal_contextManager_object_BOOLEAN__STRING_POINTER_POINTER, 284 },
 };
 
 const DBusGObjectInfo dbus_glib_contextManager_object_object_info = {  1,
   dbus_glib_contextManager_object_methods,
-  3,
-"org.asu.smarthome.smartgateway.ContextManager\0new_query_url\0S\0query_type\0I\0s\0params\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.ContextManager\0dev_command\0S\0command\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.ContextManager\0device_info\0S\0params\0I\0s\0response\0O\0F\0N\0s\0\0\0",
+  4,
+"org.asu.smarthome.smartgateway.ContextManager\0new_query_url\0S\0query_type\0I\0s\0params\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.ContextManager\0dev_command\0S\0command\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.ContextManager\0ont_update\0S\0params\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.ContextManager\0device_info\0S\0params\0I\0s\0response\0O\0F\0N\0s\0\0\0",
 "org.asu.smarthome.smartgateway.ContextManager\0new_query\0org.asu.smarthome.smartgateway.ContextManager\0error_detected\0\0",
 "\0"
 };

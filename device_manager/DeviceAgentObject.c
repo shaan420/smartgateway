@@ -175,16 +175,10 @@ gboolean deviceAgent_object_new_device(DeviceAgentObject* obj,
 	printf("deviceAgent: iface=%s dev_phy_name=%s.\n", iface_name, devname);
 	g_assert(obj != NULL);
 
-	DeviceBase *dev = DEV_AGENT->CreateNewDevice(iface_name, devname);	
-
-	if (NULL == dev)
-	{
-		printf("ERR: Could not create device.");
-		return TRUE;
-	}
+	DEV_AGENT->CreateNewDeviceAsync(iface_name, strdup(devname));	
 
 	/* Now deploy the device */
-	DEV_AGENT->DeployDevice(dev);
+	//DEV_AGENT->DeployDevice(dev);
 
 	/* Return success to GLib/D-Bus wrappers. In this case we don't need
 	   to touch the supplied error pointer-pointer. */

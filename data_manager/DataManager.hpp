@@ -81,9 +81,9 @@ class DataManager
 		
 		int Init();
 
-		int CreateNewDevStorage(const char *name);
+		int CreateNewDevStorage(const char *params);
 
-		int Insert(const char *devname, const char *command, const char *value);
+		int Insert(const char *params);
 
 		int Find(const char *devname, const char *command, int ts, char **value, int *num_elems);
 };

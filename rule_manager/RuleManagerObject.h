@@ -57,10 +57,12 @@ GType ruleManager_object_get_type(void);
 gboolean ruleManager_object_insert_rule(RuleManagerObject* obj, gchar *rule, gchar **response, GError** error);
 gboolean ruleManager_object_delete_rule(RuleManagerObject* obj, gchar *ruleId, gchar **response, GError** error);
 gboolean ruleManager_object_insert_event(RuleManagerObject* obj, gchar *event, gchar **response, GError** error);
+gboolean ruleManager_object_insert_event_external(RuleManagerObject* obj, gchar *event, gchar **response, GError** error);
 gboolean ruleManager_object_delete_event(RuleManagerObject* obj, gchar *eventId, gchar **response, GError** error);
+gboolean ruleManager_object_publish_event(RuleManagerObject* obj, gchar *event, gchar **response, GError** error);
 
-gboolean ruleManager_object_fetch_all_rules(RuleManagerObject* obj, gchar **response, GError** error);
-gboolean ruleManager_object_fetch_all_events(RuleManagerObject* obj, gchar **response, GError** error);
+gboolean ruleManager_object_fetch_all_rules(RuleManagerObject* obj, gchar *params, gchar **response, GError** error);
+gboolean ruleManager_object_fetch_all_events(RuleManagerObject* obj, gchar *params,  gchar **response, GError** error);
 
 void ruleManager_object_emitSignal(RuleManagerObject* obj, 
                                 RuleManagerObjectSignalNumber num, 

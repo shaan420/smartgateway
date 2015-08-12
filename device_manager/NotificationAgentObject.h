@@ -62,6 +62,7 @@ GType notificationagent_object_get_type(void);
  * table, the functions must be declared before the stub is included.
  */
 gboolean notificationagent_object_insert_event(NotificationAgentObject* obj, gchar *event, gchar **response, GError** error); 
+gboolean notificationagent_object_insert_event_external(NotificationAgentObject* obj, gchar *event, gchar **response, GError** error); 
 gboolean notificationagent_object_delete_event(NotificationAgentObject* obj, gchar *event, gchar **response, GError** error); 
 gboolean notificationagent_object_publish_event(NotificationAgentObject* obj, gchar *event, gchar **response, GError** error); 
 gboolean notificationagent_object_add_subscriber(NotificationAgentObject* obj, gchar *new_sub, gchar **response, GError** error); 

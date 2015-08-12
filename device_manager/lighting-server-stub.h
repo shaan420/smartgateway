@@ -162,7 +162,7 @@ static const DBusGMethodInfo dbus_glib_lighting_object_methods[] = {
 const DBusGObjectInfo dbus_glib_lighting_object_object_info = {  1,
   dbus_glib_lighting_object_methods,
   2,
-"org.asu.smarthome.smartgateway.Lighting\0get_status\0S\0cur_status\0O\0F\0N\0i\0\0org.asu.smarthome.smartgateway.Lighting\0set_status\0S\0new_status\0I\0i\0\0\0",
+"org.asu.smarthome.smartgateway.Lighting\0get_status\0S\0cur_status\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.Lighting\0set_status\0S\0new_status\0I\0i\0\0\0",
 "org.asu.smarthome.smartgateway.Lighting\0changed_status\0org.asu.smarthome.smartgateway.Lighting\0error_detected\0\0",
 "\0"
 };

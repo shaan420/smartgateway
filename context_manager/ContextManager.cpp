@@ -195,6 +195,8 @@ int ContextManager::Init()
 
 int ContextManager::HandleQueryUrl(const char *query_type, const char *params, char **response)
 {
+	char *resp = NULL;
+	GError *error = NULL;
 	if (0 == strcmp(query_type, "/rule"))
 	{
 		/* Request goes to RuleManager */
@@ -225,6 +227,21 @@ int ContextManager::HandleQueryUrl(const char *query_type, const char *params, c
 		cout << "Exec command " << params << endl;
 		return HandleDevCommand(params, response);
 	}
+	else if (0 == strcmp(query_type, "/fetch_all_rules"))
+	{
+		dbus_g_proxy_call (m_ruleManagerObj,
+					   "fetch_all_rules",
+					   &error,
+					   G_TYPE_STRING, 
+					   "fetch_all_rules", /*dummy string*/
+					   G_TYPE_INVALID,
+					   G_TYPE_STRING,
+					   &resp,
+					   G_TYPE_INVALID);
+
+		cout << resp << endl;
+		return 0;
+	}
 	else
 	{
 		cout << "Error: Received unknown request from HTTP Server.\n";
@@ -237,9 +254,11 @@ int ContextManager::HandleQueryUrl(const char *query_type, const char *params, c
 int ContextManager::HandleQuery(const char *params, char **resp)
 {
 	client::pairs_type m;
+	client::pairs_type::iterator it;
 	bool ret = false;
 	vector<DeviceObj *> devObjVec;
 	string response;
+	string action, property, classStr;
 
 	if (-1 == url_key_value_to_map(params, m))
 	{
@@ -247,39 +266,86 @@ int ContextManager::HandleQuery(const char *params, char **resp)
 		return -1;
 	}
 
-	/* 
-	 * We lookup in the device catalog for
-	 * the specific device based on the URL/Ontology.
-	 */
+	it = m.find("Class");
+	if (it == m.end())
+	{
+		cout << "ERROR: Class not found in Query getOntData\n";
+		return -1;
+	}
 
-	ret = DEV_CATALOG->GetDeviceObjByFilter(m, devObjVec);
+	classStr = it->second;
 
-	if (false == ret)
+	it = m.find("Property");
+	if (it == m.end())
+	{
+		cout << "Property not found in Query getOntData (maybe be an instance request)\n";
+	}
+
+	property = it->second;
+
+	it = m.find("Action");
+	if (it == m.end())
+	{
+		cout << "ERROR: Action not found in Query getOntData\n";
+		return -1;
+	}
+	
+	action = it->second;
+
+	if (action == "instance")
 	{
 		/* 
-		 * We did not find any valid devices using filtering.
-		 * 
+		 * We lookup in the device catalog for
+		 * the specific device based on the URL/Ontology.
 		 */
-		return false;
+
+		ret = DEV_CATALOG->GetDeviceObjByFilter(m, devObjVec);
+
+		if (false == ret)
+		{
+			/* 
+			 * We did not find any valid devices using filtering.
+			 * 
+			 */
+			return false;
+		}
+		else if (devObjVec.empty())
+		{
+			/*
+			 * We did not find any valid device. So send back error
+			 */
+			response.assign("DevObjVec Empty!");
+		}
+		else
+		{
+			/*
+			 * Found Devices.
+			 */
+			response.assign("Devices found: ");
+			BOOST_FOREACH(DeviceObj *obj, devObjVec)
+			{
+				cout << obj->GetName() << endl;
+				response.append(obj->GetName() + " ");
+			}
+		}
 	}
-	else if (devObjVec.empty())
+	else if (action == "data")
 	{
-		/*
-		 * We did not find any valid device. So send back error
-		 */
-		response.assign("DevObjVec Empty!");
+		vector<string> v;
+		string val;
+		DEV_CATALOG->GetInstancesByFilter(m, v);
+		BOOST_FOREACH(string& s, v)
+		{
+			DEV_CATALOG->GetDataFromOntology(s, property, val);
+			response = s + " " + property + " " + val;
+			/* TODO: handle multiple results */
+			break;
+		}
 	}
 	else
 	{
-		/*
-		 * Found Devices.
-		 */
-		response.assign("Devices found: ");
-		BOOST_FOREACH(DeviceObj *obj, devObjVec)
-		{
-			cout << obj->GetName() << endl;
-			response.append(obj->GetName() + " ");
-		}
+		cout << "ERROR: unknown Action in getOntData request: " << params << endl;
+		return -1;
 	}
 
 	cout << response << endl;
@@ -346,7 +412,7 @@ int ContextManager::HandleDevCommand(const char *params, char **resp)
 	string response;
 	string reqStr;
 
-	ResolveDeviceReferences(params, reqStr);
+	ResolveReferences(params, reqStr);
 
 	if (-1 == url_key_value_to_map(reqStr.c_str(), m))
 	{
@@ -444,6 +510,10 @@ int ContextManager::HandleDevCommand(const char *params, char **resp)
 				// delete once done
 				delete argsOut;
 			}
+			else
+			{
+				response += "success";
+			}
 		}
 	}
 
@@ -454,7 +524,62 @@ int ContextManager::HandleDevCommand(const char *params, char **resp)
 	return true;
 }
 
-int ContextManager::ResolveDeviceReferences(const char *params, string& ruleStr)
+int ContextManager::HandleOntUpdate(const char *params, char **resp)
+{
+	client::pairs_type m;
+	map<string, string>::iterator it;
+	map<string, string>::const_iterator cit;
+	string subj, pred, val, action;
+	string response;
+
+	if (-1 == url_key_value_to_map(params, m))
+	{
+		cout << "Error: Could not parse params from HTTP Server request\n";
+		return -1;
+	}
+
+	it = m.find("Action");
+	if (it == m.end())
+	{
+		cout << "Error: Could not find action name in keyvals map\n";
+		return -1;
+	}
+
+	action.assign(it->second);
+
+	it = m.find("Subj");
+	if (it == m.end())
+	{
+		cout << "Error: Could not find subj name in keyvals map\n";
+		return -1;
+	}
+
+	subj.assign(it->second);
+	
+	it = m.find("Pred");
+	if (it == m.end())
+	{
+		cout << "Error: Could not find pred name in keyvals map\n";
+		return -1;
+	}
+
+	pred.assign(it->second);
+
+	it = m.find("Val");
+	if (it == m.end())
+	{
+		cout << "Error: Could not find val name in keyvals map\n";
+		return -1;
+	}
+
+	val.assign(it->second);
+
+	DEV_CATALOG->OntologyUpdate(action, subj, pred, val);
+
+	return 0;
+}
+
+int ContextManager::ResolveReferences(const char *params, string& ruleStr)
 {
 	istringstream strstream(params);
 	string lineStr;
@@ -466,14 +591,18 @@ int ContextManager::ResolveDeviceReferences(const char *params, string& ruleStr)
 	 * Ontology.
 	 * A sample request for a rule registration would contain:
 	 * -------------
-	 * DevRef=X&DeviceClass=Lighting&hasLocation=Bedroom&causes=Light
-	 * DevRef=Y&DeviceClass=Device&hasLocation=Bedroom&measures=Temperature
+	 * DevRef=X&Class=Lighting&hasLocation=Bedroom&causes=Light
+	 * DevRef=Y&Class=Device&hasLocation=Bedroom&measures=Temperature
 	 * Action=insert_rule&IsOneShot=true&Rule=do(<X>, set_status, 0, Ts) :- get(<Y>, get_status, Val, Ts), Val =:= 1
 	 * -------------
 	 * In the above request, the first two lines need to be resolved via the 
 	 * Ontology to find X and Y. Then replace <X> and <Y> with the appropriate
 	 * device instances.
 	 * After that send the modified rule to the RuleManager.
+	 * 
+	 * Update**: Now this is not limited to only Device References but any type of references.
+	 * For example, Bedroom will resolve to bedroom1 and so on...
+	 * This is needed in case of "ontology-update" requests.
 	 */
 
 	/* Step 1: decode and resolve variables */
@@ -531,6 +660,53 @@ int ContextManager::ResolveDeviceReferences(const char *params, string& ruleStr)
 
 			varMap.insert(make_pair<string, string>(varName, devObjVec.front()->GetName()));
 		}
+		else if (string::npos != lineStr.find("GenRef"))
+		{
+			int ret;
+			vector<string> instVec;
+			client::pairs_type m;
+
+			/* General Reference */
+			if (-1 == url_key_value_to_map(lineStr.c_str(), m))
+			{
+				cout << "Error: Could not parse params from HTTP Server request\n";
+				return -1;
+			}
+
+			map<string, string>::iterator it;
+			it = m.find("GenRef");
+			if (m.end() == it)
+			{
+				cout << "ERROR: Malformed GenRef string in request\n";
+				return -1;
+			}
+
+			string varName(it->second);
+
+			/* Now remove the GenRef key itself from the map */
+			m.erase(it);
+
+			/* Resolve the GenRef via the Ontology */
+			ret = DEV_CATALOG->GetInstancesByFilter(m, instVec);
+
+			if (instVec.empty())
+			{
+				cout << "ERROR: Could not resolve " << lineStr << ret << endl;
+				return -1;
+			}
+
+			/*
+			 * Found Devices.
+			 * TODO: handle the case when multiple devices exist. For now just use the first.
+			 */
+			cout << "Devices found for: " << lineStr << endl;
+			BOOST_FOREACH(string& obj, instVec)
+			{
+				cout << obj << endl;
+			}
+
+			varMap.insert(make_pair<string, string>(varName, instVec.front()));
+		}
 		else
 		{
 			ruleStr.assign(lineStr);
@@ -552,14 +728,45 @@ int ContextManager::ResolveDeviceReferences(const char *params, string& ruleStr)
 	return 0;
 }
 
+static void sendToRuleManagerCompleted(DBusGProxy* proxy,
+									   DBusGProxyCall* call,
+									   gpointer userData) 
+{
+
+	/* This will hold the GError object (if any). */
+	GError* error = NULL;
+	gchar *resp = NULL;
+
+	cout << "sendToRuleManagerCompleted\n";
+
+	if (!dbus_g_proxy_end_call(proxy,
+				/* The call that we're collecting. */
+				call,
+				/* Where to store the error (if any). */
+				&error,
+				/* Return arguments */
+				G_TYPE_STRING,
+				&resp,
+				G_TYPE_INVALID)) 
+	{
+		/* Some error occurred while collecting the result. */
+		cout << " ERROR: " << error->message << endl;
+		g_error_free(error);
+		return;
+	}
+
+	if (resp) free (resp);
+
+	return;
+}
+
 int ContextManager::HandleRule(const char *params, char **response)
 {
 	client::pairs_type m;
-	GError *error = NULL;
 	string ruleStr;
 	map<string, string>::iterator it;
 
-	ResolveDeviceReferences(params, ruleStr);
+	ResolveReferences(params, ruleStr);
 	
 	/* ruleStr now contains a Prolog-processable rule */
 	cout << "RuleStr: " << ruleStr << endl;
@@ -578,6 +785,23 @@ int ContextManager::HandleRule(const char *params, char **response)
 		return -1;
 	}
 
+	dbus_g_proxy_begin_call(m_ruleManagerObj,
+			/* Method name. */
+			it->second.c_str(),
+			/* Callback to call on "completion". */
+			sendToRuleManagerCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			ruleStr.c_str(),
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
+
+	/*
 	dbus_g_proxy_call (m_ruleManagerObj,
 					   it->second.c_str(),
 					   &error,
@@ -587,18 +811,51 @@ int ContextManager::HandleRule(const char *params, char **response)
 					   G_TYPE_STRING,
 					   response,
 					   G_TYPE_INVALID);
+*/
+	*response = strdup("success");
 
 	return 0;
+}
+
+static void sendToNotificationAgentCompleted(DBusGProxy* proxy,
+								 	   	     DBusGProxyCall* call,
+									   		 gpointer userData) 
+{
+
+	/* This will hold the GError object (if any). */
+	GError* error = NULL;
+	gchar *resp = NULL;
+
+	cout << "sendToNotificationAgentCompleted\n";
+
+	if (!dbus_g_proxy_end_call(proxy,
+				/* The call that we're collecting. */
+				call,
+				/* Where to store the error (if any). */
+				&error,
+				/* Return arguments */
+				G_TYPE_STRING,
+				&resp,
+				G_TYPE_INVALID)) 
+	{
+		/* Some error occurred while collecting the result. */
+		cout << " ERROR: " << error->message << endl;
+		g_error_free(error);
+		return;
+	}
+
+	if (resp) free (resp);
+
+	return;
 }
 
 int ContextManager::HandleEventRequest(const char *params, char **response)
 {
 	client::pairs_type m;
-	GError *error = NULL;
 	string eventStr;
 	map<string, string>::iterator it;
 
-	ResolveDeviceReferences(params, eventStr);
+	ResolveReferences(params, eventStr);
 	
 	/* ruleStr now contains a Prolog-processable rule */
 	cout << "EventStr: " << eventStr << endl;
@@ -618,31 +875,48 @@ int ContextManager::HandleEventRequest(const char *params, char **response)
 	}
 
 	/* Notification agent needs to know about the everything */
-	cout << "Informaing notificationAgent\n";
-	dbus_g_proxy_call (m_notificationAgentObj,
-					   it->second.c_str(),
-					   &error,
-					   G_TYPE_STRING, 
-					   eventStr.c_str(),
-					   G_TYPE_INVALID,
-					   G_TYPE_STRING,
-					   response,
-					   G_TYPE_INVALID);
+	cout << "Informing notificationAgent\n";
+	
+	dbus_g_proxy_begin_call(m_notificationAgentObj,
+			/* Method name. */
+			it->second.c_str(),
+			/* Callback to call on "completion". */
+			sendToNotificationAgentCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			eventStr.c_str(),
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
 
 	if (string::npos != it->second.find("event"))
 	{
 		/* RuleManager needs to know about the event registrations only */
-		cout << "Informaing ruleManager\n";
-		dbus_g_proxy_call (m_ruleManagerObj,
-					   it->second.c_str(),
-					   &error,
-					   G_TYPE_STRING, 
-					   params,
-					   G_TYPE_INVALID,
-					   G_TYPE_STRING,
-					   response,
-					   G_TYPE_INVALID);
+		cout << "Informing ruleManager\n";
+		
+		dbus_g_proxy_begin_call(m_ruleManagerObj,
+			/* Method name. */
+			it->second.c_str(),
+			/* Callback to call on "completion". */
+			sendToRuleManagerCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			eventStr.c_str(),
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
+
 	}
+
+	*response = strdup("success");
 
 	return 0;
 }
@@ -658,7 +932,7 @@ int ContextManager::HandleDevDataRequest(const char *params, char **response)
 	map<string, string>::iterator it;
 	string reqStr;
 
-	ResolveDeviceReferences(params, reqStr);
+	ResolveReferences(params, reqStr);
 
 	if (-1 == url_key_value_to_map(reqStr.c_str(), m))
 	{

@@ -114,14 +114,16 @@ static const DBusGMethodInfo dbus_glib_ruleManager_object_methods[] = {
   { (GCallback) ruleManager_object_delete_rule, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 84 },
   { (GCallback) ruleManager_object_insert_event, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 170 },
   { (GCallback) ruleManager_object_delete_event, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 256 },
-  { (GCallback) ruleManager_object_fetch_all_rules, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 344 },
-  { (GCallback) ruleManager_object_fetch_all_events, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 433 },
+  { (GCallback) ruleManager_object_insert_event_external, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 344 },
+  { (GCallback) ruleManager_object_publish_event, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 439 },
+  { (GCallback) ruleManager_object_fetch_all_rules, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 526 },
+  { (GCallback) ruleManager_object_fetch_all_events, dbus_glib_marshal_ruleManager_object_BOOLEAN__STRING_POINTER_POINTER, 615 },
 };
 
 const DBusGObjectInfo dbus_glib_ruleManager_object_object_info = {  1,
   dbus_glib_ruleManager_object_methods,
-  6,
-"org.asu.smarthome.smartgateway.RuleManager\0insert_rule\0S\0rule\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0delete_rule\0S\0ruleId\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0insert_event\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0delete_event\0S\0eventId\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0fetch_all_rules\0S\0dummy\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0fetch_all_events\0S\0dummy\0I\0s\0response\0O\0F\0N\0s\0\0\0",
+  8,
+"org.asu.smarthome.smartgateway.RuleManager\0insert_rule\0S\0rule\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0delete_rule\0S\0ruleId\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0insert_event\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0delete_event\0S\0eventId\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0insert_event_external\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0publish_event\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0fetch_all_rules\0S\0dummy\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.RuleManager\0fetch_all_events\0S\0dummy\0I\0s\0response\0O\0F\0N\0s\0\0\0",
 "org.asu.smarthome.smartgateway.RuleManager\0new_rule\0org.asu.smarthome.smartgateway.RuleManager\0error_detected\0\0",
 "\0"
 };

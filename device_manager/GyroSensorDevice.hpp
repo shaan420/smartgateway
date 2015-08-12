@@ -17,7 +17,7 @@
 #define CPU_CLOCK 400000000.0f
 #define INITIAL_SKIP_COUNT 5
 
-class GyroSensorDevice : public DeviceDbus<GyroSensorObject, int>
+class GyroSensorDevice : public DeviceDbus<GyroSensorObject>
 {
 	protected:
 		int RecvFromDevice();

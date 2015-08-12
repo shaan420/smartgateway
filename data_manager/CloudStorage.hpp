@@ -2,6 +2,12 @@
 #define __CLOUD_STORAGE_HPP__
 #include "StorageSlot.hpp"
 #include "TimeManager.hpp"
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/foreach.hpp>
+#include <cassert>
+#include <exception>
+#include <sstream>
 
 /* Otherwise compilation will fail */
 extern "C"
@@ -23,8 +29,8 @@ class CloudStorage : public StorageSlot<T>
 
 	public:
 
-		CloudStorage(ts_context_t *ctx, const char *name, int fieldId) : m_ctx(ctx), m_fieldId(fieldId),
-											     			StorageSlot<T>(name, STORAGE_SLOT_TYPE_CLOUD) 
+		CloudStorage(ts_context_t *ctx, const char *name, int fieldId) : StorageSlot<T>(name, STORAGE_SLOT_TYPE_CLOUD), 
+																		 m_ctx(ctx), m_fieldId(fieldId) 
 		{
 			Init();
 		}
@@ -80,6 +86,74 @@ class CloudStorage : public StorageSlot<T>
 
 		int Find(unsigned int ts, char **res, int *num_elems)
 		{
+			char ts_str[64];
+			string response;
+			char *body;
+			int size;
+			char field_str[16];
+			char *data = (char *)malloc(MAXLINE);
+			int n_ret = 0;
+
+			if (data == NULL)
+			{
+				cout << "ERROR: malloc failed\n";
+				return -1;
+			}
+
+			ts_datastream_get_n(m_ctx, m_fieldId, 
+					0 /* get only last value for now */, 
+					&n_ret /* num of values actually returned */,
+					data);
+
+			body = strstr(data, "\r\n");
+			if (body == NULL)
+			{
+				cout << "ERROR: datastream_get failed\n";
+				free (data);
+				return -1;
+			}
+
+			/* get the size of the body */
+			size = strtol(data, NULL, 16);
+
+			if (size >= MAXLINE-5)
+			{
+				cout << "ERROR: response size from Thingspeak cloud platform excedded limit\n";
+				free (data);
+				return -1;
+			}
+
+			/* skip the \r\n */
+			body += 2;
+
+			/* mark the end of the body */
+			body[size] = '\0';
+
+			cout << "JSON Response from cloud:\n" << body << endl;
+
+			/* 
+			 * Now body points to a valid json string. 
+			 * Parse the string into the CloudCatalog
+			 */
+			stringstream ss;
+			ss << body;
+
+			boost::property_tree::ptree pt;
+			boost::property_tree::read_json(ss, pt);
+			free (data);
+
+			snprintf(field_str, 16, "field%d", m_fieldId);
+	
+			response.assign("NumElems=");
+			response += boost::lexical_cast<string>(n_ret) + "&"; 
+			response.assign("Values=");
+			response += pt.get<string>(field_str);
+			response += "&Ts=";
+			snprintf(ts_str, 64, "%llu", TIME_MANAGER->GetCurTimeSec());
+			response += ts_str;
+
+			*res = strdup(response.c_str());
+			return 0;
 #if 0
 			unsigned int n = ts, i = 0;
 			*num_elems = 0;
@@ -130,7 +204,6 @@ class CloudStorage : public StorageSlot<T>
 
 			*res = strdup(response.c_str());
 #endif
-			return 0;
 		}
 };
 

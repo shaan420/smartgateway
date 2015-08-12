@@ -3,7 +3,7 @@
 #include <map>
 #include <stdio.h>
 #include <string>
-#include "Device.hpp"
+#include "DeviceBase.hpp"
 
 using namespace std;
 
@@ -25,14 +25,12 @@ struct DeviceFactory
 		m_classes.insert(std::make_pair(n, &constructor<T>)); 
 	}
 
-	void *construct(string const& n, 
-					string const& devname, 
-					string const& desc, 
-					DeviceConf_t conf)
+	void *construct(string const& devname, 
+					DeviceConf_t& conf)
 	{
-		map_type::iterator i = m_classes.find(n);
+		map_type::iterator i = m_classes.find(conf.m_driverName);
 		if (i == m_classes.end()) return NULL;
-		return i->second(devname, desc, conf);
+		return i->second(devname, conf.m_driverName, conf);
 	}
 };
 

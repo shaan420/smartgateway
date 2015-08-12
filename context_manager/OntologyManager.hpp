@@ -38,6 +38,26 @@ class OntologyManager
 		/* RDF Triple store */
 		owlcpp::Triple_store m_store;
 
+		/* 
+		 * Triple update map 
+		 * The OWLCPP lib currently does not support 
+		 * updating/erasing triples. So as a workaround
+		 * maintain a map that contains all the updates.
+		 * 
+		 * GetData() will first check the Ontology with 
+		 * the subj and pred. If the obj says "in-memory"
+		 * then lookup this map for the value, otherwise return 
+		 * obj.
+		 * SetData() will insert the following triple
+		 * subj-pred-"in-memory" always.
+		 * TODO: remove this workaround once the library supports
+		 * updating triples.
+		 * 
+		 * The key is basically the concatenation of the
+		 * subj and the pred. The obj is the value.
+		 */
+		map<string, string> m_tripleUpdateMap;
+
 		/* Reasoning Kernel */
 		ReasoningKernel m_kernel;
 
@@ -51,12 +71,21 @@ class OntologyManager
 			return m_ns;
 		}
 
+		map<string, string>& TripleUpdateMap()
+		{
+			return m_tripleUpdateMap;
+		}
+
 		bool GetDeviceListByFilter(const map<string, string>& keyvals, 
 								   vector<string>& devList);
 
 		int GetData(const string& subject, 
 			    	const string& pred, 
 					string& object);
+
+		int SetData(const string& subject, 
+					const string& pred, 
+					const string& object);
 
 		bool IsInstance(const string& name, bool &valid);
 

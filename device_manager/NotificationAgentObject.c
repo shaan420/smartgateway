@@ -194,21 +194,21 @@ gboolean notificationagent_object_insert_event(NotificationAgentObject* obj, gch
 	return TRUE;
 }
 
-gboolean notificationagent_object_add_subscriber(NotificationAgentObject* obj, gchar *sub_params, gchar **response, GError** error)
+gboolean notificationagent_object_insert_event_external(NotificationAgentObject* obj, gchar *new_event, gchar **response, GError** error)
 {
-	printf("notificationagent1: new_subscriber called.\n");
+	printf("notificationagent1: new_event external called.\n");
 	g_assert(obj != NULL);
 
 	NotificationAgentDevice *dev = static_cast<NotificationAgentDevice *>(obj->m_dev_ptr);
 
 	if (NULL != dev)
 	{
-		printf("Inserting new subscriber %s\n", sub_params);
-		dev->AddSubscriberForEvent(sub_params);
+		printf("Inserting new event %s\n", new_event);
+		dev->AddEvent(new_event);
 
 		/* Emit the "changed_notificationagent1" signal. */
-		printf("Publishing new new_sub\n");
-		notificationagent_object_emitSignal(obj, E_NOTIFICATIONAGENT_OBJECT_SIGNAL_CHANGED_STATUS, "new_sub");
+		printf("Publishing new new_event\n");
+		notificationagent_object_emitSignal(obj, E_NOTIFICATIONAGENT_OBJECT_SIGNAL_CHANGED_STATUS, "new_event");
 	}
 	else
 	{
@@ -220,9 +220,42 @@ gboolean notificationagent_object_add_subscriber(NotificationAgentObject* obj, g
 	return TRUE;
 }
 
-gboolean notificationagent_object_remove_subscriber(NotificationAgentObject* obj, gchar *sub, gchar **response, GError** error)
+gboolean notificationagent_object_add_subscriber(NotificationAgentObject* obj, gchar *sub_params, gchar **response, GError** error)
 {
 	printf("notificationagent1: new_subscriber called.\n");
+	g_assert(obj != NULL);
+
+	NotificationAgentDevice *dev = static_cast<NotificationAgentDevice *>(obj->m_dev_ptr);
+
+	if (NULL != dev)
+	{
+		printf("Inserting new subscriber %s\n", sub_params);
+		if (0 == dev->AddSubscriberForEvent(sub_params))
+		{
+			/* Emit the "changed_notificationagent1" signal. */
+			printf("Publishing new new_sub\n");
+			notificationagent_object_emitSignal(obj, E_NOTIFICATIONAGENT_OBJECT_SIGNAL_CHANGED_STATUS, "new_sub");
+			*response = strdup("success");
+		}
+		else
+		{
+			*response = strdup("error");
+		}
+	}
+	else
+	{
+		printf("Error contacting physical device\n");
+		*response = strdup("error");
+	}
+
+	/* Return success to GLib/D-Bus wrappers. In this case we don't need
+	   to touch the supplied error pointer-pointer. */
+	return TRUE;
+}
+
+gboolean notificationagent_object_remove_subscriber(NotificationAgentObject* obj, gchar *sub, gchar **response, GError** error)
+{
+	printf("notificationagent1: remove_subscriber called.\n");
 	g_assert(obj != NULL);
 
 	/* Return success to GLib/D-Bus wrappers. In this case we don't need
@@ -232,7 +265,7 @@ gboolean notificationagent_object_remove_subscriber(NotificationAgentObject* obj
 
 gboolean notificationagent_object_delete_event(NotificationAgentObject* obj, gchar *event, gchar **response, GError** error)
 {
-	printf("notificationagent1: new_subscriber called.\n");
+	printf("notificationagent1: delete_event called.\n");
 	g_assert(obj != NULL);
 
 	/* Return success to GLib/D-Bus wrappers. In this case we don't need
@@ -252,8 +285,8 @@ gboolean notificationagent_object_publish_event(NotificationAgentObject* obj, gc
 		dev->Write(event_params, strlen(event_params));
 
 		/* Emit the "changed_notificationagent1" signal. */
-		printf("Publishing new event_params\n");
-		notificationagent_object_emitSignal(obj, E_NOTIFICATIONAGENT_OBJECT_SIGNAL_CHANGED_STATUS, "event_params");
+		//printf("Publishing new event_params\n");
+		//notificationagent_object_emitSignal(obj, E_NOTIFICATIONAGENT_OBJECT_SIGNAL_CHANGED_STATUS, "event_params");
 	}
 	else
 	{

@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS = foreign
 
-HOME=/home/ayanami-dummy
-#HOME=/home/shankar
+#HOME=/home/ayanami-dummy
+HOME=/home/shankar
 
 #BOOST_LIB_PATH=$(HOME)/boost_1_55_0/bin.v2/libs
 BOOST_LIB_PATH=$(HOME)/owlcpp-libs-galileo

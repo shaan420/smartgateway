@@ -1,0 +1,71 @@
+#ifndef __LIGHTING_DEVICE_HPP__
+#define __LIGHTING_DEVICE_HPP__
+#include "Device.hpp"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+
+#include "LightingObject.h"
+
+class LightingDevice : public Device<int>
+{
+	protected:
+		int RecvFromDevice();
+		int SendToDevice();
+
+	private:
+		/* This is the GObject used for D-Bus.*/
+		LightingObject *m_obj;
+
+		int m_cur_value;
+		int m_prev_value;
+
+		LightingDevice() {}
+
+		void CreateDevHandler();
+		void DestroyDevHandler();
+	
+	public:
+		LightingDevice(string name, string desc, DeviceConf_t conf) 
+				: Device(name, desc, conf)
+		{ 
+			m_obj = (LightingObject *)g_object_new(LIGHTING_TYPE_OBJECT, NULL);
+			if (m_obj == NULL) {
+				g_print("Failed to create one gobj instance.\n");
+			}
+
+			/* 
+			 * Store the back pointer here so that when the D-Bus "set_status"
+			 * is invoked, we can use the LightingDevice obj from the LightingObject obj.
+			 */
+			m_obj->m_dev_ptr = static_cast<void *>(this);
+		}
+
+		LightingObject *GetObj()
+		{
+			return m_obj;
+		}
+
+		int GetLightingStatus()
+		{
+			return m_obj->m_status;
+		}
+
+		void SetLightingStatus(int status)
+		{
+			m_obj->m_status = status;
+		}
+
+		int OnInit();
+		void OnError();
+		void OnChange();
+		void OnSendDone();
+		bool HasChanged();
+		void SetDeviceParams();
+		void GetDeviceParams();
+		int ReadShared(void **mem);
+		int Write(void *mem, int len);
+		int Read(void *mem, int len);
+};
+#endif

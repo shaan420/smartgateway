@@ -179,11 +179,10 @@ bool OntologyManager::GetDeviceListByFilter(const map<string, string>& keyvals, 
 	bool valid = true; /* To show whether the node is valid (ie. is a concept or an individual ) in the Ontology file */ 
 	TDLConceptExpression *filterConcept = NULL;
 	map<string, string>::const_iterator cit;
-	map<string, string>::iterator it;
 	string devclass;
 
-	cit = keyvals.find("DeviceClass");
-	if (it == keyvals.end())
+	cit = keyvals.find("Class");
+	if (cit == keyvals.end())
 	{
 		cout << "Error: Could not find device name in keyvals map\n";
 		return false;
@@ -211,8 +210,10 @@ bool OntologyManager::GetDeviceListByFilter(const map<string, string>& keyvals, 
 
 	for (cit = keyvals.begin(); cit != keyvals.end(); cit++)
 	{
-		/* skip the "DeviceClass" key itself */
-		if (cit->first == "DeviceClass")
+		/* skip the "Class|Action|Property" key itself */
+		if (cit->first == "Class" || 
+				cit->first == "Action" ||
+				cit->first == "Property")
 		{
 			continue;
 		}
@@ -328,8 +329,103 @@ int OntologyManager::GetData(const string& subject, const string& pred, string& 
 	BOOST_FOREACH(owlcpp::Triple const& t, 
 				m_store.find_triple(*subj_id, *pred_id, owlcpp::any(), owlcpp::any())) 
 	{
-		object.assign(to_string(t.obj_, m_store));
-		cout << object << endl;
+		string obj = to_string(t.obj_, m_store);
+
+		if (obj == "\"in-memory\"")
+		{
+			/* Need to lookup in the tripleUpdateMap */
+			map<string, string>::iterator it;
+
+			it = TripleUpdateMap().find(subject+pred);
+			if (TripleUpdateMap().end() != it)
+			{
+				obj = it->second;
+			}
+		}
+
+		object.assign(obj);
+		cout << "GetData(): " << object << endl;
+		break;
+	}
+
+	return 0;
+}
+
+int OntologyManager::SetData(const string& subject, const string& pred, const string& object)
+{
+	bool valid;
+	if (false == IsInstance(subject, valid))
+	{
+		cout << "ERROR: SetData failed. Subject must be an Instance Node\n";
+		return -1;
+	}
+
+	const owlcpp::Node_id *subj_idp = m_store.find_node_iri(m_ns + subject);
+	const owlcpp::Node_id *pred_idp = m_store.find_node_iri(m_ns + pred);
+	owlcpp::Node_id pred_id;
+	owlcpp::Node_id obj_id;
+	owlcpp::Doc_id doc_id;
+	owlcpp::Triple triple;
+
+	if (NULL == subj_idp)
+	{
+		cout << "subject node not found: " << subject << endl;
+		return -1;
+	}
+
+	cout << "Subj found:" << subject << endl;
+
+	BOOST_FOREACH(const owlcpp::Triple& t,
+			m_store.find_triple(*subj_idp, owlcpp::any(), owlcpp::any(), owlcpp::any()))
+	{
+		doc_id = t.doc_;
+		cout << "DocId found:" << to_string(doc_id) << endl;
+		break;
+	}
+
+	if (NULL == pred_idp)
+	{
+		/*
+		 * pred not present, so create it 
+		 * First, declare it using the OWL-to-RDF conversion:
+		 * [Declaration( DataProperty( DP ) )] ==>> [T(DP) rdf:type owl:DatatypeProperty .]
+		 */
+		pred_id = m_store.insert_node_iri(m_ns + pred);
+
+		m_store.insert(owlcpp::Triple::make(pred_id, 
+					owlcpp::terms::rdf_type::id(), 
+					owlcpp::terms::owl_DatatypeProperty::id(),
+					doc_id));
+		pred_idp = &pred_id;
+
+		/* Create node for Object if not already present */
+		obj_id = m_store.insert_literal("in-memory", owlcpp::terms::xsd_string::id(), "en");
+
+		cout << "Obj created/found: " << owlcpp::to_string(obj_id, m_store) << endl;
+
+		/* Create triple */
+		triple = owlcpp::Triple::make(*subj_idp, *pred_idp, obj_id, doc_id);
+
+		cout << "Triple created\n";
+
+		/* Insert into store */
+		cout << "Inserting Triple: " << subject << "-" << pred << "-" << object << endl;
+		m_store.insert(triple);
+		TripleUpdateMap()[subject+pred] = object;
+	}
+	else
+	{
+		BOOST_FOREACH(const owlcpp::Triple& t,
+				m_store.find_triple(*subj_idp, *pred_idp, owlcpp::any(), owlcpp::any()))
+		{
+			if (to_string(t.obj_, m_store) == "\"in-memory\"")
+			{
+				/* Now update the tripleUpdateMap */
+				cout << "Updating Triple: " << subject << "-" << pred << "-" << object << endl;
+				TripleUpdateMap()[subject+pred] = object;
+			}
+			break;
+		}
 	}
 
 	return 0;

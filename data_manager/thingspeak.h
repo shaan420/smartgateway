@@ -112,6 +112,7 @@ char *          ts_get_value_str(ts_datapoint_t *);
 /* Datastream functions */
 int32_t ts_datastream_update(ts_context_t *, ts_feed_id_t, char *, ts_datapoint_t *);
 char   *ts_datastream_get(ts_context_t *, ts_feed_id_t, ts_data_type_t, char *, char *);
+char   *ts_datastream_get_n(ts_context_t *, int, int, int*, char *);
 
 
 /* Datastream functions */

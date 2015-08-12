@@ -8,7 +8,7 @@ extern "C" {
 #include <dbus/dbus-glib.h>
 
 typedef enum {
-	E_CONTEXTMANAGER_OBJECT_SIGNAL_CHANGED_STATUS = 0,
+	E_CONTEXTMANAGER_OBJECT_SIGNAL_NEW_QUERY = 0,
 	E_CONTEXTMANAGER_OBJECT_SIGNAL_ERROR,
 	E_CONTEXTMANAGER_OBJECT_SIGNAL_COUNT
 } ContextManagerObjectSignalNumber;
@@ -56,6 +56,7 @@ GType contextManager_object_get_type(void);
  */
 gboolean contextManager_object_new_query_url(ContextManagerObject* obj, gchar *query_type, gchar *params, gchar **response, GError** error);
 gboolean contextManager_object_dev_command(ContextManagerObject* obj, gchar *command, gchar **response, GError** error);
+gboolean contextManager_object_ont_update(ContextManagerObject* obj, gchar *params, gchar **response, GError** error);
 gboolean contextManager_object_device_info(ContextManagerObject* obj, gchar *params, gchar **response, GError** error);
 
 void contextManager_object_emitSignal(ContextManagerObject* obj, 

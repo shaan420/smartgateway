@@ -158,11 +158,22 @@ class RuleManager
 		/* This is used to execute the device actions via the ContextManager */
 		int ExecuteCommand(string& devStr, string& commandStr, string& valueStr);
 
+		/* This is used to update the Ontology via the ContextManager */
+		int OntologyUpdate(string& subjStr, string& predStr, string& valueStr);
+
 		/* 
+		 * There are two types events - Internal and External
+		 * Internal Events are events detected by the RuleManager by satisfying the
+		 * Prolog rules.
+		 * External Events are events that are triggered by the Cloud Service. These
+		 * events are simply inserted into the Prolog Knowledgebase as that might trigger
+		 * some Internal Event or some Command Execution or Ontology Update.
+		 *
 		 * This is used to provide notifications to those who have subscribed 
 		 * for an event via the NotificationAgent.
 		 */
-		int PublishEvent(string& eventStr, string& tsStr);
+		int PublishEvent(string& eventStr, string& msgStr, string& val, string& tsStr);
+		int PublishExternalEvent(const char *event_params);
 
 		/*
 		 * Event Driven Status Changes

@@ -157,57 +157,6 @@ dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_POINTER (GClosure     *clos
   g_value_set_boolean (return_value, v_return);
 }
 
-/* BOOLEAN:STRING,STRING,STRING,POINTER */
-extern void dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_STRING_STRING_POINTER (GClosure     *closure,
-                                                                                        GValue       *return_value,
-                                                                                        guint         n_param_values,
-                                                                                        const GValue *param_values,
-                                                                                        gpointer      invocation_hint,
-                                                                                        gpointer      marshal_data);
-void
-dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_STRING_STRING_POINTER (GClosure     *closure,
-                                                                            GValue       *return_value G_GNUC_UNUSED,
-                                                                            guint         n_param_values,
-                                                                            const GValue *param_values,
-                                                                            gpointer      invocation_hint G_GNUC_UNUSED,
-                                                                            gpointer      marshal_data)
-{
-  typedef gboolean (*GMarshalFunc_BOOLEAN__STRING_STRING_STRING_POINTER) (gpointer     data1,
-                                                                          gpointer     arg_1,
-                                                                          gpointer     arg_2,
-                                                                          gpointer     arg_3,
-                                                                          gpointer     arg_4,
-                                                                          gpointer     data2);
-  register GMarshalFunc_BOOLEAN__STRING_STRING_STRING_POINTER callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
-  gboolean v_return;
-
-  g_return_if_fail (return_value != NULL);
-  g_return_if_fail (n_param_values == 5);
-
-  if (G_CCLOSURE_SWAP_DATA (closure))
-    {
-      data1 = closure->data;
-      data2 = g_value_peek_pointer (param_values + 0);
-    }
-  else
-    {
-      data1 = g_value_peek_pointer (param_values + 0);
-      data2 = closure->data;
-    }
-  callback = (GMarshalFunc_BOOLEAN__STRING_STRING_STRING_POINTER) (marshal_data ? marshal_data : cc->callback);
-
-  v_return = callback (data1,
-                       g_marshal_value_peek_string (param_values + 1),
-                       g_marshal_value_peek_string (param_values + 2),
-                       g_marshal_value_peek_string (param_values + 3),
-                       g_marshal_value_peek_pointer (param_values + 4),
-                       data2);
-
-  g_value_set_boolean (return_value, v_return);
-}
-
 G_END_DECLS
 
 #endif /* __dbus_glib_marshal_dataManager_object_MARSHAL_H__ */
@@ -215,14 +164,14 @@ G_END_DECLS
 #include <dbus/dbus-glib.h>
 static const DBusGMethodInfo dbus_glib_dataManager_object_methods[] = {
   { (GCallback) dataManager_object_new, dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_POINTER, 0 },
-  { (GCallback) dataManager_object_insert, dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_STRING_STRING_POINTER, 62 },
-  { (GCallback) dataManager_object_find, dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_STRING_INT_POINTER_POINTER_POINTER, 149 },
+  { (GCallback) dataManager_object_insert, dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_POINTER, 61 },
+  { (GCallback) dataManager_object_find, dbus_glib_marshal_dataManager_object_BOOLEAN__STRING_STRING_INT_POINTER_POINTER_POINTER, 125 },
 };
 
 const DBusGObjectInfo dbus_glib_dataManager_object_object_info = {  1,
   dbus_glib_dataManager_object_methods,
   3,
-"org.asu.smarthome.smartgateway.DataManager\0new\0S\0devname\0I\0s\0\0org.asu.smarthome.smartgateway.DataManager\0insert\0S\0devname\0I\0s\0command\0I\0s\0value\0I\0s\0\0org.asu.smarthome.smartgateway.DataManager\0find\0S\0devname\0I\0s\0command\0I\0s\0ts\0I\0i\0value\0O\0F\0N\0s\0num_elems\0O\0F\0N\0i\0\0\0",
+"org.asu.smarthome.smartgateway.DataManager\0new\0S\0params\0I\0s\0\0org.asu.smarthome.smartgateway.DataManager\0insert\0S\0params\0I\0s\0\0org.asu.smarthome.smartgateway.DataManager\0find\0S\0devname\0I\0s\0command\0I\0s\0ts\0I\0i\0value\0O\0F\0N\0s\0num_elems\0O\0F\0N\0i\0\0\0",
 "org.asu.smarthome.smartgateway.DataManager\0new_key\0org.asu.smarthome.smartgateway.DataManager\0error_detected\0\0",
 "\0"
 };

@@ -64,7 +64,7 @@
     <!-- Signals to tell interested clients about state change.
          We send a string parameter with them. They never can have
          arguments with direction=in. -->
-    <signal name="status_changed">
+    <signal name="changed_status">
       <arg type="s" name="change_status" direction="out"/>
     </signal>
 

@@ -26,7 +26,7 @@ StorageSlotBase *DevStorage::FindStorageSlot(const char *command, bool create)
 	if (it != m_slotMap.end())
 	{
 		/* Found storageSlot */
-		cout << "Found Storage slot\n";
+		//cout << "Found Storage slot\n";
 		return it->second;
 	}
 	else

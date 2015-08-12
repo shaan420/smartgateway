@@ -247,11 +247,13 @@ int DataManager::CreateNewDevStorage(const char *params)
 	it = m.find("DataStorageLocation");
 	if (it == m.end())
 	{
-		cout << "DataStorageLocation not found!\n";
-		return -1;
+		cout << "DataStorageLocation not found! Using local storage\n";
+		slotType = STORAGE_SLOT_TYPE_RING_BUFFER;
 	}
-	
-	slotType = ((it->second == "\"cloud\"") ? STORAGE_SLOT_TYPE_CLOUD : STORAGE_SLOT_TYPE_RING_BUFFER);
+	else
+	{
+		slotType = ((it->second == "\"cloud\"") ? STORAGE_SLOT_TYPE_CLOUD : STORAGE_SLOT_TYPE_RING_BUFFER);
+	}
 
 	DevStorage *d = new DevStorage(devStr.c_str(), slotType);
 	if (NULL == d)
@@ -287,14 +289,49 @@ ts_context_t *DataManager::GetCloudChannelCtx(const char *name)
 	return ctx;
 }
 
-int DataManager::Insert(const char *devname, 
-						const char *command, 
-						const char *value)
+int DataManager::Insert(const char *params)
 {
 	int ret;
+	string devStr, commandStr, valStr;
+	map<string, string> m;
+	map<string, string>::iterator it;
+	StorageSlotType_t slotType;
+
+	if (url_key_value_to_map(params, m))
+	{
+		cout << "ERROR: Parsing new device req failed " << endl;
+		return -1;
+	}
+
+	it = m.find("DeviceName");
+	if (it == m.end())
+	{
+		cout << "DeviceName not found!\n";
+		return -1;
+	}
+
+	devStr = it->second;
+
+	it = m.find("Command");
+	if (it == m.end())
+	{
+		cout << "Command not found!\n";
+		return -1;
+	}
+
+	commandStr = it->second;
+
+	it = m.find("Val");
+	if (it == m.end())
+	{
+		cout << "Val not found!\n";
+		return -1;
+	}
+
+	valStr = it->second;
 
 	/* find appropriate devStorate */
-	DevStorage *d = FindDevStorage(devname);
+	DevStorage *d = FindDevStorage(devStr.c_str());
 
 	if (NULL == d)
 	{
@@ -302,7 +339,7 @@ int DataManager::Insert(const char *devname,
 		return -1;
 	}
 
-	StorageSlotBase *slotBase = d->FindStorageSlot(command, true);
+	StorageSlotBase *slotBase = d->FindStorageSlot(commandStr.c_str(), true);
 
 	if (NULL == slotBase)
 	{
@@ -321,14 +358,14 @@ int DataManager::Insert(const char *devname,
 		case STORAGE_SLOT_TYPE_RING_BUFFER:
 			{
 				RingBufferStorage<int> *storage = static_cast<RingBufferStorage<int> *>(slotBase);
-				ret = storage->Insert(value);
+				ret = storage->Insert(valStr.c_str());
 			}
 			break;
 
 		case STORAGE_SLOT_TYPE_CLOUD:
 			{
 				CloudStorage<float> *storage = static_cast<CloudStorage<float> *>(slotBase);
-				ret = storage->Insert(value);
+				ret = storage->Insert(valStr.c_str());
 			}
 			break;
 
@@ -386,7 +423,7 @@ int DataManager::Find(const char *devname, const char *command, int ts, char **v
 				if (0 == storage->Find(ts, value, num_elems))
 				{
 					/* Successfully got results */
-					cout << "Found: " << *value << endl;
+					//cout << "Found: " << *value << endl;
 					return 0;
 				}
 				else
@@ -396,6 +433,24 @@ int DataManager::Find(const char *devname, const char *command, int ts, char **v
 				}
 			}
 			break;
+		
+		case STORAGE_SLOT_TYPE_CLOUD:
+			{
+				CloudStorage<int> *storage = static_cast<CloudStorage<int> *>(slotBase);
+				if (0 == storage->Find(ts, value, num_elems))
+				{
+					/* Successfully got results */
+					//cout << "Found: " << *value << endl;
+					return 0;
+				}
+				else
+				{
+					cout << "ERROR: Could not find data\n";
+					return -1;
+				}
+			}
+			break;
+
 
 
 		default:

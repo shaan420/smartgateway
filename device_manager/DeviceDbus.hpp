@@ -1,13 +1,13 @@
 #ifndef __DEVICE_DBUS_HPP__
 #define __DEVICE_DBUS_HPP__
 
-#include "Device.hpp"
+#include "DeviceBase.hpp"
 #include "DeviceAgent.hpp"
 #include <glib-object.h>
 #include "../common/include/common-defs.h"
 
-template <typename DbusObjectType, typename DeviceHandlerType>
-class DeviceDbus : public Device<DeviceHandlerType>
+template <typename DbusObjectType>
+class DeviceDbus : public DeviceBase
 {
 	private:
 		DbusObjectType *m_obj;
@@ -15,7 +15,7 @@ class DeviceDbus : public Device<DeviceHandlerType>
 	public: 
 		DeviceDbus() {}
 		DeviceDbus(GType type, const string& name, const string& desc, DeviceConf_t& conf)
-			: Device<DeviceHandlerType>(name, desc, conf)
+			: DeviceBase(name, desc, conf)
 		{
 			guint result;
 			DBusGProxy *busProxy;

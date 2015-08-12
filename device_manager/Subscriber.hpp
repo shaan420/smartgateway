@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <curl/curl.h>
 #include "url_utils.hpp"
+#include <boost/lexical_cast.hpp>
 
 extern "C"
 {
@@ -17,6 +18,7 @@ using namespace std;
 
 #define CLOUD_API_KEY "BOOM7YQVSAKY3QMQ"
 #define CLOUD_FEED_ID 43433
+#define CLOUD_USER_KEY "3FP2S5YM5EJ375P8"
 
 typedef enum SubscriberNotificationType
 {
@@ -35,9 +37,12 @@ class Subscriber
 
 		
 		int Sendmail(const char *to,
-					 const char *message);
+					 const char *message,
+					 const char *val);
 
-		int SendToCloud(const char *message);
+		int SendToCloud(const char *field_id,
+						const char *message,
+						const char *val);
 	public:
 		Subscriber() {}
 		Subscriber(const char *name, const char *type, const char *args) : 
@@ -129,6 +134,8 @@ class Subscriber
 
 			/* Initialize the Cloud agent */
 			sm_cloud = ts_create_context(CLOUD_API_KEY, CLOUD_FEED_ID);
+			ts_context_set_user_key(sm_cloud, CLOUD_USER_KEY);
+			ts_clear_channel(sm_cloud);
 
 			if (sm_cloud == NULL)
 			{
@@ -140,7 +147,17 @@ class Subscriber
 			return 0;
 		}
 
-		int Publish(const char *message);
+		int Publish(const char *message, const char *val);
+
+		void SetParams(string params)
+		{
+			m_params.assign(params);
+		}
+
+		SubscriberNotificationType_t Type()
+		{
+			return m_type;
+		}
 
 		const char *Name()
 		{

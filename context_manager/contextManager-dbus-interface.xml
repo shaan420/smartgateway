@@ -50,6 +50,12 @@
       <arg type="s" name="command" direction="in"/>
       <arg type="s" name="response" direction="out"/>
     </method>
+	
+	<!-- new dev command from RuleManager -->
+    <method name="ont_update">
+      <arg type="s" name="params" direction="in"/>
+      <arg type="s" name="response" direction="out"/>
+    </method>
 
 	<!-- device info request from RuleManager to 
 				register signal handler for this device -->

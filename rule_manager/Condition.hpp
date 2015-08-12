@@ -13,6 +13,7 @@ typedef enum ConditionType
 	CONDITION_TYPE_GET = 0,
 	CONDITION_TYPE_DO,
 	CONDITION_TYPE_EVENT,
+	CONDITION_TYPE_ONT,
 	CONDITION_TYPE_GENERAL
 } ConditionType_t;
 
@@ -83,7 +84,8 @@ class Condition
 								  m_commandStr(c->CommandStr()),
 								  m_valueStr(c->ValueStr()),
 								  m_tsStr(c->TsStr()),
-								  m_idStr(c->IdStr())
+								  m_idStr(c->IdStr()),
+								  m_dbus_obj(c->DbusObj())
 		{
 			m_type = c->type();
 		}
@@ -141,7 +143,6 @@ class Condition
 		{
 			return m_valueStr;
 		}
-
 
 		string& TsStr()
 		{

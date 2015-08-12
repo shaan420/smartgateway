@@ -69,7 +69,7 @@ static size_t payload_source(void *ptr, size_t size, size_t nmemb, void *userp)
 	return 0;
 }
 
-int Subscriber::Publish(const char *message)
+int Subscriber::Publish(const char *message, const char *val)
 {
 	switch (m_type)
 	{
@@ -78,11 +78,11 @@ int Subscriber::Publish(const char *message)
 			break;
 
 		case SUBSCRIBER_NOTIFICATION_TYPE_EMAIL:
-			Sendmail(m_params.c_str(), message);
+			Sendmail(m_params.c_str(), message, val);
 			break;
 
 		case SUBSCRIBER_NOTIFICATION_TYPE_CLOUD:
-			SendToCloud(message);
+			SendToCloud(m_params.c_str(), message, val);
 			break;
 
 		default:
@@ -107,11 +107,15 @@ static int prepare_udata(struct UserData *udata, const char *m)
 }
 
 int Subscriber::Sendmail(const char *to, 
-			 			 const char *message)
+			 			 const char *message,
+						 const char *val)
 {
 	struct UserData udata;
 	CURLcode res = CURLE_OK;
 	struct curl_slist *recipients = NULL;
+	char msg[256];
+
+	snprintf(msg, 256, "EventName=%s&Val=%s", message, val);
 
 	if (sm_curl != NULL) 
 	{
@@ -123,7 +127,7 @@ int Subscriber::Sendmail(const char *to,
 		 * specify a FILE pointer to read from. */
 		curl_easy_setopt(sm_curl, CURLOPT_READFUNCTION, payload_source);
 
-		prepare_udata(&udata, message);
+		prepare_udata(&udata, msg);
 		curl_easy_setopt(sm_curl, CURLOPT_READDATA, &udata);
 		curl_easy_setopt(sm_curl, CURLOPT_UPLOAD, 1L);
 
@@ -152,14 +156,19 @@ int Subscriber::Sendmail(const char *to,
 	return 0;
 }
 
-int Subscriber::SendToCloud(const char *message)
+int Subscriber::SendToCloud(const char *field_id, 
+							const char *message, 
+							const char *val)
 {
+	char field_str[32];
 	ts_datapoint_t data;
 	memset(&data, 0, sizeof(ts_datapoint_t));
 
-	ts_set_value_str(&data, message);
+	float value = strtof(val, NULL);
+	ts_set_value_f32(&data, value);
 
-	ts_datastream_update(sm_cloud, 0, "status", &data);
+	snprintf(field_str, 32, "field%s", field_id);
+	ts_datastream_update(sm_cloud, 0, field_str, &data);
 	return 0;
 }
 

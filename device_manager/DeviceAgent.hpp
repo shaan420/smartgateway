@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <map>
 #include <dbus/dbus-glib.h>
+#include <boost/lockfree/spsc_queue.hpp>
 #include "DeviceFactory.hpp"
 #include "DeviceAgentObject.h"
 #include "../common/include/common-defs.h"
@@ -11,9 +12,26 @@
 
 extern DeviceFactory g_factory;
 
+typedef enum DbusDataManagerAction
+{
+	DBUS_DATA_MANAGER_ACTION_NEW = 0,
+	DBUS_DATA_MANAGER_ACTION_INSERT
+} DbusDataManagerAction_t;
+
+typedef struct DbusAsyncMsg
+{
+	DbusDataManagerAction_t action;
+	char *params;
+} DbusAsyncMsg_t;
+
+
 class DeviceAgent
 {
+	public:
+		typedef boost::lockfree::spsc_queue<DbusAsyncMsg *, boost::lockfree::capacity<1024> > DbusOffloadQueue_t;
+
 	private:
+		GMutex *m_deviceMapLock;
 		map<std::string, DeviceBase *> m_deviceMap;
 
 		/* The GObject representing a D-Bus connection. */
@@ -23,11 +41,12 @@ class DeviceAgent
 		/* Proxy DBUS object to communicate with DataManager */
 		DBusGProxy *m_dataManagerObj;
 
-		int AddDevice(DeviceBase *dev);
+		DbusOffloadQueue_t m_dbus_offload_queue;
+		GThread *m_dbus_offload_th;
 
+	
 		int RemoveDevice(string name);
 
-		int StringToConf(const char *params, DeviceConf_t *conf, string& name);
 
 	public:
 		DeviceAgent() {}
@@ -53,7 +72,11 @@ class DeviceAgent
 		}
 #endif
 
+		void UpdateDataManager(const char *, char *);
+		void SendToDataManager(DbusAsyncMsg_t *);
+
 		DeviceBase *CreateNewDevice(const char *iface_name, const char *devname);
+		int CreateNewDeviceAsync(const char *iface_name, char *params);
 
 		DBusGConnection *GetDbusSession() const
 		{
@@ -64,6 +87,8 @@ class DeviceAgent
 
 		int Init(void);
 		int DeployDevices(void);
+		int StringToConf(const char *params, DeviceConf_t *conf, string& name);
+		int AddDevice(DeviceBase *dev);
 		int DeployDevice(DeviceBase *dev);
 		static DeviceAgent *GetInstance();
 		DBusGProxy *DataManagerObj()

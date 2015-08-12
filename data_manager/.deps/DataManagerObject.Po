@@ -812,14 +812,387 @@ DataManagerObject.o: DataManagerObject.c DataManager.hpp \
  /usr/local/include/boost/range/detail/safe_bool.hpp \
  /usr/local/include/boost/container/container_fwd.hpp \
  /usr/local/include/boost/integer.hpp \
- /usr/local/include/boost/integer_fwd.hpp CloudStorage.hpp thingspeak.h \
+ /usr/local/include/boost/integer_fwd.hpp CloudStorage.hpp \
+ /usr/local/include/boost/property_tree/ptree.hpp \
+ /usr/local/include/boost/property_tree/ptree_fwd.hpp \
+ /usr/local/include/boost/optional/optional_fwd.hpp \
+ /usr/local/include/boost/property_tree/string_path.hpp \
+ /usr/local/include/boost/property_tree/id_translator.hpp \
+ /usr/local/include/boost/optional.hpp \
+ /usr/local/include/boost/optional/optional.hpp \
+ /usr/local/include/boost/type_traits/alignment_of.hpp \
+ /usr/local/include/boost/type_traits/detail/size_t_trait_def.hpp \
+ /usr/local/include/boost/mpl/size_t.hpp \
+ /usr/local/include/boost/mpl/size_t_fwd.hpp \
+ /usr/local/include/boost/type_traits/detail/size_t_trait_undef.hpp \
+ /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp \
+ /usr/local/include/boost/type_traits/type_with_alignment.hpp \
+ /usr/local/include/boost/preprocessor/list/for_each_i.hpp \
+ /usr/local/include/boost/preprocessor/tuple/to_list.hpp \
+ /usr/local/include/boost/preprocessor/list/transform.hpp \
+ /usr/local/include/boost/preprocessor/list/append.hpp \
+ /usr/local/include/boost/detail/reference_content.hpp \
+ /usr/local/include/boost/none.hpp /usr/local/include/boost/none_t.hpp \
+ /usr/local/include/boost/utility/compare_pointees.hpp \
+ /usr/local/include/boost/utility/in_place_factory.hpp \
+ /usr/local/include/boost/utility/detail/in_place_factory_prefix.hpp \
+ /usr/local/include/boost/preprocessor/punctuation/paren.hpp \
+ /usr/local/include/boost/preprocessor/iteration/iterate.hpp \
+ /usr/local/include/boost/preprocessor/slot/slot.hpp \
+ /usr/local/include/boost/preprocessor/slot/detail/def.hpp \
+ /usr/local/include/boost/preprocessor/repetition/enum.hpp \
+ /usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp \
+ /usr/local/include/boost/preprocessor/iteration/detail/iter/forward1.hpp \
+ /usr/local/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp \
+ /usr/local/include/boost/preprocessor/slot/detail/shared.hpp \
+ /usr/local/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp \
+ /usr/local/include/boost/utility/detail/in_place_factory_suffix.hpp \
+ /usr/local/include/boost/property_tree/exceptions.hpp \
+ /usr/local/include/boost/any.hpp \
+ /usr/local/include/boost/type_traits/decay.hpp \
+ /usr/local/include/boost/type_traits/remove_bounds.hpp \
+ /usr/local/include/boost/property_tree/detail/exception_implementation.hpp \
+ /usr/local/include/boost/property_tree/detail/ptree_utils.hpp \
+ /usr/local/include/boost/property_tree/stream_translator.hpp \
+ /usr/local/include/boost/optional/optional_io.hpp \
+ /usr/local/include/boost/utility/value_init.hpp \
+ /usr/local/include/boost/aligned_storage.hpp \
+ /usr/local/include/boost/type_traits/cv_traits.hpp \
+ /usr/local/include/boost/type_traits/add_cv.hpp \
+ /usr/local/include/boost/type_traits/remove_volatile.hpp \
+ /usr/local/include/boost/multi_index_container.hpp \
+ /usr/local/include/boost/detail/allocator_utilities.hpp \
+ /usr/local/include/boost/multi_index_container_fwd.hpp \
+ /usr/local/include/boost/multi_index/identity.hpp \
+ /usr/local/include/boost/multi_index/identity_fwd.hpp \
+ /usr/local/include/boost/multi_index/indexed_by.hpp \
+ /usr/local/include/boost/preprocessor/control/expr_if.hpp \
+ /usr/local/include/boost/multi_index/ordered_index_fwd.hpp \
+ /usr/local/include/boost/multi_index/detail/ord_index_args.hpp \
+ /usr/local/include/boost/multi_index/tag.hpp \
+ /usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp \
+ /usr/local/include/boost/mpl/set/set0.hpp \
+ /usr/local/include/boost/mpl/set/aux_/at_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/has_key_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/tag.hpp \
+ /usr/local/include/boost/mpl/has_key_fwd.hpp \
+ /usr/local/include/boost/mpl/aux_/overload_names.hpp \
+ /usr/local/include/boost/mpl/aux_/ptr_to_ref.hpp \
+ /usr/local/include/boost/mpl/aux_/config/operators.hpp \
+ /usr/local/include/boost/mpl/set/aux_/clear_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/set0.hpp \
+ /usr/local/include/boost/mpl/set/aux_/size_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/empty_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/insert_impl.hpp \
+ /usr/local/include/boost/mpl/insert_fwd.hpp \
+ /usr/local/include/boost/mpl/set/aux_/item.hpp \
+ /usr/local/include/boost/mpl/base.hpp \
+ /usr/local/include/boost/mpl/set/aux_/erase_impl.hpp \
+ /usr/local/include/boost/mpl/erase_fwd.hpp \
+ /usr/local/include/boost/mpl/set/aux_/erase_key_impl.hpp \
+ /usr/local/include/boost/mpl/erase_key_fwd.hpp \
+ /usr/local/include/boost/mpl/set/aux_/key_type_impl.hpp \
+ /usr/local/include/boost/mpl/key_type_fwd.hpp \
+ /usr/local/include/boost/mpl/set/aux_/value_type_impl.hpp \
+ /usr/local/include/boost/mpl/value_type_fwd.hpp \
+ /usr/local/include/boost/mpl/set/aux_/begin_end_impl.hpp \
+ /usr/local/include/boost/mpl/set/aux_/iterator.hpp \
+ /usr/local/include/boost/mpl/has_key.hpp \
+ /usr/local/include/boost/mpl/aux_/has_key_impl.hpp \
+ /usr/local/include/boost/mpl/transform.hpp \
+ /usr/local/include/boost/mpl/pair_view.hpp \
+ /usr/local/include/boost/mpl/iterator_category.hpp \
+ /usr/local/include/boost/mpl/min_max.hpp \
+ /usr/local/include/boost/mpl/is_sequence.hpp \
+ /usr/local/include/boost/preprocessor/facilities/intercept.hpp \
+ /usr/local/include/boost/multi_index/detail/access_specifier.hpp \
+ /usr/local/include/boost/multi_index/detail/adl_swap.hpp \
+ /usr/local/include/boost/multi_index/detail/base_type.hpp \
+ /usr/local/include/boost/multi_index/detail/index_base.hpp \
+ /usr/local/include/boost/multi_index/detail/copy_map.hpp \
+ /usr/local/include/boost/multi_index/detail/auto_space.hpp \
+ /usr/local/include/boost/multi_index/detail/prevent_eti.hpp \
+ /usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp \
+ /usr/local/include/boost/multi_index/detail/node_type.hpp \
+ /usr/local/include/boost/mpl/reverse_iter_fold.hpp \
+ /usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_iter_fold_impl.hpp \
+ /usr/local/include/boost/multi_index/detail/header_holder.hpp \
+ /usr/local/include/boost/multi_index/detail/index_node_base.hpp \
+ /usr/local/include/boost/type_traits/aligned_storage.hpp \
+ /usr/local/include/boost/archive/archive_exception.hpp \
+ /usr/local/include/boost/archive/detail/decl.hpp \
+ /usr/local/include/boost/archive/detail/abi_prefix.hpp \
+ /usr/local/include/boost/config/abi_prefix.hpp \
+ /usr/local/include/boost/archive/detail/abi_suffix.hpp \
+ /usr/local/include/boost/config/abi_suffix.hpp \
+ /usr/local/include/boost/serialization/access.hpp \
+ /usr/local/include/boost/serialization/pfto.hpp \
+ /usr/local/include/boost/multi_index/detail/is_index_list.hpp \
+ /usr/local/include/boost/mpl/empty.hpp \
+ /usr/local/include/boost/mpl/aux_/empty_impl.hpp \
+ /usr/local/include/boost/multi_index/detail/msvc_index_specifier.hpp \
+ /usr/local/include/boost/multi_index/detail/vartempl_support.hpp \
+ /usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp \
+ /usr/local/include/boost/tuple/tuple.hpp \
+ /usr/local/include/boost/ref.hpp \
+ /usr/local/include/boost/tuple/detail/tuple_basic.hpp \
+ /usr/local/include/boost/type_traits/function_traits.hpp \
+ /usr/local/include/boost/multi_index/detail/index_loader.hpp \
+ /usr/local/include/boost/serialization/nvp.hpp \
+ /usr/local/include/boost/serialization/level.hpp \
+ /usr/local/include/boost/serialization/level_enum.hpp \
+ /usr/local/include/boost/serialization/tracking.hpp \
+ /usr/local/include/boost/serialization/tracking_enum.hpp \
+ /usr/local/include/boost/serialization/type_info_implementation.hpp \
+ /usr/local/include/boost/serialization/traits.hpp \
+ /usr/local/include/boost/serialization/split_member.hpp \
+ /usr/local/include/boost/serialization/base_object.hpp \
+ /usr/local/include/boost/type_traits/is_polymorphic.hpp \
+ /usr/local/include/boost/serialization/force_include.hpp \
+ /usr/local/include/boost/serialization/void_cast_fwd.hpp \
+ /usr/local/include/boost/serialization/wrapper.hpp \
+ /usr/local/include/boost/multi_index/detail/index_saver.hpp \
+ /usr/local/include/boost/multi_index/detail/index_matcher.hpp \
+ /usr/local/include/boost/multi_index/detail/converter.hpp \
+ /usr/local/include/boost/multi_index/detail/has_tag.hpp \
+ /usr/local/include/boost/multi_index/detail/safe_mode.hpp \
+ /usr/local/include/boost/multi_index/detail/scope_guard.hpp \
+ /usr/local/include/boost/utility/base_from_member.hpp \
+ /usr/local/include/boost/multi_index/detail/archive_constructed.hpp \
+ /usr/local/include/boost/serialization/serialization.hpp \
+ /usr/local/include/boost/serialization/strong_typedef.hpp \
+ /usr/local/include/boost/operators.hpp \
+ /usr/local/include/boost/multi_index/detail/serialization_version.hpp \
+ /usr/local/include/boost/serialization/version.hpp \
+ /usr/local/include/boost/serialization/collection_size_type.hpp \
+ /usr/local/include/boost/serialization/split_free.hpp \
+ /usr/local/include/boost/serialization/is_bitwise_serializable.hpp \
+ /usr/local/include/boost/multi_index/sequenced_index.hpp \
+ /usr/local/include/boost/foreach_fwd.hpp \
+ /usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp \
+ /usr/local/include/boost/multi_index/detail/safe_ctr_proxy.hpp \
+ /usr/local/include/boost/multi_index/detail/seq_index_node.hpp \
+ /usr/local/include/boost/multi_index/detail/seq_index_ops.hpp \
+ /usr/local/include/boost/multi_index/sequenced_index_fwd.hpp \
+ /usr/local/include/boost/bind.hpp /usr/local/include/boost/bind/bind.hpp \
+ /usr/local/include/boost/mem_fn.hpp \
+ /usr/local/include/boost/bind/mem_fn.hpp \
+ /usr/local/include/boost/get_pointer.hpp \
+ /usr/local/include/boost/config/no_tr1/memory.hpp \
+ /usr/local/include/boost/bind/mem_fn_template.hpp \
+ /usr/local/include/boost/bind/mem_fn_cc.hpp \
+ /usr/local/include/boost/is_placeholder.hpp \
+ /usr/local/include/boost/bind/arg.hpp \
+ /usr/local/include/boost/visit_each.hpp \
+ /usr/local/include/boost/bind/storage.hpp \
+ /usr/local/include/boost/bind/bind_template.hpp \
+ /usr/local/include/boost/bind/bind_cc.hpp \
+ /usr/local/include/boost/bind/bind_mf_cc.hpp \
+ /usr/local/include/boost/bind/bind_mf2_cc.hpp \
+ /usr/local/include/boost/bind/placeholders.hpp \
+ /usr/local/include/boost/multi_index/ordered_index.hpp \
+ /usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp \
+ /usr/local/include/boost/multi_index/detail/ord_index_node.hpp \
+ /usr/local/include/boost/multi_index/detail/uintptr_type.hpp \
+ /usr/local/include/boost/multi_index/detail/ord_index_ops.hpp \
+ /usr/local/include/boost/multi_index/detail/unbounded.hpp \
+ /usr/local/include/boost/multi_index/detail/value_compare.hpp \
+ /usr/local/include/boost/multi_index/detail/duplicates_iterator.hpp \
+ /usr/local/include/boost/multi_index/member.hpp \
+ /usr/local/include/boost/property_tree/detail/ptree_implementation.hpp \
+ /usr/local/include/boost/property_tree/json_parser.hpp \
+ /usr/local/include/boost/property_tree/detail/json_parser_read.hpp \
+ /usr/local/include/boost/property_tree/detail/json_parser_error.hpp \
+ /usr/local/include/boost/property_tree/detail/file_parser_error.hpp \
+ /usr/local/include/boost/spirit/include/classic.hpp \
+ /usr/local/include/boost/spirit/home/classic.hpp \
+ /usr/local/include/boost/spirit/home/classic/core.hpp \
+ /usr/local/include/boost/spirit/home/classic/version.hpp \
+ /usr/local/include/boost/version.hpp \
+ /usr/local/include/boost/spirit/home/classic/debug.hpp \
+ /usr/local/include/boost/spirit/home/classic/debug/minimal.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/config.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/nil.hpp \
+ /usr/local/include/boost/spirit/home/classic/namespace.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/match.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/assert.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/safe_bool.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/impl/match_attr_traits.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/impl/match.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/parser.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/scanner/scanner.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/parser_id.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/scanner/scanner_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/impl/parser.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/primitives/primitives.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/directives.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/scanner/skipper.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/primitives/impl/primitives.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/scanner/skipper_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/scanner/impl/skipper.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/primitives/numerics.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/directives.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/composite.hpp \
+ /usr/local/include/boost/compressed_pair.hpp \
+ /usr/local/include/boost/detail/compressed_pair.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/primitives/numerics_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/primitives/impl/numerics.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/subrule.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/parser_context.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/subrule_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/subrule.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/rule.hpp \
+ /usr/local/include/boost/scoped_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/scoped_ptr.hpp \
+ /usr/local/include/boost/checked_delete.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
+ /usr/local/include/boost/smart_ptr/detail/operator_bool.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/rule.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/grammar.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/object_with_id.ipp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc \
+ /usr/local/include/boost/shared_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/detail/shared_count.hpp \
+ /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
+ /usr/local/include/boost/detail/sp_typeinfo.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock_pool.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp \
+ /usr/local/include/boost/smart_ptr/detail/yield_k.hpp \
+ /usr/local/include/boost/memory_order.hpp \
+ /usr/local/include/boost/weak_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/weak_ptr.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/actions.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/epsilon.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/parser_traits.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/impl/parser_traits.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/operators.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/sequence.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/as_parser.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/sequence.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/sequential_and.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/sequential_and.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/sequential_or.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/sequential_or.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/alternative.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/alternative.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/difference.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/difference.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/intersection.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/intersection.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/exclusive_or.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/exclusive_or.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/kleene_star.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/kleene_star.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/positive.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/positive.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/optional.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/optional.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/list.hpp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/impl/list.ipp \
+ /usr/local/include/boost/spirit/home/classic/core/composite/no_actions.hpp \
+ /usr/local/include/boost/spirit/home/classic/actor/assign_actor.hpp \
+ /usr/local/include/boost/spirit/home/classic/actor/ref_value_actor.hpp \
+ /usr/local/include/boost/spirit/home/classic/actor/ref_const_ref_actor.hpp \
+ /usr/local/include/boost/spirit/home/classic/actor/push_back_actor.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/fundamental.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/impl/fundamental.ipp \
+ /usr/local/include/boost/spirit/home/classic/meta/traverse.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/impl/traverse.ipp \
+ /usr/local/include/boost/spirit/home/classic/error_handling.hpp \
+ /usr/local/include/boost/spirit/home/classic/error_handling/exceptions.hpp \
+ /usr/local/include/boost/spirit/home/classic/error_handling/exceptions_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/error_handling/impl/exceptions.ipp \
+ /usr/local/include/boost/spirit/home/classic/iterator.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/file_iterator.hpp \
+ /usr/local/include/boost/iterator_adaptors.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/file_iterator_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/impl/file_iterator.ipp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/stat.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stat.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fcntl.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fcntl.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fcntl-linux.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/uio.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/mman.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mman.h \
+ /usr/local/include/boost/spirit/home/classic/iterator/fixed_size_queue.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/position_iterator.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/position_iterator_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/impl/position_iterator.ipp \
+ /usr/local/include/boost/spirit/home/classic/iterator/multi_pass.hpp \
+ /usr/local/include/boost/spirit/home/classic/iterator/multi_pass_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/symbols.hpp \
+ /usr/local/include/boost/spirit/home/classic/symbols/symbols.hpp \
+ /usr/local/include/boost/spirit/home/classic/symbols/symbols_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/symbols/impl/symbols.ipp \
+ /usr/local/include/boost/spirit/home/classic/symbols/impl/tst.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/chset.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset/basic_chset.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bitset \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset/range_run.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset/range_run.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset/basic_chset.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/chset_operators.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/chset_operators.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/escape_char.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/escape_char_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/escape_char.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/functor_parser.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/loops.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/confix.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/confix_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/confix.ipp \
+ /usr/local/include/boost/spirit/home/classic/meta/refactoring.hpp \
+ /usr/local/include/boost/spirit/home/classic/meta/impl/refactoring.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/lists.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/lists_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/impl/lists.ipp \
+ /usr/local/include/boost/spirit/home/classic/utility/distinct.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/distinct_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/flush_multi_pass.hpp \
+ /usr/local/include/boost/spirit/home/classic/utility/scoped_lock.hpp \
+ /usr/local/include/boost/spirit/home/classic/attribute.hpp \
+ /usr/local/include/boost/spirit/home/classic/attribute/parametric.hpp \
+ /usr/local/include/boost/spirit/home/classic/attribute/closure.hpp \
+ /usr/local/include/boost/spirit/home/classic/attribute/closure_context.hpp \
+ /usr/local/include/boost/spirit/home/classic/attribute/closure_fwd.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/tuples.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/closures.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/actor.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/primitives.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/casts.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/composite.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/operators.hpp \
+ /usr/local/include/boost/spirit/home/classic/phoenix/tuple_helpers.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cassert \
+ /usr/local/include/boost/property_tree/detail/json_parser_write.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iomanip \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fstream \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/basic_file.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++io.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/fstream.tcc \
+ /usr/local/include/boost/foreach.hpp thingspeak.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/malloc.h \
  ts_http.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/arpa/inet.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/netinet/in.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/socket.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/uio.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/uio.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/socket.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/socket_type.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sockaddr.h \
@@ -832,10 +1205,6 @@ DataManagerObject.o: DataManagerObject.c DataManager.hpp \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/rpc/netdb.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/netdb.h \
  DataManagerObject.h ../common/include/common-defs.h DevStorage.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc \
  dataManager-server-stub.h
 
 DataManager.hpp:
@@ -2500,6 +2869,758 @@ TimeManager.hpp:
 
 CloudStorage.hpp:
 
+/usr/local/include/boost/property_tree/ptree.hpp:
+
+/usr/local/include/boost/property_tree/ptree_fwd.hpp:
+
+/usr/local/include/boost/optional/optional_fwd.hpp:
+
+/usr/local/include/boost/property_tree/string_path.hpp:
+
+/usr/local/include/boost/property_tree/id_translator.hpp:
+
+/usr/local/include/boost/optional.hpp:
+
+/usr/local/include/boost/optional/optional.hpp:
+
+/usr/local/include/boost/type_traits/alignment_of.hpp:
+
+/usr/local/include/boost/type_traits/detail/size_t_trait_def.hpp:
+
+/usr/local/include/boost/mpl/size_t.hpp:
+
+/usr/local/include/boost/mpl/size_t_fwd.hpp:
+
+/usr/local/include/boost/type_traits/detail/size_t_trait_undef.hpp:
+
+/usr/local/include/boost/type_traits/has_nothrow_constructor.hpp:
+
+/usr/local/include/boost/type_traits/type_with_alignment.hpp:
+
+/usr/local/include/boost/preprocessor/list/for_each_i.hpp:
+
+/usr/local/include/boost/preprocessor/tuple/to_list.hpp:
+
+/usr/local/include/boost/preprocessor/list/transform.hpp:
+
+/usr/local/include/boost/preprocessor/list/append.hpp:
+
+/usr/local/include/boost/detail/reference_content.hpp:
+
+/usr/local/include/boost/none.hpp:
+
+/usr/local/include/boost/none_t.hpp:
+
+/usr/local/include/boost/utility/compare_pointees.hpp:
+
+/usr/local/include/boost/utility/in_place_factory.hpp:
+
+/usr/local/include/boost/utility/detail/in_place_factory_prefix.hpp:
+
+/usr/local/include/boost/preprocessor/punctuation/paren.hpp:
+
+/usr/local/include/boost/preprocessor/iteration/iterate.hpp:
+
+/usr/local/include/boost/preprocessor/slot/slot.hpp:
+
+/usr/local/include/boost/preprocessor/slot/detail/def.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/enum.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp:
+
+/usr/local/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
+
+/usr/local/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
+
+/usr/local/include/boost/preprocessor/slot/detail/shared.hpp:
+
+/usr/local/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
+
+/usr/local/include/boost/utility/detail/in_place_factory_suffix.hpp:
+
+/usr/local/include/boost/property_tree/exceptions.hpp:
+
+/usr/local/include/boost/any.hpp:
+
+/usr/local/include/boost/type_traits/decay.hpp:
+
+/usr/local/include/boost/type_traits/remove_bounds.hpp:
+
+/usr/local/include/boost/property_tree/detail/exception_implementation.hpp:
+
+/usr/local/include/boost/property_tree/detail/ptree_utils.hpp:
+
+/usr/local/include/boost/property_tree/stream_translator.hpp:
+
+/usr/local/include/boost/optional/optional_io.hpp:
+
+/usr/local/include/boost/utility/value_init.hpp:
+
+/usr/local/include/boost/aligned_storage.hpp:
+
+/usr/local/include/boost/type_traits/cv_traits.hpp:
+
+/usr/local/include/boost/type_traits/add_cv.hpp:
+
+/usr/local/include/boost/type_traits/remove_volatile.hpp:
+
+/usr/local/include/boost/multi_index_container.hpp:
+
+/usr/local/include/boost/detail/allocator_utilities.hpp:
+
+/usr/local/include/boost/multi_index_container_fwd.hpp:
+
+/usr/local/include/boost/multi_index/identity.hpp:
+
+/usr/local/include/boost/multi_index/identity_fwd.hpp:
+
+/usr/local/include/boost/multi_index/indexed_by.hpp:
+
+/usr/local/include/boost/preprocessor/control/expr_if.hpp:
+
+/usr/local/include/boost/multi_index/ordered_index_fwd.hpp:
+
+/usr/local/include/boost/multi_index/detail/ord_index_args.hpp:
+
+/usr/local/include/boost/multi_index/tag.hpp:
+
+/usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp:
+
+/usr/local/include/boost/mpl/set/set0.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/at_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/has_key_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/tag.hpp:
+
+/usr/local/include/boost/mpl/has_key_fwd.hpp:
+
+/usr/local/include/boost/mpl/aux_/overload_names.hpp:
+
+/usr/local/include/boost/mpl/aux_/ptr_to_ref.hpp:
+
+/usr/local/include/boost/mpl/aux_/config/operators.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/clear_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/set0.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/size_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/empty_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/insert_impl.hpp:
+
+/usr/local/include/boost/mpl/insert_fwd.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/item.hpp:
+
+/usr/local/include/boost/mpl/base.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/erase_impl.hpp:
+
+/usr/local/include/boost/mpl/erase_fwd.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/erase_key_impl.hpp:
+
+/usr/local/include/boost/mpl/erase_key_fwd.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/key_type_impl.hpp:
+
+/usr/local/include/boost/mpl/key_type_fwd.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/value_type_impl.hpp:
+
+/usr/local/include/boost/mpl/value_type_fwd.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/begin_end_impl.hpp:
+
+/usr/local/include/boost/mpl/set/aux_/iterator.hpp:
+
+/usr/local/include/boost/mpl/has_key.hpp:
+
+/usr/local/include/boost/mpl/aux_/has_key_impl.hpp:
+
+/usr/local/include/boost/mpl/transform.hpp:
+
+/usr/local/include/boost/mpl/pair_view.hpp:
+
+/usr/local/include/boost/mpl/iterator_category.hpp:
+
+/usr/local/include/boost/mpl/min_max.hpp:
+
+/usr/local/include/boost/mpl/is_sequence.hpp:
+
+/usr/local/include/boost/preprocessor/facilities/intercept.hpp:
+
+/usr/local/include/boost/multi_index/detail/access_specifier.hpp:
+
+/usr/local/include/boost/multi_index/detail/adl_swap.hpp:
+
+/usr/local/include/boost/multi_index/detail/base_type.hpp:
+
+/usr/local/include/boost/multi_index/detail/index_base.hpp:
+
+/usr/local/include/boost/multi_index/detail/copy_map.hpp:
+
+/usr/local/include/boost/multi_index/detail/auto_space.hpp:
+
+/usr/local/include/boost/multi_index/detail/prevent_eti.hpp:
+
+/usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp:
+
+/usr/local/include/boost/multi_index/detail/node_type.hpp:
+
+/usr/local/include/boost/mpl/reverse_iter_fold.hpp:
+
+/usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_iter_fold_impl.hpp:
+
+/usr/local/include/boost/multi_index/detail/header_holder.hpp:
+
+/usr/local/include/boost/multi_index/detail/index_node_base.hpp:
+
+/usr/local/include/boost/type_traits/aligned_storage.hpp:
+
+/usr/local/include/boost/archive/archive_exception.hpp:
+
+/usr/local/include/boost/archive/detail/decl.hpp:
+
+/usr/local/include/boost/archive/detail/abi_prefix.hpp:
+
+/usr/local/include/boost/config/abi_prefix.hpp:
+
+/usr/local/include/boost/archive/detail/abi_suffix.hpp:
+
+/usr/local/include/boost/config/abi_suffix.hpp:
+
+/usr/local/include/boost/serialization/access.hpp:
+
+/usr/local/include/boost/serialization/pfto.hpp:
+
+/usr/local/include/boost/multi_index/detail/is_index_list.hpp:
+
+/usr/local/include/boost/mpl/empty.hpp:
+
+/usr/local/include/boost/mpl/aux_/empty_impl.hpp:
+
+/usr/local/include/boost/multi_index/detail/msvc_index_specifier.hpp:
+
+/usr/local/include/boost/multi_index/detail/vartempl_support.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp:
+
+/usr/local/include/boost/tuple/tuple.hpp:
+
+/usr/local/include/boost/ref.hpp:
+
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:
+
+/usr/local/include/boost/type_traits/function_traits.hpp:
+
+/usr/local/include/boost/multi_index/detail/index_loader.hpp:
+
+/usr/local/include/boost/serialization/nvp.hpp:
+
+/usr/local/include/boost/serialization/level.hpp:
+
+/usr/local/include/boost/serialization/level_enum.hpp:
+
+/usr/local/include/boost/serialization/tracking.hpp:
+
+/usr/local/include/boost/serialization/tracking_enum.hpp:
+
+/usr/local/include/boost/serialization/type_info_implementation.hpp:
+
+/usr/local/include/boost/serialization/traits.hpp:
+
+/usr/local/include/boost/serialization/split_member.hpp:
+
+/usr/local/include/boost/serialization/base_object.hpp:
+
+/usr/local/include/boost/type_traits/is_polymorphic.hpp:
+
+/usr/local/include/boost/serialization/force_include.hpp:
+
+/usr/local/include/boost/serialization/void_cast_fwd.hpp:
+
+/usr/local/include/boost/serialization/wrapper.hpp:
+
+/usr/local/include/boost/multi_index/detail/index_saver.hpp:
+
+/usr/local/include/boost/multi_index/detail/index_matcher.hpp:
+
+/usr/local/include/boost/multi_index/detail/converter.hpp:
+
+/usr/local/include/boost/multi_index/detail/has_tag.hpp:
+
+/usr/local/include/boost/multi_index/detail/safe_mode.hpp:
+
+/usr/local/include/boost/multi_index/detail/scope_guard.hpp:
+
+/usr/local/include/boost/utility/base_from_member.hpp:
+
+/usr/local/include/boost/multi_index/detail/archive_constructed.hpp:
+
+/usr/local/include/boost/serialization/serialization.hpp:
+
+/usr/local/include/boost/serialization/strong_typedef.hpp:
+
+/usr/local/include/boost/operators.hpp:
+
+/usr/local/include/boost/multi_index/detail/serialization_version.hpp:
+
+/usr/local/include/boost/serialization/version.hpp:
+
+/usr/local/include/boost/serialization/collection_size_type.hpp:
+
+/usr/local/include/boost/serialization/split_free.hpp:
+
+/usr/local/include/boost/serialization/is_bitwise_serializable.hpp:
+
+/usr/local/include/boost/multi_index/sequenced_index.hpp:
+
+/usr/local/include/boost/foreach_fwd.hpp:
+
+/usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp:
+
+/usr/local/include/boost/multi_index/detail/safe_ctr_proxy.hpp:
+
+/usr/local/include/boost/multi_index/detail/seq_index_node.hpp:
+
+/usr/local/include/boost/multi_index/detail/seq_index_ops.hpp:
+
+/usr/local/include/boost/multi_index/sequenced_index_fwd.hpp:
+
+/usr/local/include/boost/bind.hpp:
+
+/usr/local/include/boost/bind/bind.hpp:
+
+/usr/local/include/boost/mem_fn.hpp:
+
+/usr/local/include/boost/bind/mem_fn.hpp:
+
+/usr/local/include/boost/get_pointer.hpp:
+
+/usr/local/include/boost/config/no_tr1/memory.hpp:
+
+/usr/local/include/boost/bind/mem_fn_template.hpp:
+
+/usr/local/include/boost/bind/mem_fn_cc.hpp:
+
+/usr/local/include/boost/is_placeholder.hpp:
+
+/usr/local/include/boost/bind/arg.hpp:
+
+/usr/local/include/boost/visit_each.hpp:
+
+/usr/local/include/boost/bind/storage.hpp:
+
+/usr/local/include/boost/bind/bind_template.hpp:
+
+/usr/local/include/boost/bind/bind_cc.hpp:
+
+/usr/local/include/boost/bind/bind_mf_cc.hpp:
+
+/usr/local/include/boost/bind/bind_mf2_cc.hpp:
+
+/usr/local/include/boost/bind/placeholders.hpp:
+
+/usr/local/include/boost/multi_index/ordered_index.hpp:
+
+/usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp:
+
+/usr/local/include/boost/multi_index/detail/ord_index_node.hpp:
+
+/usr/local/include/boost/multi_index/detail/uintptr_type.hpp:
+
+/usr/local/include/boost/multi_index/detail/ord_index_ops.hpp:
+
+/usr/local/include/boost/multi_index/detail/unbounded.hpp:
+
+/usr/local/include/boost/multi_index/detail/value_compare.hpp:
+
+/usr/local/include/boost/multi_index/detail/duplicates_iterator.hpp:
+
+/usr/local/include/boost/multi_index/member.hpp:
+
+/usr/local/include/boost/property_tree/detail/ptree_implementation.hpp:
+
+/usr/local/include/boost/property_tree/json_parser.hpp:
+
+/usr/local/include/boost/property_tree/detail/json_parser_read.hpp:
+
+/usr/local/include/boost/property_tree/detail/json_parser_error.hpp:
+
+/usr/local/include/boost/property_tree/detail/file_parser_error.hpp:
+
+/usr/local/include/boost/spirit/include/classic.hpp:
+
+/usr/local/include/boost/spirit/home/classic.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core.hpp:
+
+/usr/local/include/boost/spirit/home/classic/version.hpp:
+
+/usr/local/include/boost/version.hpp:
+
+/usr/local/include/boost/spirit/home/classic/debug.hpp:
+
+/usr/local/include/boost/spirit/home/classic/debug/minimal.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/config.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/nil.hpp:
+
+/usr/local/include/boost/spirit/home/classic/namespace.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/match.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/assert.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/safe_bool.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/impl/match_attr_traits.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/impl/match.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/parser.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/scanner/scanner.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/parser_id.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/scanner/scanner_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/impl/parser.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/primitives/primitives.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/directives.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/scanner/skipper.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/primitives/impl/primitives.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/scanner/skipper_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/scanner/impl/skipper.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/primitives/numerics.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/directives.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/composite.hpp:
+
+/usr/local/include/boost/compressed_pair.hpp:
+
+/usr/local/include/boost/detail/compressed_pair.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/primitives/numerics_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/primitives/impl/numerics.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/subrule.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/parser_context.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/subrule_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/subrule.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/rule.hpp:
+
+/usr/local/include/boost/scoped_ptr.hpp:
+
+/usr/local/include/boost/smart_ptr/scoped_ptr.hpp:
+
+/usr/local/include/boost/checked_delete.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/operator_bool.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/rule.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/grammar.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/non_terminal/impl/object_with_id.ipp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc:
+
+/usr/local/include/boost/shared_ptr.hpp:
+
+/usr/local/include/boost/smart_ptr/shared_ptr.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/shared_count.hpp:
+
+/usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp:
+
+/usr/local/include/boost/detail/sp_typeinfo.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/spinlock_pool.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/spinlock.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp:
+
+/usr/local/include/boost/smart_ptr/detail/yield_k.hpp:
+
+/usr/local/include/boost/memory_order.hpp:
+
+/usr/local/include/boost/weak_ptr.hpp:
+
+/usr/local/include/boost/smart_ptr/weak_ptr.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/actions.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/epsilon.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/parser_traits.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/impl/parser_traits.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/operators.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/sequence.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/as_parser.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/sequence.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/sequential_and.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/sequential_and.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/sequential_or.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/sequential_or.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/alternative.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/alternative.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/difference.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/difference.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/intersection.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/intersection.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/exclusive_or.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/exclusive_or.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/kleene_star.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/kleene_star.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/positive.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/positive.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/optional.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/optional.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/list.hpp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/impl/list.ipp:
+
+/usr/local/include/boost/spirit/home/classic/core/composite/no_actions.hpp:
+
+/usr/local/include/boost/spirit/home/classic/actor/assign_actor.hpp:
+
+/usr/local/include/boost/spirit/home/classic/actor/ref_value_actor.hpp:
+
+/usr/local/include/boost/spirit/home/classic/actor/ref_const_ref_actor.hpp:
+
+/usr/local/include/boost/spirit/home/classic/actor/push_back_actor.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/fundamental.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/impl/fundamental.ipp:
+
+/usr/local/include/boost/spirit/home/classic/meta/traverse.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/impl/traverse.ipp:
+
+/usr/local/include/boost/spirit/home/classic/error_handling.hpp:
+
+/usr/local/include/boost/spirit/home/classic/error_handling/exceptions.hpp:
+
+/usr/local/include/boost/spirit/home/classic/error_handling/exceptions_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/error_handling/impl/exceptions.ipp:
+
+/usr/local/include/boost/spirit/home/classic/iterator.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/file_iterator.hpp:
+
+/usr/local/include/boost/iterator_adaptors.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/file_iterator_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/impl/file_iterator.ipp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/stat.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stat.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fcntl.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fcntl.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fcntl-linux.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/uio.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/mman.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mman.h:
+
+/usr/local/include/boost/spirit/home/classic/iterator/fixed_size_queue.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/position_iterator.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/position_iterator_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/impl/position_iterator.ipp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/multi_pass.hpp:
+
+/usr/local/include/boost/spirit/home/classic/iterator/multi_pass_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/symbols.hpp:
+
+/usr/local/include/boost/spirit/home/classic/symbols/symbols.hpp:
+
+/usr/local/include/boost/spirit/home/classic/symbols/symbols_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/symbols/impl/symbols.ipp:
+
+/usr/local/include/boost/spirit/home/classic/symbols/impl/tst.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/chset.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset/basic_chset.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bitset:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset/range_run.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset/range_run.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset/basic_chset.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/chset_operators.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/chset_operators.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/escape_char.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/escape_char_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/escape_char.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/functor_parser.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/loops.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/confix.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/confix_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/confix.ipp:
+
+/usr/local/include/boost/spirit/home/classic/meta/refactoring.hpp:
+
+/usr/local/include/boost/spirit/home/classic/meta/impl/refactoring.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/lists.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/lists_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/impl/lists.ipp:
+
+/usr/local/include/boost/spirit/home/classic/utility/distinct.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/distinct_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/flush_multi_pass.hpp:
+
+/usr/local/include/boost/spirit/home/classic/utility/scoped_lock.hpp:
+
+/usr/local/include/boost/spirit/home/classic/attribute.hpp:
+
+/usr/local/include/boost/spirit/home/classic/attribute/parametric.hpp:
+
+/usr/local/include/boost/spirit/home/classic/attribute/closure.hpp:
+
+/usr/local/include/boost/spirit/home/classic/attribute/closure_context.hpp:
+
+/usr/local/include/boost/spirit/home/classic/attribute/closure_fwd.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/tuples.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/closures.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/actor.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/primitives.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/casts.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/composite.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/operators.hpp:
+
+/usr/local/include/boost/spirit/home/classic/phoenix/tuple_helpers.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cassert:
+
+/usr/local/include/boost/property_tree/detail/json_parser_write.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/iomanip:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fstream:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/basic_file.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/c++io.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/fstream.tcc:
+
+/usr/local/include/boost/foreach.hpp:
+
 thingspeak.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/malloc.h:
@@ -2513,8 +3634,6 @@ ts_http.h:
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/socket.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/sys/uio.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/uio.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/socket.h:
 
@@ -2543,13 +3662,5 @@ DataManagerObject.h:
 ../common/include/common-defs.h:
 
 DevStorage.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/vector:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_vector.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_bvector.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/vector.tcc:
 
 dataManager-server-stub.h:

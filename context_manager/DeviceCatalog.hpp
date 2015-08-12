@@ -344,9 +344,14 @@ class DeviceCatalog
 		bool GetDeviceObjByFilter(const map<string, string>& keyvals, 
 								  vector<DeviceObj *>& devObjVec);
 
+		bool GetInstancesByFilter(const map<string, string>& keyvals, 
+								  vector<string>& devObjVec);
+
 		int GetDataFromOntology(const string& subj, const string& pred, string& obj);
 
 		DeviceIface *GetIfaceByName(const string& name);
+
+		int OntologyUpdate(string& action, string& subj, string& pred, string& val);
 	
 		string& GetServiceName()
 		{

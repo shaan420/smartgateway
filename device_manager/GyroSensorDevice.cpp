@@ -240,7 +240,7 @@ static void gpio_init_output()
 }
 
 //COnfigure the input pin (echo) of the sensor
-static void gpio_init_input(void)
+/*static void gpio_init_input(void)
 {
 	int exp,direction;
 	exp = open("/sys/class/gpio/export",O_WRONLY);
@@ -249,7 +249,7 @@ static void gpio_init_input(void)
 	pwrite(direction,"in",sizeof("in"),0);
 	close(direction);
 	close(exp);
-}
+}*/
 
 int GyroSensorDevice::RecvFromDevice()
 {

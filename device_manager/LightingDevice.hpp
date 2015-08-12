@@ -8,35 +8,31 @@
 
 #include "LightingObject.h"
 
-class LightingDevice : public DeviceDbus<LightingObject, int>
+class LightingDevice : public DeviceDbus<LightingObject>
 {
 	protected:
-		int RecvFromDevice();
-		int SendToDevice();
-
-	private:
-		string m_cur_value;
-		string m_prev_value;
-
-		LightingDevice() {}
+		virtual int RecvFromDevice() {return 0;}
+		virtual int SendToDevice() {return 0;}
 
 	public:
 		LightingDevice(const string name, const string desc, DeviceConf_t conf) 
 				: DeviceDbus(LIGHTING_TYPE_OBJECT, name, desc, conf)
 		{ 
 		}
+		
+		LightingDevice() {}
 
-		int OnInit();
-		void OnError();
-		void OnChange();
-		void OnSendDone();
-		bool HasChanged();
-		void SetDeviceParams();
-		void GetDeviceParams();
-		int ReadShared(void **mem);
-		int Write(void *mem, int len);
-		int Read(void *mem, int len);
-		int UpdateDataManager();
-		int PrepareOutputData(string& value);
+		virtual int OnInit() {return 0;}
+		virtual void OnError() {}
+		virtual void OnChange() {}
+		virtual void OnSendDone() {}
+		virtual bool HasChanged() {return 0;}
+		virtual void SetDeviceParams() {}
+		virtual void GetDeviceParams() {}
+		virtual int ReadShared(void **mem) {return 0;}
+		virtual int Write(void *mem, int len) {return 0;}
+		virtual int Read(void *mem, int len) {return 0;}
+		virtual int UpdateDataManager() {return 0;}
+		virtual int PrepareOutputData(string& value) {return 0;}
 };
 #endif

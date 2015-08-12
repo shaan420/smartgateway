@@ -9,7 +9,7 @@
 #include "NotificationAgentObject.h"
 #include "Event.hpp"
 
-class NotificationAgentDevice : public DeviceDbus<NotificationAgentObject, int>
+class NotificationAgentDevice : public DeviceDbus<NotificationAgentObject>
 {
 	public:
 		typedef map<string, Event*> EventMap_t;
@@ -20,6 +20,7 @@ class NotificationAgentDevice : public DeviceDbus<NotificationAgentObject, int>
 
 	private:
 		EventMap_t m_map;
+		string m_val;
 
 		NotificationAgentDevice() {}
 

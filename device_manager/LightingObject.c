@@ -170,6 +170,7 @@ void lighting_object_emitSignal(LightingObject* obj,
 
 gboolean lighting_object_get_status(LightingObject* obj, gchar * *cur_status, GError** error) 
 {
+	string valueStr;
 	printf("lighting1: get_status called.\n");
 	g_assert(obj != NULL);
 
@@ -180,9 +181,18 @@ gboolean lighting_object_get_status(LightingObject* obj, gchar * *cur_status, GE
 		lighting_object_emitSignal(obj, E_LIGHTING_OBJECT_SIGNAL_ERROR, "error");
 	}
 	*/
-	
-	printf("cur_status=%s\n", obj->m_cur_status);
-	*cur_status = g_strndup(obj->m_cur_status, strlen(obj->m_cur_status));
+	LightingDevice *dev = static_cast<LightingDevice *>(obj->m_dev_ptr);
+	if (NULL != dev)
+	{
+		//printf("Writing to physical device: %d\n", new_status);
+		dev->PrepareOutputData(valueStr);
+
+		/* Emit the "changed_lighting1" signal. */
+		//	printf("Publishing new new_status\n");
+		//	lighting_object_emitSignal(obj, E_LIGHTING_OBJECT_SIGNAL_CHANGED_STATUS, "new_status");
+	}
+
+	*cur_status = g_strdup(valueStr.c_str());
 
 	/* Return success to GLib/D-Bus wrappers. In this case we don't need
 	   to touch the supplied error pointer-pointer. */

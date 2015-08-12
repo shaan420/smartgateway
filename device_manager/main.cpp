@@ -4,9 +4,18 @@
 #include "DeviceAgent.hpp"
 #include "GyroSensorDevice.hpp"
 #include "DistanceSensorDevice.hpp"
-#include "LightingDevice.hpp"
 #include "NotificationAgentDevice.hpp"
 #include "DeviceFactory.hpp"
+
+/* Device Driver includes */
+#include "groveTemperatureSensorDevice.hpp"
+#include "groveLightSensorDevice.hpp"
+#include "groveSoundSensorDevice.hpp"
+#include "groveTouchSensorDevice.hpp"
+#include "groveLightingDevice.hpp"
+#include "groveBuzzerDevice.hpp"
+#include "ledLightingDevice.hpp"
+#include "testLightingDevice.hpp"
 
 DeviceFactory g_factory;
 
@@ -20,7 +29,7 @@ int main()
 	/*
 	 * Instantiating the Notification Agent
 	 */
-	const char *params = "DeviceName=notificationAgent&InputSamplingRateMsec=\"1000\"&RetrievalFreq=\"ondemand\"&RetrievalMethod=\"push\"&DataStorageLocation=\"cloud\"";
+	const char *params = "DeviceName=notificationAgent&InputSamplingRateMsec=\"1000\"&RetrievalFreq=\"ondemand\"&RetrievalMethod=\"push\"&DataStorageLocation=\"cloud\"&DriverName=\"NotificationAgentDevice\"";
 	DEVICE_FACTORY_REGISTER_DEVICE(NotificationAgentDevice);
 	DeviceBase *dev = DEV_AGENT->CreateNewDevice("NotificationAgent", params);
 
@@ -32,7 +41,14 @@ int main()
 
 //	DEVICE_FACTORY_REGISTER_DEVICE(GyroSensorDevice);
 //	DEVICE_FACTORY_REGISTER_DEVICE(DistanceSensorDevice);
-	DEVICE_FACTORY_REGISTER_DEVICE(LightingDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(ledLightingDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveTemperatureSensorDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveSoundSensorDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveLightSensorDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveTouchSensorDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveBuzzerDevice);
+//	DEVICE_FACTORY_REGISTER_DEVICE(groveLightingDevice);
+	DEVICE_FACTORY_REGISTER_DEVICE(testLightingDevice);
 
 	g_print("starting main-loop.\n");
  	g_main_loop_run(mainloop);

@@ -21,6 +21,8 @@ extern int h_errno;
 
 
 ssize_t ts_http_post(ts_context_t *, char *, char *, char *);
-char   *ts_http_get(char *, char *, char *);
+ssize_t ts_http_put(ts_context_t *, char *, char *, char *);
+ssize_t ts_http_delete(ts_context_t *, char *, char *);
+char   *ts_http_get(ts_context_t *, char *, char *, char *);
 
 #endif /*_TS_HTTP_*/

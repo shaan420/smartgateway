@@ -172,7 +172,6 @@ gboolean ruleManager_object_insert_rule(RuleManagerObject* obj,
 										gchar **response,
 								   		GError** error)
 {
-	char buf[33];
 	printf("ruleManager: new rule_params=\"%s\"\n", rule_params);
 	g_assert(obj != NULL);
 
@@ -186,14 +185,12 @@ gboolean ruleManager_object_insert_rule(RuleManagerObject* obj,
 	if (ret == -1)
 	{
 		/* Error */
-		//*response = strdup("error");
+		*response = strdup("error");
 	}
 	else
 	{
 		/* Success, return the RuleID */
-		//itoa(ret, buf, 10);
-		//snprintf(buf, sizeof(buf), "%d", ret);
-		//*response = strdup(buf);
+		*response = strdup("success");
 	}
 
 	return true;
@@ -204,7 +201,6 @@ gboolean ruleManager_object_insert_event(RuleManagerObject* obj,
 										 gchar **response,
 								   		 GError** error)
 {
-	char buf[33];
 	printf("ruleManager: new event_params=\"%s\"\n", event_params);
 	g_assert(obj != NULL);
 
@@ -217,26 +213,64 @@ gboolean ruleManager_object_insert_event(RuleManagerObject* obj,
 	if (ret == -1)
 	{
 		/* Error */
-		//*response = strdup("error");
+		*response = strdup("error");
 	}
 	else
 	{
 		/* Success, return the RuleID */
-		//itoa(ret, buf, 10);
-		//snprintf(buf, sizeof(buf), "%d", ret);
-		//*response = strdup(buf);
+		*response = strdup("success");
 	}
 
 	return true;
 }
 
+gboolean ruleManager_object_insert_event_external(RuleManagerObject* obj, 
+								   		 		  gchar *event_params, 
+										 		  gchar **response,
+								   		 		  GError** error)
+{
+	printf("ruleManager: new external event_params=\"%s\"\n", event_params);
+	g_assert(obj != NULL);
 
+	/*
+	 * RuleManager has nothing to do here. So just return success.
+	 */
+	*response = strdup("success");
+
+	return true;
+}
+gboolean ruleManager_object_publish_event(RuleManagerObject* obj, 
+								   		  gchar *event_params, 
+										  gchar **response,
+								   		  GError** error)
+{
+	printf("ruleManager: publish event_params=\"%s\"\n", event_params);
+	g_assert(obj != NULL);
+
+	int ret = RULE_MANAGER->PublishExternalEvent(event_params);
+	
+	if (response == NULL)
+	{
+		printf("ERROR: Response is NULL\n");
+	}
+	if (ret == -1)
+	{
+		/* Error */
+		*response = strdup("error");
+	}
+	else
+	{
+		/* Success, return the RuleID */
+		*response = strdup("success");
+	}
+
+	return true;
+}
 gboolean ruleManager_object_delete_rule(RuleManagerObject* obj, 
 								   			gchar *ruleId, 
 											gchar **response,
 								   			GError** error)
 {
-	char buf[33];
 	printf("ruleManager: delete ruleId=\"%s\"\n", ruleId);
 	g_assert(obj != NULL);
 
@@ -245,12 +279,12 @@ gboolean ruleManager_object_delete_rule(RuleManagerObject* obj,
 	if (ret == -1)
 	{
 		/* Error */
-		//*response = strdup("error");
+		*response = strdup("error");
 	}
 	else
 	{
 		/* Success */
-		//*response = strdup("success");
+		*response = strdup("success");
 	}
 
 	return true;
@@ -261,27 +295,27 @@ gboolean ruleManager_object_delete_event(RuleManagerObject* obj,
 											gchar **response,
 								   			GError** error)
 {
-	char buf[33];
 	printf("ruleManager: delete eventId=\"%s\"\n", eventId);
 	g_assert(obj != NULL);
 
 	/* This Delete req comes from the main thread, hence a value "false" */
 	int ret = RULE_MANAGER->DeleteRule(eventId, false); 
-	//if (ret == -1)
-	//{
+	if (ret == -1)
+	{
 		/* Error */
-	//	*response = strdup("error");
-	//}
-	//else
-	//{
+		*response = strdup("error");
+	}
+	else
+	{
 		/* Success */
-	//	*response = strdup("success");
-	//}
+		*response = strdup("success");
+	}
 
 	return true;
 }
 
 gboolean ruleManager_object_fetch_all_rules(RuleManagerObject* obj, 
+								   				gchar *params, 
 												gchar **response,
 								   				GError** error)
 {
@@ -293,6 +327,7 @@ gboolean ruleManager_object_fetch_all_rules(RuleManagerObject* obj,
 }
 
 gboolean ruleManager_object_fetch_all_events(RuleManagerObject* obj, 
+								   				gchar *params, 
 												gchar **response,
 								   				GError** error)
 {

@@ -1,13 +1,18 @@
 #include "DeviceAgent.hpp"
 #include "url_utils.hpp"
+#include <algorithm>
 
 using namespace std;
 
-extern DBusGProxy *g_dataManagerObj;
-
 static DeviceAgent *g_deviceAgent = NULL;
 
-int g_devId = 0;
+volatile int g_devId = 0;
+
+int g_cnt;
+
+pthread_mutex_t g_dbus_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t g_dbus_cond = PTHREAD_COND_INITIALIZER;
+
 /**
  * Print out an error message and optionally quit (if fatal is TRUE)
  */
@@ -18,17 +23,177 @@ int g_devId = 0;
 		exit(0);
 	}
 }*/
+static void *dbus_offload_thread_func(void *data)
+{
+	DbusAsyncMsg_t *msg = NULL;
+	DeviceAgent::DbusOffloadQueue_t *q = (DeviceAgent::DbusOffloadQueue_t *)data;
+	if (NULL == q)
+	{
+		cout << "ERROR: invalid dbus offload queue\n";
+		return NULL;
+	}
+
+	while(1)
+	{
+		pthread_cond_wait(&g_dbus_cond, &g_dbus_mutex);
+
+		while (q->pop(msg))
+		{
+			/* 
+			 * This is to serialize the invocations to DBUS proxy.
+			 */
+			//cout << "Dbus Offload Thread pop data: " << msg->params << endl;
+			DEV_AGENT->SendToDataManager(msg);
+		}
+	}
+
+	return NULL;
+}
+
+static void sendToDataManagerCompleted(DBusGProxy* proxy,
+									   DBusGProxyCall* call,
+									   gpointer userData) {
+
+	/* This will hold the GError object (if any). */
+	GError* error = NULL;
+
+	DbusAsyncMsg *msg = (DbusAsyncMsg *)userData;
+
+	//cout << "sendToDataManagerCompleted\n";
+
+	/* We next need to collect the results from the RPC call.
+	   The function returns FALSE on errors (which we check), although
+	   we could also check whether error-ptr is still NULL. */
+	if (!dbus_g_proxy_end_call(proxy,
+				/* The call that we're collecting. */
+				call,
+				/* Where to store the error (if any). */
+				&error,
+				/* Next we list the GType codes for all
+				   the arguments we expect back. In our
+				   case there are none, so set to
+				   invalid. */
+				G_TYPE_INVALID)) {
+		/* Some error occurred while collecting the result. */
+		cout << " ERROR: " << error->message << endl;
+		g_error_free(error);
+		free (msg->params);
+		free (msg);
+		return;
+	}
+
+	if (msg->action == DBUS_DATA_MANAGER_ACTION_NEW)
+	{
+		/* Construct the class name for the device */
+		DeviceConf_t conf;
+		GError *error = NULL;
+		string devname;
+
+		/* Set the device configuration */
+		if (DEV_AGENT->StringToConf(msg->params, &conf, devname))
+		{
+			free (msg->params);
+			free (msg);
+			return;
+		}
+
+		DeviceBase *dev = static_cast<DeviceBase*>(g_factory.construct(devname.c_str(), conf));
+		if (NULL == dev)
+		{
+			cout << "ERROR: Suitable Driver for Device not found. " << devname.c_str() << endl;;
+			free (msg->params);
+			free (msg);
+			return;
+		}
+
+		DEV_AGENT->AddDevice(dev);
+		DEV_AGENT->DeployDevice(dev);
+	}
+
+	free (msg->params);
+	free (msg);
+}
+
+void DeviceAgent::SendToDataManager(DbusAsyncMsg_t *msg)
+{
+	GError *error = NULL;
+
+	dbus_g_proxy_begin_call(m_dataManagerObj,
+			/* Method name. */
+			(msg->action == DBUS_DATA_MANAGER_ACTION_NEW) ? "new" : "insert",
+			/* Callback to call on "completion". */
+			sendToDataManagerCompleted,
+			/* User-data to pass to callback. */
+			msg,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			msg->params,
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
+
+	return;
+}
+
+/*
+ * This function expects params to be already allocated.
+ * It will be freed once the dbus proxy call completes
+ * asynchronously.
+ */
+void DeviceAgent::UpdateDataManager(const char *action, char *params)
+{
+	GError *error = NULL;
+
+	DbusAsyncMsg_t *msg = (DbusAsyncMsg_t *) malloc(sizeof(DbusAsyncMsg_t));
+
+	if (NULL == msg)
+	{
+		cout << "ERROR: malloc failed for DbusAsyncMsg" << endl;
+		free (params);
+		return;
+	}
+
+	if (0 == strcmp(action, "insert"))
+	{
+		msg->action = DBUS_DATA_MANAGER_ACTION_INSERT;
+	} 
+	else if (0 == strcmp(action, "new"))
+	{
+		msg->action = DBUS_DATA_MANAGER_ACTION_NEW;
+	}
+	else
+	{
+		cout << "ERROR: Unknown action in DbusAsyncMsg" << endl;
+		free (params);
+		free (msg);
+		return;
+	}
+
+	msg->params = params;
+
+	m_dbus_offload_queue.push(msg);
+
+	pthread_cond_signal(&g_dbus_cond);
+}
+
 
 int DeviceAgent::AddDevice(DeviceBase *dev)
 {
+	g_mutex_lock(m_deviceMapLock);
 	m_deviceMap.insert(make_pair<std::string&, DeviceBase *>(dev->GetDeviceName(), dev));
+	g_mutex_unlock(m_deviceMapLock);
+
 	printf("Added %s to deviceMap\n", dev->GetDeviceName().c_str());
 	return 0;
 }
 
 int DeviceAgent::RemoveDevice(string name)
 {
+	g_mutex_lock(m_deviceMapLock);
 	m_deviceMap.erase(name);
+	g_mutex_unlock(m_deviceMapLock);
 	//TODO: Cleanly shutdown all threads from this device.
 
 	return 0;
@@ -182,7 +347,9 @@ int DeviceAgent::Init()
 	}
 
 	cout << "DBUS Proxy for DataManager created successfully\n";
-	g_dataManagerObj = obj;
+	m_dataManagerObj = obj;
+
+	m_dbus_offload_th = g_thread_new("DbusOffloadThread", &dbus_offload_thread_func, (gpointer)&m_dbus_offload_queue);
 
 	/* 
 	 * The function does not return any status, so can't check for
@@ -192,7 +359,22 @@ int DeviceAgent::Init()
 			(SMARTGATEWAY_SERVICE_OBJECT_PATH_PREFIX+name).c_str(),
 			G_OBJECT(m_obj));
 
+	m_deviceMapLock = g_mutex_new();	
+
 	g_print("%s ready to serve requests\n", name.c_str());
+
+	return 0;
+}
+
+int DeviceAgent::CreateNewDeviceAsync(const char *iface_name, char *params)
+{
+	GError *error = NULL;
+
+	/*
+	 * Now instruct the DataManager to create a new StorageSlot
+	 * for this device.
+	 */
+	UpdateDataManager("new", params);
 
 	return 0;
 }
@@ -214,7 +396,7 @@ DeviceBase *DeviceAgent::CreateNewDevice(const char *iface_name, const char *par
 	 * Now instruct the DataManager to create a new StorageSlot
 	 * for this device.
 	 */
-	dbus_g_proxy_call (g_dataManagerObj,
+	dbus_g_proxy_call (m_dataManagerObj,
 			"new",
 			&error,
 			G_TYPE_STRING,
@@ -222,11 +404,14 @@ DeviceBase *DeviceAgent::CreateNewDevice(const char *iface_name, const char *par
 			G_TYPE_INVALID,
 			G_TYPE_INVALID);
 
-	string iface(iface_name);
-	iface += "Device";
-	DeviceBase *dev = static_cast<DeviceBase*>(g_factory.construct(iface, devname.c_str(), iface, conf));
-	AddDevice(dev);
+	DeviceBase *dev = static_cast<DeviceBase*>(g_factory.construct(devname.c_str(), conf));
+	if (NULL == dev)
+	{
+		cout << "ERROR: Suitable Driver for Device not found. " << devname.c_str() << endl;;
+		return NULL;
+	}
 
+	AddDevice(dev);
 
 	return dev;
 }
@@ -277,6 +462,22 @@ int DeviceAgent::StringToConf(const char *params, DeviceConf_t *conf, string& na
 			{
 				conf->m_retrievalMethod = DEVICE_DATA_RETRIEVAL_METHOD_PUSH;
 			}
+		}
+		else if (it->first == "CommMethod")
+		{
+			if (it->second == "\"gpio\"")
+			{
+				conf->m_commMethod = DEVICE_COMM_METHOD_GPIO;
+			}
+		}
+		else if (it->first == "CommParams")
+		{
+			conf->m_commParams.assign(it->second);
+		}
+		else if (it->first == "DriverName")
+		{
+			it->second.erase(std::remove(it->second.begin(), it->second.end(), '\"'), it->second.end());
+			conf->m_driverName.assign(it->second);
 		}
 	}
 

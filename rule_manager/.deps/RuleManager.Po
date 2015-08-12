@@ -387,16 +387,7 @@ RuleManager.o: RuleManager.cpp \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/algorithmfwd.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_heap.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_tempbuf.h \
- /usr/local/include/boost/spirit/include/qi.hpp \
- /usr/local/include/boost/spirit/home/qi.hpp \
- /usr/local/include/boost/spirit/home/qi/action.hpp \
- /usr/local/include/boost/spirit/home/qi/action/action.hpp \
- /usr/local/include/boost/spirit/home/qi/meta_compiler.hpp \
- /usr/local/include/boost/spirit/home/support/meta_compiler.hpp \
- /usr/local/include/boost/spirit/include/phoenix_limits.hpp \
- /usr/local/include/boost/proto/proto.hpp \
- /usr/local/include/boost/proto/core.hpp \
- /usr/local/include/boost/proto/proto_fwd.hpp \
+ /usr/local/include/boost/lexical_cast.hpp \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/climits \
  /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/limits.h \
  /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include-fixed/syslimits.h \
@@ -407,13 +398,314 @@ RuleManager.o: RuleManager.cpp \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/posix2_lim.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/xopen_lim.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdio_lim.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstring \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdio \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libio.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/_G_config.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sys_errlist.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/typeinfo \
+ /usr/local/include/boost/limits.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/limits \
+ /usr/local/include/boost/throw_exception.hpp \
+ /usr/local/include/boost/exception/detail/attribute_noreturn.hpp \
+ /usr/local/include/boost/exception/exception.hpp \
+ /usr/local/include/boost/detail/lcast_precision.hpp \
+ /usr/local/include/boost/integer_traits.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/locale \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ctime \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/time_members.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/messages_members.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libintl.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/codecvt.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/sstream \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/sstream.tcc \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cmath \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/math.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_val.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_valf.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_vall.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/inf.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/nan.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathdef.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathcalls.h \
+ /usr/local/include/boost/array.hpp /usr/local/include/boost/swap.hpp \
+ /usr/local/include/boost/utility/swap.hpp \
+ /usr/local/include/boost/functional/hash_fwd.hpp \
+ /usr/local/include/boost/functional/hash/hash_fwd.hpp \
+ /usr/local/include/boost/numeric/conversion/cast.hpp \
+ /usr/local/include/boost/type.hpp \
+ /usr/local/include/boost/numeric/conversion/converter.hpp \
+ /usr/local/include/boost/numeric/conversion/conversion_traits.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/conversion_traits.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/meta.hpp \
+ /usr/local/include/boost/mpl/equal_to.hpp \
+ /usr/local/include/boost/mpl/aux_/comparison_op.hpp \
+ /usr/local/include/boost/mpl/aux_/numeric_op.hpp \
+ /usr/local/include/boost/mpl/numeric_cast.hpp \
+ /usr/local/include/boost/mpl/tag.hpp \
+ /usr/local/include/boost/mpl/aux_/has_tag.hpp \
+ /usr/local/include/boost/mpl/aux_/numeric_cast_utils.hpp \
+ /usr/local/include/boost/mpl/aux_/config/forwarding.hpp \
+ /usr/local/include/boost/mpl/aux_/msvc_eti_base.hpp \
+ /usr/local/include/boost/mpl/aux_/is_msvc_eti_arg.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/int_float_mixture.hpp \
+ /usr/local/include/boost/numeric/conversion/int_float_mixture_enum.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/sign_mixture.hpp \
+ /usr/local/include/boost/numeric/conversion/sign_mixture_enum.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp \
+ /usr/local/include/boost/numeric/conversion/udt_builtin_mixture_enum.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/is_subranged.hpp \
+ /usr/local/include/boost/mpl/multiplies.hpp \
+ /usr/local/include/boost/mpl/times.hpp \
+ /usr/local/include/boost/mpl/aux_/arithmetic_op.hpp \
+ /usr/local/include/boost/mpl/aux_/largest_int.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/times.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessor/default_params.hpp \
+ /usr/local/include/boost/mpl/less.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/less.hpp \
+ /usr/local/include/boost/numeric/conversion/converter_policies.hpp \
+ /usr/local/include/boost/config/no_tr1/cmath.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/functional \
+ /usr/local/include/boost/numeric/conversion/detail/converter.hpp \
+ /usr/local/include/boost/numeric/conversion/bounds.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/bounds.hpp \
+ /usr/local/include/boost/numeric/conversion/numeric_cast_traits.hpp \
+ /usr/local/include/boost/cstdint.hpp \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdint.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdint.h \
+ /usr/local/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp \
+ /usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp \
+ /usr/local/include/boost/type_traits/make_unsigned.hpp \
+ /usr/local/include/boost/type_traits/is_signed.hpp \
+ /usr/local/include/boost/type_traits/is_unsigned.hpp \
+ /usr/local/include/boost/type_traits/add_volatile.hpp \
+ /usr/local/include/boost/type_traits/has_left_shift.hpp \
+ /usr/local/include/boost/type_traits/detail/has_binary_operator.hpp \
+ /usr/local/include/boost/type_traits/is_base_of.hpp \
+ /usr/local/include/boost/type_traits/is_fundamental.hpp \
+ /usr/local/include/boost/type_traits/has_right_shift.hpp \
+ /usr/local/include/boost/math/special_functions/sign.hpp \
+ /usr/local/include/boost/math/tools/config.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cfloat \
+ /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h \
+ /usr/local/include/boost/math/tools/user.hpp \
+ /usr/local/include/boost/detail/fenv.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fenv.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fenv.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fenv.h \
+ /usr/local/include/boost/math/special_functions/math_fwd.hpp \
+ /usr/local/include/boost/math/special_functions/detail/round_fwd.hpp \
+ /usr/local/include/boost/math/tools/promotion.hpp \
+ /usr/local/include/boost/type_traits/is_floating_point.hpp \
+ /usr/local/include/boost/math/policies/policy.hpp \
+ /usr/local/include/boost/mpl/list.hpp \
+ /usr/local/include/boost/mpl/limits/list.hpp \
+ /usr/local/include/boost/mpl/list/list20.hpp \
+ /usr/local/include/boost/mpl/list/list10.hpp \
+ /usr/local/include/boost/mpl/list/list0.hpp \
+ /usr/local/include/boost/mpl/long.hpp \
+ /usr/local/include/boost/mpl/long_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/push_front.hpp \
+ /usr/local/include/boost/mpl/push_front_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/item.hpp \
+ /usr/local/include/boost/mpl/list/aux_/tag.hpp \
+ /usr/local/include/boost/mpl/list/aux_/pop_front.hpp \
+ /usr/local/include/boost/mpl/pop_front_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/push_back.hpp \
+ /usr/local/include/boost/mpl/push_back_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/front.hpp \
+ /usr/local/include/boost/mpl/front_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/clear.hpp \
+ /usr/local/include/boost/mpl/clear_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/O1_size.hpp \
+ /usr/local/include/boost/mpl/O1_size_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/size.hpp \
+ /usr/local/include/boost/mpl/size_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/empty.hpp \
+ /usr/local/include/boost/mpl/empty_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/begin_end.hpp \
+ /usr/local/include/boost/mpl/begin_end_fwd.hpp \
+ /usr/local/include/boost/mpl/list/aux_/iterator.hpp \
+ /usr/local/include/boost/mpl/iterator_tags.hpp \
+ /usr/local/include/boost/mpl/deref.hpp \
+ /usr/local/include/boost/mpl/aux_/msvc_type.hpp \
+ /usr/local/include/boost/mpl/aux_/lambda_spec.hpp \
+ /usr/local/include/boost/mpl/list/aux_/include_preprocessed.hpp \
+ /usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp \
+ /usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/list.hpp \
+ /usr/local/include/boost/mpl/contains.hpp \
+ /usr/local/include/boost/mpl/contains_fwd.hpp \
+ /usr/local/include/boost/mpl/sequence_tag.hpp \
+ /usr/local/include/boost/mpl/sequence_tag_fwd.hpp \
+ /usr/local/include/boost/mpl/aux_/has_begin.hpp \
+ /usr/local/include/boost/mpl/aux_/contains_impl.hpp \
+ /usr/local/include/boost/mpl/begin_end.hpp \
+ /usr/local/include/boost/mpl/aux_/begin_end_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/traits_lambda_spec.hpp \
+ /usr/local/include/boost/mpl/find.hpp \
+ /usr/local/include/boost/mpl/find_if.hpp \
+ /usr/local/include/boost/mpl/aux_/find_if_pred.hpp \
+ /usr/local/include/boost/mpl/aux_/iter_apply.hpp \
+ /usr/local/include/boost/mpl/iter_fold_if.hpp \
+ /usr/local/include/boost/mpl/pair.hpp \
+ /usr/local/include/boost/mpl/aux_/iter_fold_if_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp \
+ /usr/local/include/boost/mpl/same_as.hpp \
+ /usr/local/include/boost/mpl/remove_if.hpp \
+ /usr/local/include/boost/mpl/fold.hpp \
+ /usr/local/include/boost/mpl/O1_size.hpp \
+ /usr/local/include/boost/mpl/aux_/O1_size_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/has_size.hpp \
+ /usr/local/include/boost/mpl/aux_/fold_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp \
+ /usr/local/include/boost/mpl/reverse_fold.hpp \
+ /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/inserter_algorithm.hpp \
+ /usr/local/include/boost/mpl/back_inserter.hpp \
+ /usr/local/include/boost/mpl/push_back.hpp \
+ /usr/local/include/boost/mpl/aux_/push_back_impl.hpp \
+ /usr/local/include/boost/mpl/inserter.hpp \
+ /usr/local/include/boost/mpl/front_inserter.hpp \
+ /usr/local/include/boost/mpl/push_front.hpp \
+ /usr/local/include/boost/mpl/aux_/push_front_impl.hpp \
+ /usr/local/include/boost/mpl/clear.hpp \
+ /usr/local/include/boost/mpl/aux_/clear_impl.hpp \
+ /usr/local/include/boost/mpl/vector.hpp \
+ /usr/local/include/boost/mpl/limits/vector.hpp \
+ /usr/local/include/boost/mpl/vector/vector20.hpp \
+ /usr/local/include/boost/mpl/vector/vector10.hpp \
+ /usr/local/include/boost/mpl/vector/vector0.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/at.hpp \
+ /usr/local/include/boost/mpl/at_fwd.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/tag.hpp \
+ /usr/local/include/boost/mpl/aux_/config/typeof.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/front.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/push_front.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/item.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/pop_front.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/push_back.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/pop_back.hpp \
+ /usr/local/include/boost/mpl/pop_back_fwd.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/back.hpp \
+ /usr/local/include/boost/mpl/back_fwd.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/clear.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/vector0.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/iterator.hpp \
+ /usr/local/include/boost/mpl/plus.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp \
+ /usr/local/include/boost/mpl/minus.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/minus.hpp \
+ /usr/local/include/boost/mpl/advance_fwd.hpp \
+ /usr/local/include/boost/mpl/distance_fwd.hpp \
+ /usr/local/include/boost/mpl/prior.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/O1_size.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/size.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/empty.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/begin_end.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/include_preprocessed.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp \
+ /usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp \
+ /usr/local/include/boost/mpl/at.hpp \
+ /usr/local/include/boost/mpl/aux_/at_impl.hpp \
+ /usr/local/include/boost/mpl/advance.hpp \
+ /usr/local/include/boost/mpl/negate.hpp \
+ /usr/local/include/boost/mpl/aux_/advance_forward.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp \
+ /usr/local/include/boost/mpl/aux_/advance_backward.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp \
+ /usr/local/include/boost/mpl/size.hpp \
+ /usr/local/include/boost/mpl/aux_/size_impl.hpp \
+ /usr/local/include/boost/mpl/distance.hpp \
+ /usr/local/include/boost/mpl/iter_fold.hpp \
+ /usr/local/include/boost/mpl/aux_/iter_fold_impl.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp \
+ /usr/local/include/boost/mpl/iterator_range.hpp \
+ /usr/local/include/boost/mpl/comparison.hpp \
+ /usr/local/include/boost/mpl/not_equal_to.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp \
+ /usr/local/include/boost/mpl/greater.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp \
+ /usr/local/include/boost/mpl/less_equal.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp \
+ /usr/local/include/boost/mpl/greater_equal.hpp \
+ /usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
+ /usr/local/include/boost/config/no_tr1/complex.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/complex \
+ /usr/local/include/boost/math/special_functions/detail/fp_traits.hpp \
+ /usr/local/include/boost/detail/endian.hpp \
+ /usr/local/include/boost/predef/detail/endian_compat.h \
+ /usr/local/include/boost/predef/other/endian.h \
+ /usr/local/include/boost/predef/version_number.h \
+ /usr/local/include/boost/predef/make.h \
+ /usr/local/include/boost/predef/detail/test.h \
+ /usr/local/include/boost/predef/library/c/gnu.h \
+ /usr/local/include/boost/predef/library/c/_prefix.h \
+ /usr/local/include/boost/predef/detail/_cassert.h \
+ /usr/local/include/boost/predef/os/macos.h \
+ /usr/local/include/boost/predef/os/bsd.h \
+ /usr/local/include/boost/predef/os/bsd/bsdi.h \
+ /usr/local/include/boost/predef/os/bsd/dragonfly.h \
+ /usr/local/include/boost/predef/os/bsd/free.h \
+ /usr/local/include/boost/predef/os/bsd/open.h \
+ /usr/local/include/boost/predef/os/bsd/net.h \
+ /usr/local/include/boost/math/special_functions/fpclassify.hpp \
+ /usr/local/include/boost/math/tools/real_cast.hpp \
+ /usr/local/include/boost/range/iterator_range_core.hpp \
+ /usr/local/include/boost/range/functions.hpp \
+ /usr/local/include/boost/range/size.hpp \
+ /usr/local/include/boost/range/size_type.hpp \
+ /usr/local/include/boost/range/difference_type.hpp \
+ /usr/local/include/boost/range/distance.hpp \
+ /usr/local/include/boost/range/empty.hpp \
+ /usr/local/include/boost/range/algorithm/equal.hpp \
+ /usr/local/include/boost/range/concepts.hpp \
+ /usr/local/include/boost/concept_check.hpp \
+ /usr/local/include/boost/concept/assert.hpp \
+ /usr/local/include/boost/concept/detail/general.hpp \
+ /usr/local/include/boost/concept/detail/backward_compatibility.hpp \
+ /usr/local/include/boost/concept/detail/has_constraints.hpp \
+ /usr/local/include/boost/type_traits/conversion_traits.hpp \
+ /usr/local/include/boost/concept/usage.hpp \
+ /usr/local/include/boost/concept/detail/concept_def.hpp \
+ /usr/local/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/local/include/boost/preprocessor/seq/seq.hpp \
+ /usr/local/include/boost/preprocessor/seq/elem.hpp \
+ /usr/local/include/boost/preprocessor/seq/size.hpp \
+ /usr/local/include/boost/preprocessor/seq/enum.hpp \
+ /usr/local/include/boost/concept/detail/concept_undef.hpp \
+ /usr/local/include/boost/iterator/iterator_concepts.hpp \
+ /usr/local/include/boost/range/value_type.hpp \
+ /usr/local/include/boost/range/detail/misc_concept.hpp \
+ /usr/local/include/boost/range/detail/safe_bool.hpp \
+ /usr/local/include/boost/container/container_fwd.hpp \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/memory \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_raw_storage_iter.h \
+ /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/auto_ptr.h \
+ /usr/local/include/boost/integer.hpp \
+ /usr/local/include/boost/integer_fwd.hpp \
+ /usr/local/include/boost/spirit/include/qi.hpp \
+ /usr/local/include/boost/spirit/home/qi.hpp \
+ /usr/local/include/boost/spirit/home/qi/action.hpp \
+ /usr/local/include/boost/spirit/home/qi/action/action.hpp \
+ /usr/local/include/boost/spirit/home/qi/meta_compiler.hpp \
+ /usr/local/include/boost/spirit/home/support/meta_compiler.hpp \
+ /usr/local/include/boost/spirit/include/phoenix_limits.hpp \
+ /usr/local/include/boost/proto/proto.hpp \
+ /usr/local/include/boost/proto/core.hpp \
+ /usr/local/include/boost/proto/proto_fwd.hpp \
  /usr/local/include/boost/preprocessor/repetition/enum_params_with_a_default.hpp \
  /usr/local/include/boost/preprocessor/facilities/intercept.hpp \
  /usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp \
  /usr/local/include/boost/preprocessor/repetition/enum_trailing_binary_params.hpp \
  /usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp \
- /usr/local/include/boost/ref.hpp /usr/local/include/boost/mpl/long.hpp \
- /usr/local/include/boost/mpl/long_fwd.hpp \
+ /usr/local/include/boost/ref.hpp \
  /usr/local/include/boost/utility/result_of.hpp \
  /usr/local/include/boost/preprocessor/iteration/iterate.hpp \
  /usr/local/include/boost/preprocessor/slot/slot.hpp \
@@ -427,7 +719,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/utility/detail/result_of_iterate.hpp \
  /usr/local/include/boost/proto/args.hpp \
  /usr/local/include/boost/proto/detail/is_noncopyable.hpp \
- /usr/local/include/boost/type_traits/is_base_of.hpp \
  /usr/local/include/boost/proto/detail/args.hpp \
  /usr/local/include/boost/proto/detail/preprocessed/args.hpp \
  /usr/local/include/boost/proto/tags.hpp \
@@ -469,7 +760,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/proto/detail/preprocessed/expr.hpp \
  /usr/local/include/boost/proto/repeat.hpp \
  /usr/local/include/boost/proto/fusion.hpp \
- /usr/local/include/boost/mpl/sequence_tag_fwd.hpp \
  /usr/local/include/boost/fusion/include/is_view.hpp \
  /usr/local/include/boost/fusion/support/is_view.hpp \
  /usr/local/include/boost/fusion/support/detail/is_view.hpp \
@@ -477,15 +767,7 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/support/tag_of_fwd.hpp \
  /usr/local/include/boost/fusion/support/detail/is_mpl_sequence.hpp \
  /usr/local/include/boost/fusion/support/sequence_base.hpp \
- /usr/local/include/boost/mpl/begin_end_fwd.hpp \
  /usr/local/include/boost/mpl/is_sequence.hpp \
- /usr/local/include/boost/mpl/begin_end.hpp \
- /usr/local/include/boost/mpl/aux_/begin_end_impl.hpp \
- /usr/local/include/boost/mpl/aux_/has_begin.hpp \
- /usr/local/include/boost/mpl/aux_/traits_lambda_spec.hpp \
- /usr/local/include/boost/mpl/sequence_tag.hpp \
- /usr/local/include/boost/mpl/aux_/has_tag.hpp \
- /usr/local/include/boost/mpl/aux_/is_msvc_eti_arg.hpp \
  /usr/local/include/boost/fusion/include/tag_of_fwd.hpp \
  /usr/local/include/boost/fusion/include/category_of.hpp \
  /usr/local/include/boost/fusion/support/category_of.hpp \
@@ -553,49 +835,12 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/view/joint_view/joint_view_fwd.hpp \
  /usr/local/include/boost/fusion/sequence/intrinsic/size.hpp \
  /usr/local/include/boost/fusion/sequence/intrinsic/detail/segmented_size.hpp \
- /usr/local/include/boost/mpl/fold.hpp \
- /usr/local/include/boost/mpl/O1_size.hpp \
- /usr/local/include/boost/mpl/O1_size_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/O1_size_impl.hpp \
- /usr/local/include/boost/mpl/aux_/has_size.hpp \
- /usr/local/include/boost/mpl/aux_/config/forwarding.hpp \
- /usr/local/include/boost/mpl/aux_/fold_impl.hpp \
- /usr/local/include/boost/mpl/deref.hpp \
- /usr/local/include/boost/mpl/aux_/msvc_type.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp \
- /usr/local/include/boost/mpl/plus.hpp \
- /usr/local/include/boost/mpl/aux_/arithmetic_op.hpp \
- /usr/local/include/boost/mpl/aux_/largest_int.hpp \
- /usr/local/include/boost/mpl/aux_/numeric_op.hpp \
- /usr/local/include/boost/mpl/numeric_cast.hpp \
- /usr/local/include/boost/mpl/tag.hpp \
- /usr/local/include/boost/mpl/aux_/numeric_cast_utils.hpp \
- /usr/local/include/boost/mpl/aux_/msvc_eti_base.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp \
  /usr/local/include/boost/fusion/mpl/begin.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/mpl_iterator.hpp \
  /usr/local/include/boost/fusion/support/detail/mpl_iterator_category.hpp \
- /usr/local/include/boost/mpl/prior.hpp \
- /usr/local/include/boost/mpl/advance.hpp \
- /usr/local/include/boost/mpl/advance_fwd.hpp \
- /usr/local/include/boost/mpl/less.hpp \
- /usr/local/include/boost/mpl/aux_/comparison_op.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/less.hpp \
- /usr/local/include/boost/mpl/negate.hpp \
- /usr/local/include/boost/mpl/aux_/advance_forward.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp \
- /usr/local/include/boost/mpl/aux_/advance_backward.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp \
- /usr/local/include/boost/mpl/distance.hpp \
- /usr/local/include/boost/mpl/distance_fwd.hpp \
- /usr/local/include/boost/mpl/iter_fold.hpp \
- /usr/local/include/boost/mpl/aux_/iter_fold_impl.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp \
- /usr/local/include/boost/mpl/iterator_range.hpp \
  /usr/local/include/boost/mpl/begin.hpp \
  /usr/local/include/boost/fusion/iterator/mpl/fusion_iterator.hpp \
- /usr/local/include/boost/mpl/iterator_tags.hpp \
  /usr/local/include/boost/fusion/mpl/end.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/end_impl.hpp \
  /usr/local/include/boost/mpl/end.hpp \
@@ -616,14 +861,10 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/view/single_view/single_view.hpp \
  /usr/local/include/boost/fusion/view/single_view/single_view_iterator.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/deref_impl.hpp \
- /usr/local/include/boost/mpl/equal_to.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/next_impl.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/prior_impl.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/advance_impl.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/distance_impl.hpp \
- /usr/local/include/boost/mpl/minus.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/minus.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/equal_to_impl.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/value_of_impl.hpp \
  /usr/local/include/boost/fusion/view/single_view/detail/at_impl.hpp \
@@ -686,13 +927,7 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/adapted/mpl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/is_sequence_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/size_impl.hpp \
- /usr/local/include/boost/mpl/size.hpp \
- /usr/local/include/boost/mpl/size_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/size_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp \
- /usr/local/include/boost/mpl/at.hpp \
- /usr/local/include/boost/mpl/at_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/at_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/at_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/has_key_impl.hpp \
  /usr/local/include/boost/mpl/has_key.hpp \
@@ -702,17 +937,12 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/is_view_impl.hpp \
  /usr/local/include/boost/fusion/adapted/mpl/detail/empty_impl.hpp \
  /usr/local/include/boost/mpl/empty.hpp \
- /usr/local/include/boost/mpl/empty_fwd.hpp \
  /usr/local/include/boost/mpl/aux_/empty_impl.hpp \
  /usr/local/include/boost/fusion/mpl/at.hpp \
  /usr/local/include/boost/fusion/mpl/back.hpp \
  /usr/local/include/boost/mpl/back.hpp \
- /usr/local/include/boost/mpl/back_fwd.hpp \
  /usr/local/include/boost/mpl/aux_/back_impl.hpp \
  /usr/local/include/boost/fusion/mpl/clear.hpp \
- /usr/local/include/boost/mpl/clear.hpp \
- /usr/local/include/boost/mpl/clear_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/clear_impl.hpp \
  /usr/local/include/boost/fusion/mpl/detail/clear.hpp \
  /usr/local/include/boost/fusion/container/vector/vector_fwd.hpp \
  /usr/local/include/boost/fusion/container/vector/limits.hpp \
@@ -734,32 +964,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/container/vector/detail/distance_impl.hpp \
  /usr/local/include/boost/fusion/container/vector/detail/advance_impl.hpp \
  /usr/local/include/boost/fusion/container/vector/detail/end_impl.hpp \
- /usr/local/include/boost/mpl/vector/vector10.hpp \
- /usr/local/include/boost/mpl/vector/vector0.hpp \
- /usr/local/include/boost/mpl/vector/aux_/at.hpp \
- /usr/local/include/boost/mpl/vector/aux_/tag.hpp \
- /usr/local/include/boost/mpl/aux_/config/typeof.hpp \
- /usr/local/include/boost/mpl/vector/aux_/front.hpp \
- /usr/local/include/boost/mpl/front_fwd.hpp \
- /usr/local/include/boost/mpl/vector/aux_/push_front.hpp \
- /usr/local/include/boost/mpl/push_front_fwd.hpp \
- /usr/local/include/boost/mpl/vector/aux_/item.hpp \
- /usr/local/include/boost/mpl/vector/aux_/pop_front.hpp \
- /usr/local/include/boost/mpl/pop_front_fwd.hpp \
- /usr/local/include/boost/mpl/vector/aux_/push_back.hpp \
- /usr/local/include/boost/mpl/push_back_fwd.hpp \
- /usr/local/include/boost/mpl/vector/aux_/pop_back.hpp \
- /usr/local/include/boost/mpl/pop_back_fwd.hpp \
- /usr/local/include/boost/mpl/vector/aux_/back.hpp \
- /usr/local/include/boost/mpl/vector/aux_/clear.hpp \
- /usr/local/include/boost/mpl/vector/aux_/vector0.hpp \
- /usr/local/include/boost/mpl/vector/aux_/iterator.hpp \
- /usr/local/include/boost/mpl/vector/aux_/O1_size.hpp \
- /usr/local/include/boost/mpl/vector/aux_/size.hpp \
- /usr/local/include/boost/mpl/vector/aux_/empty.hpp \
- /usr/local/include/boost/mpl/vector/aux_/begin_end.hpp \
- /usr/local/include/boost/mpl/vector/aux_/include_preprocessed.hpp \
- /usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp \
  /usr/local/include/boost/preprocessor/dec.hpp \
  /usr/local/include/boost/preprocessor/repetition/enum_shifted.hpp \
  /usr/local/include/boost/fusion/container/vector/detail/preprocessed/vector10.hpp \
@@ -784,11 +988,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/mpl/erase.hpp \
  /usr/local/include/boost/mpl/erase_fwd.hpp \
  /usr/local/include/boost/mpl/aux_/erase_impl.hpp \
- /usr/local/include/boost/mpl/push_front.hpp \
- /usr/local/include/boost/mpl/aux_/push_front_impl.hpp \
- /usr/local/include/boost/mpl/reverse_fold.hpp \
- /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp \
  /usr/local/include/boost/fusion/algorithm/transformation/erase.hpp \
  /usr/local/include/boost/fusion/sequence/convert.hpp \
  /usr/local/include/boost/fusion/mpl/erase_key.hpp \
@@ -810,16 +1009,8 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/mpl/insert_range_fwd.hpp \
  /usr/local/include/boost/mpl/aux_/insert_range_impl.hpp \
  /usr/local/include/boost/mpl/copy.hpp \
- /usr/local/include/boost/mpl/aux_/inserter_algorithm.hpp \
- /usr/local/include/boost/mpl/back_inserter.hpp \
- /usr/local/include/boost/mpl/push_back.hpp \
- /usr/local/include/boost/mpl/aux_/push_back_impl.hpp \
- /usr/local/include/boost/mpl/inserter.hpp \
- /usr/local/include/boost/mpl/front_inserter.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessor/default_params.hpp \
  /usr/local/include/boost/mpl/joint_view.hpp \
  /usr/local/include/boost/mpl/aux_/joint_iter.hpp \
- /usr/local/include/boost/mpl/aux_/lambda_spec.hpp \
  /usr/local/include/boost/mpl/aux_/iter_push_front.hpp \
  /usr/local/include/boost/type_traits/same_traits.hpp \
  /usr/local/include/boost/fusion/algorithm/transformation/insert_range.hpp \
@@ -860,12 +1051,7 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/proto/detail/deprecated.hpp \
  /usr/local/include/boost/preprocessor/control/expr_if.hpp \
  /usr/local/include/boost/preprocessor/comparison/greater.hpp \
- /usr/local/include/boost/preprocessor/seq/size.hpp \
- /usr/local/include/boost/preprocessor/seq/enum.hpp \
- /usr/local/include/boost/preprocessor/seq/seq.hpp \
- /usr/local/include/boost/preprocessor/seq/elem.hpp \
  /usr/local/include/boost/preprocessor/seq/to_tuple.hpp \
- /usr/local/include/boost/preprocessor/seq/for_each_i.hpp \
  /usr/local/include/boost/preprocessor/seq/pop_back.hpp \
  /usr/local/include/boost/preprocessor/seq/first_n.hpp \
  /usr/local/include/boost/preprocessor/seq/detail/split.hpp \
@@ -887,7 +1073,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/mpl/map/map10.hpp \
  /usr/local/include/boost/mpl/map/map0.hpp \
  /usr/local/include/boost/mpl/map/aux_/contains_impl.hpp \
- /usr/local/include/boost/mpl/contains_fwd.hpp \
  /usr/local/include/boost/mpl/map/aux_/at_impl.hpp \
  /usr/local/include/boost/mpl/map/aux_/tag.hpp \
  /usr/local/include/boost/mpl/aux_/order_impl.hpp \
@@ -897,7 +1082,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/mpl/aux_/config/operators.hpp \
  /usr/local/include/boost/mpl/map/aux_/insert_impl.hpp \
  /usr/local/include/boost/mpl/map/aux_/item.hpp \
- /usr/local/include/boost/mpl/pair.hpp \
  /usr/local/include/boost/mpl/map/aux_/map0.hpp \
  /usr/local/include/boost/mpl/map/aux_/erase_impl.hpp \
  /usr/local/include/boost/mpl/map/aux_/erase_key_impl.hpp \
@@ -967,7 +1151,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/algorithm/iteration/detail/segmented_for_each.hpp \
  /usr/local/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp \
  /usr/local/include/boost/detail/sp_typeinfo.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/typeinfo \
  /usr/local/include/boost/proto/context.hpp \
  /usr/local/include/boost/proto/context/null.hpp \
  /usr/local/include/boost/proto/context/detail/null_eval.hpp \
@@ -977,9 +1160,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/proto/detail/decltype.hpp \
  /usr/local/include/boost/get_pointer.hpp \
  /usr/local/include/boost/config/no_tr1/memory.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/memory \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_raw_storage_iter.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/auto_ptr.h \
  /usr/local/include/boost/typeof/typeof.hpp \
  /usr/local/include/boost/typeof/message.hpp \
  /usr/local/include/boost/typeof/native.hpp \
@@ -1048,18 +1228,10 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/proto/functional/range.hpp \
  /usr/local/include/boost/proto/functional/range/begin.hpp \
  /usr/local/include/boost/proto/functional/range/empty.hpp \
- /usr/local/include/boost/range/empty.hpp \
  /usr/local/include/boost/proto/functional/range/end.hpp \
  /usr/local/include/boost/proto/functional/range/rbegin.hpp \
  /usr/local/include/boost/proto/functional/range/rend.hpp \
  /usr/local/include/boost/proto/functional/range/size.hpp \
- /usr/local/include/boost/range/size.hpp \
- /usr/local/include/boost/range/size_type.hpp \
- /usr/local/include/boost/range/difference_type.hpp \
- /usr/local/include/boost/type_traits/make_unsigned.hpp \
- /usr/local/include/boost/type_traits/is_signed.hpp \
- /usr/local/include/boost/type_traits/is_unsigned.hpp \
- /usr/local/include/boost/type_traits/add_volatile.hpp \
  /usr/local/include/boost/spirit/home/support/make_component.hpp \
  /usr/local/include/boost/spirit/include/phoenix_core.hpp \
  /usr/local/include/boost/spirit/home/phoenix/core.hpp \
@@ -1079,12 +1251,8 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/fusion/container/vector/detail/preprocessed/as_vector.hpp \
  /usr/local/include/boost/fusion/container/vector/detail/preprocessed/as_vector10.hpp \
  /usr/local/include/boost/fusion/container/vector/detail/convert_impl.hpp \
- /usr/local/include/boost/mpl/vector/vector20.hpp \
- /usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp \
  /usr/local/include/boost/spirit/home/phoenix/core/basic_environment.hpp \
  /usr/local/include/boost/mpl/remove.hpp \
- /usr/local/include/boost/mpl/remove_if.hpp \
- /usr/local/include/boost/mpl/same_as.hpp \
  /usr/local/include/boost/mpl/transform.hpp \
  /usr/local/include/boost/mpl/pair_view.hpp \
  /usr/local/include/boost/mpl/iterator_category.hpp \
@@ -1119,7 +1287,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/preprocessor/enum.hpp \
  /usr/local/include/boost/preprocessor/enum_params.hpp \
  /usr/local/include/boost/preprocessor/enum_shifted_params.hpp \
- /usr/local/include/boost/mpl/limits/list.hpp \
  /usr/local/include/boost/variant/detail/substitute_fwd.hpp \
  /usr/local/include/boost/variant/detail/backup_holder.hpp \
  /usr/local/include/boost/variant/detail/enable_recursive_fwd.hpp \
@@ -1149,26 +1316,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/move/algorithm.hpp \
  /usr/local/include/boost/detail/no_exceptions_support.hpp \
  /usr/local/include/boost/variant/detail/make_variant_list.hpp \
- /usr/local/include/boost/mpl/list.hpp \
- /usr/local/include/boost/mpl/list/list20.hpp \
- /usr/local/include/boost/mpl/list/list10.hpp \
- /usr/local/include/boost/mpl/list/list0.hpp \
- /usr/local/include/boost/mpl/list/aux_/push_front.hpp \
- /usr/local/include/boost/mpl/list/aux_/item.hpp \
- /usr/local/include/boost/mpl/list/aux_/tag.hpp \
- /usr/local/include/boost/mpl/list/aux_/pop_front.hpp \
- /usr/local/include/boost/mpl/list/aux_/push_back.hpp \
- /usr/local/include/boost/mpl/list/aux_/front.hpp \
- /usr/local/include/boost/mpl/list/aux_/clear.hpp \
- /usr/local/include/boost/mpl/list/aux_/O1_size.hpp \
- /usr/local/include/boost/mpl/list/aux_/size.hpp \
- /usr/local/include/boost/mpl/list/aux_/empty.hpp \
- /usr/local/include/boost/mpl/list/aux_/begin_end.hpp \
- /usr/local/include/boost/mpl/list/aux_/iterator.hpp \
- /usr/local/include/boost/mpl/list/aux_/include_preprocessed.hpp \
- /usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp \
- /usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/list.hpp \
  /usr/local/include/boost/variant/detail/over_sequence.hpp \
  /usr/local/include/boost/variant/detail/visitation_impl.hpp \
  /usr/local/include/boost/variant/detail/cast_storage.hpp \
@@ -1178,20 +1325,9 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/variant/detail/apply_visitor_unary.hpp \
  /usr/local/include/boost/variant/detail/apply_visitor_binary.hpp \
  /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp \
- /usr/local/include/boost/functional/hash_fwd.hpp \
- /usr/local/include/boost/functional/hash/hash_fwd.hpp \
  /usr/local/include/boost/math/common_factor_ct.hpp \
  /usr/local/include/boost/math_fwd.hpp \
- /usr/local/include/boost/cstdint.hpp \
- /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdint.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdint.h \
  /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp \
- /usr/local/include/boost/mpl/find_if.hpp \
- /usr/local/include/boost/mpl/aux_/find_if_pred.hpp \
- /usr/local/include/boost/mpl/aux_/iter_apply.hpp \
- /usr/local/include/boost/mpl/iter_fold_if.hpp \
- /usr/local/include/boost/mpl/aux_/iter_fold_if_impl.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp \
  /usr/local/include/boost/mpl/max_element.hpp \
  /usr/local/include/boost/mpl/sizeof.hpp \
  /usr/local/include/boost/variant/detail/variant_io.hpp \
@@ -1204,11 +1340,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/mpl/equal.hpp \
  /usr/local/include/boost/spirit/home/support/utf8.hpp \
  /usr/local/include/boost/regex/pending/unicode_iterator.hpp \
- /usr/local/include/boost/throw_exception.hpp \
- /usr/local/include/boost/exception/detail/attribute_noreturn.hpp \
- /usr/local/include/boost/exception/exception.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/sstream \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/sstream.tcc \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/list \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_list.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/list.tcc \
@@ -1221,11 +1352,8 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/spirit/home/support/attributes_fwd.hpp \
  /usr/local/include/boost/optional.hpp \
  /usr/local/include/boost/optional/optional.hpp \
- /usr/local/include/boost/type.hpp /usr/local/include/boost/none.hpp \
- /usr/local/include/boost/none_t.hpp \
- /usr/local/include/boost/utility/swap.hpp \
+ /usr/local/include/boost/none.hpp /usr/local/include/boost/none_t.hpp \
  /usr/local/include/boost/utility/compare_pointees.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/functional \
  /usr/local/include/boost/utility/in_place_factory.hpp \
  /usr/local/include/boost/utility/detail/in_place_factory_prefix.hpp \
  /usr/local/include/boost/preprocessor/punctuation/paren.hpp \
@@ -1236,26 +1364,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/variant/visitor_ptr.hpp \
  /usr/local/include/boost/variant/bad_visit.hpp \
  /usr/local/include/boost/range/iterator_range.hpp \
- /usr/local/include/boost/range/iterator_range_core.hpp \
- /usr/local/include/boost/range/functions.hpp \
- /usr/local/include/boost/range/distance.hpp \
- /usr/local/include/boost/range/algorithm/equal.hpp \
- /usr/local/include/boost/range/concepts.hpp \
- /usr/local/include/boost/concept_check.hpp \
- /usr/local/include/boost/concept/assert.hpp \
- /usr/local/include/boost/concept/detail/general.hpp \
- /usr/local/include/boost/concept/detail/backward_compatibility.hpp \
- /usr/local/include/boost/concept/detail/has_constraints.hpp \
- /usr/local/include/boost/type_traits/conversion_traits.hpp \
- /usr/local/include/boost/concept/usage.hpp \
- /usr/local/include/boost/concept/detail/concept_def.hpp \
- /usr/local/include/boost/concept/detail/concept_undef.hpp \
- /usr/local/include/boost/iterator/iterator_concepts.hpp \
- /usr/local/include/boost/limits.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/limits \
- /usr/local/include/boost/range/value_type.hpp \
- /usr/local/include/boost/range/detail/misc_concept.hpp \
- /usr/local/include/boost/range/detail/safe_bool.hpp \
  /usr/local/include/boost/range/iterator_range_io.hpp \
  /usr/local/include/boost/spirit/home/qi/parser.hpp \
  /usr/local/include/boost/spirit/home/qi/detail/attributes.hpp \
@@ -1263,12 +1371,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/spirit/home/support/has_semantic_action.hpp \
  /usr/local/include/boost/spirit/home/support/detail/hold_any.hpp \
  /usr/local/include/boost/spirit/home/support/detail/as_variant.hpp \
- /usr/local/include/boost/mpl/vector.hpp \
- /usr/local/include/boost/mpl/limits/vector.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp \
- /usr/local/include/boost/mpl/contains.hpp \
- /usr/local/include/boost/mpl/aux_/contains_impl.hpp \
- /usr/local/include/boost/mpl/find.hpp \
  /usr/local/include/boost/fusion/include/filter_if.hpp \
  /usr/local/include/boost/fusion/algorithm/transformation/filter_if.hpp \
  /usr/local/include/boost/fusion/view/filter_view/filter_view.hpp \
@@ -1289,8 +1391,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/type_traits/cv_traits.hpp \
  /usr/local/include/boost/type_traits/add_cv.hpp \
  /usr/local/include/boost/type_traits/remove_volatile.hpp \
- /usr/local/include/boost/swap.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstring \
  /usr/local/include/boost/spirit/home/support/utree/utree_traits_fwd.hpp \
  /usr/local/include/boost/spirit/home/support/action_dispatch.hpp \
  /usr/local/include/boost/spirit/home/support/handles_container.hpp \
@@ -1354,31 +1454,13 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/spirit/home/support/char_set/range.hpp \
  /usr/local/include/boost/spirit/home/support/char_set/range_run_impl.hpp \
  /usr/local/include/boost/spirit/home/support/char_set/range_functions.hpp \
- /usr/local/include/boost/integer_traits.hpp \
  /usr/local/include/boost/spirit/home/qi/char/char_class.hpp \
  /usr/local/include/boost/spirit/home/qi/detail/enable_lit.hpp \
  /usr/local/include/boost/spirit/home/qi/binary.hpp \
  /usr/local/include/boost/spirit/home/qi/binary/binary.hpp \
  /usr/local/include/boost/spirit/home/support/detail/endian.hpp \
  /usr/local/include/boost/spirit/home/support/detail/endian/endian.hpp \
- /usr/local/include/boost/detail/endian.hpp \
- /usr/local/include/boost/predef/detail/endian_compat.h \
- /usr/local/include/boost/predef/other/endian.h \
- /usr/local/include/boost/predef/version_number.h \
- /usr/local/include/boost/predef/make.h \
- /usr/local/include/boost/predef/detail/test.h \
- /usr/local/include/boost/predef/library/c/gnu.h \
- /usr/local/include/boost/predef/library/c/_prefix.h \
- /usr/local/include/boost/predef/detail/_cassert.h \
- /usr/local/include/boost/predef/os/macos.h \
- /usr/local/include/boost/predef/os/bsd.h \
- /usr/local/include/boost/predef/os/bsd/bsdi.h \
- /usr/local/include/boost/predef/os/bsd/dragonfly.h \
- /usr/local/include/boost/predef/os/bsd/free.h \
- /usr/local/include/boost/predef/os/bsd/open.h \
- /usr/local/include/boost/predef/os/bsd/net.h \
  /usr/local/include/boost/spirit/home/support/detail/endian/cover_operators.hpp \
- /usr/local/include/boost/type_traits/is_floating_point.hpp \
  /usr/local/include/boost/spirit/home/qi/directive.hpp \
  /usr/local/include/boost/spirit/home/qi/directive/as.hpp \
  /usr/local/include/boost/spirit/home/qi/directive/encoding.hpp \
@@ -1401,8 +1483,6 @@ RuleManager.o: RuleManager.cpp \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cassert \
  /usr/local/include/boost/config/no_tr1/functional.hpp \
  /usr/local/include/boost/function/function_base.hpp \
- /usr/local/include/boost/integer.hpp \
- /usr/local/include/boost/integer_fwd.hpp \
  /usr/local/include/boost/type_traits/composite_traits.hpp \
  /usr/local/include/boost/type_traits/is_union.hpp \
  /usr/local/include/boost/function_equal.hpp \
@@ -1488,46 +1568,9 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/spirit/home/qi/numeric/real.hpp \
  /usr/local/include/boost/spirit/home/qi/numeric/real_policies.hpp \
  /usr/local/include/boost/spirit/home/qi/numeric/detail/real_impl.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cmath \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/math.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_val.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_valf.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_vall.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/inf.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/nan.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathdef.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathcalls.h \
  /usr/local/include/boost/spirit/home/support/detail/pow10.hpp \
- /usr/local/include/boost/config/no_tr1/cmath.hpp \
  /usr/local/include/boost/spirit/home/support/numeric_traits.hpp \
  /usr/local/include/boost/spirit/home/support/detail/sign.hpp \
- /usr/local/include/boost/math/special_functions/fpclassify.hpp \
- /usr/local/include/boost/math/tools/real_cast.hpp \
- /usr/local/include/boost/math/special_functions/math_fwd.hpp \
- /usr/local/include/boost/math/special_functions/detail/round_fwd.hpp \
- /usr/local/include/boost/math/tools/promotion.hpp \
- /usr/local/include/boost/math/tools/config.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cfloat \
- /opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h \
- /usr/local/include/boost/math/tools/user.hpp \
- /usr/local/include/boost/detail/fenv.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fenv.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fenv.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fenv.h \
- /usr/local/include/boost/math/policies/policy.hpp \
- /usr/local/include/boost/mpl/comparison.hpp \
- /usr/local/include/boost/mpl/not_equal_to.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp \
- /usr/local/include/boost/mpl/greater.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp \
- /usr/local/include/boost/mpl/less_equal.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp \
- /usr/local/include/boost/mpl/greater_equal.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
- /usr/local/include/boost/config/no_tr1/complex.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/complex \
- /usr/local/include/boost/math/special_functions/detail/fp_traits.hpp \
- /usr/local/include/boost/math/special_functions/sign.hpp \
  /usr/local/include/boost/spirit/home/qi/operator.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/sequence.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/alternative.hpp \
@@ -1538,7 +1581,6 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/spirit/home/support/algorithm/any_ns.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/permutation.hpp \
  /usr/local/include/boost/spirit/home/qi/detail/permute_function.hpp \
- /usr/local/include/boost/array.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/difference.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/list.hpp \
  /usr/local/include/boost/spirit/home/qi/operator/optional.hpp \
@@ -1632,21 +1674,9 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/iostreams/detail/adapter/non_blocking_adapter.hpp \
  /usr/local/include/boost/iostreams/read.hpp \
  /usr/local/include/boost/iostreams/char_traits.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdio \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libio.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/_G_config.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sys_errlist.h \
  /usr/local/include/boost/iostreams/seek.hpp \
  /usr/local/include/boost/iostreams/positioning.hpp \
  /usr/local/include/boost/iostreams/detail/config/codecvt.hpp \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/locale \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ctime \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/time_members.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/messages_members.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libintl.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/codecvt.h \
- /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.tcc \
  /usr/local/include/boost/iostreams/detail/config/fpos.hpp \
  /usr/local/include/boost/iostreams/write.hpp \
  /usr/local/include/boost/iostreams/detail/optional.hpp \
@@ -1875,47 +1905,47 @@ RuleManager.o: RuleManager.cpp \
  /usr/local/include/boost/preprocessor/detail/is_nullary.hpp \
  /usr/local/include/boost/lockfree/detail/prefix.hpp Rule.hpp \
  Condition.hpp RuleManagerObject.h \
- /home/ayanami-dummy/XSB_galileo/emu/cinterf.h \
- /home/ayanami-dummy/XSB_galileo/emu/context.h \
- /home/ayanami-dummy/XSB_galileo/emu/cell_def_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/basictypes.h \
- /home/ayanami-dummy/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h \
- /home/ayanami-dummy/XSB_galileo/emu/basicdefs.h \
- /home/ayanami-dummy/XSB_galileo/emu/setjmp_xsb.h \
+ /home/shankar/XSB_galileo/emu/cinterf.h \
+ /home/shankar/XSB_galileo/emu/context.h \
+ /home/shankar/XSB_galileo/emu/cell_def_xsb.h \
+ /home/shankar/XSB_galileo/emu/basictypes.h \
+ /home/shankar/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h \
+ /home/shankar/XSB_galileo/emu/basicdefs.h \
+ /home/shankar/XSB_galileo/emu/setjmp_xsb.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/setjmp.h \
- /home/ayanami-dummy/XSB_galileo/emu/flag_defs_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/hashtable_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/conc_compl.h \
- /home/ayanami-dummy/XSB_galileo/emu/debugs/debug_attv.h \
- /home/ayanami-dummy/XSB_galileo/emu/memory_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/memory_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/export.h \
- /home/ayanami-dummy/XSB_galileo/emu/varstring_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/dynamic_stack.h \
- /home/ayanami-dummy/XSB_galileo/emu/psc_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/psc_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/incr_xsb_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/tries.h \
- /home/ayanami-dummy/XSB_galileo/emu/struct_manager.h \
- /home/ayanami-dummy/XSB_galileo/emu/choice.h \
- /home/ayanami-dummy/XSB_galileo/emu/tab_structs.h \
- /home/ayanami-dummy/XSB_galileo/emu/debug_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/table_status_defs.h \
- /home/ayanami-dummy/XSB_galileo/emu/slgdelay.h \
- /home/ayanami-dummy/XSB_galileo/emu/debugs/debug_delay.h \
- /home/ayanami-dummy/XSB_galileo/emu/token_defs_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/odbc_def_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/findall.h \
- /home/ayanami-dummy/XSB_galileo/emu/cinterf_defs.h \
+ /home/shankar/XSB_galileo/emu/flag_defs_xsb.h \
+ /home/shankar/XSB_galileo/emu/hashtable_xsb.h \
+ /home/shankar/XSB_galileo/emu/conc_compl.h \
+ /home/shankar/XSB_galileo/emu/debugs/debug_attv.h \
+ /home/shankar/XSB_galileo/emu/memory_xsb.h \
+ /home/shankar/XSB_galileo/emu/memory_defs.h \
+ /home/shankar/XSB_galileo/emu/export.h \
+ /home/shankar/XSB_galileo/emu/varstring_xsb.h \
+ /home/shankar/XSB_galileo/emu/dynamic_stack.h \
+ /home/shankar/XSB_galileo/emu/psc_xsb.h \
+ /home/shankar/XSB_galileo/emu/psc_defs.h \
+ /home/shankar/XSB_galileo/emu/incr_xsb_defs.h \
+ /home/shankar/XSB_galileo/emu/tries.h \
+ /home/shankar/XSB_galileo/emu/struct_manager.h \
+ /home/shankar/XSB_galileo/emu/choice.h \
+ /home/shankar/XSB_galileo/emu/tab_structs.h \
+ /home/shankar/XSB_galileo/emu/debug_xsb.h \
+ /home/shankar/XSB_galileo/emu/table_status_defs.h \
+ /home/shankar/XSB_galileo/emu/slgdelay.h \
+ /home/shankar/XSB_galileo/emu/debugs/debug_delay.h \
+ /home/shankar/XSB_galileo/emu/token_defs_xsb.h \
+ /home/shankar/XSB_galileo/emu/odbc_def_xsb.h \
+ /home/shankar/XSB_galileo/emu/findall.h \
+ /home/shankar/XSB_galileo/emu/cinterf_defs.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/linux/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno.h \
  /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno-base.h \
- /home/ayanami-dummy/XSB_galileo/emu/context.h \
- /home/ayanami-dummy/XSB_galileo/emu/thread_xsb.h \
- /home/ayanami-dummy/XSB_galileo/emu/thread_defs_xsb.h url_utils.hpp \
+ /home/shankar/XSB_galileo/emu/context.h \
+ /home/shankar/XSB_galileo/emu/thread_xsb.h \
+ /home/shankar/XSB_galileo/emu/thread_defs_xsb.h url_utils.hpp \
  /usr/local/include/boost/fusion/include/std_pair.hpp \
  /usr/local/include/boost/fusion/adapted/std_pair.hpp \
  /usr/local/include/boost/fusion/adapted/struct/adapt_struct.hpp \
@@ -2709,25 +2739,7 @@ RuleManager.o: RuleManager.cpp \
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_tempbuf.h:
 
-/usr/local/include/boost/spirit/include/qi.hpp:
-
-/usr/local/include/boost/spirit/home/qi.hpp:
-
-/usr/local/include/boost/spirit/home/qi/action.hpp:
-
-/usr/local/include/boost/spirit/home/qi/action/action.hpp:
-
-/usr/local/include/boost/spirit/home/qi/meta_compiler.hpp:
-
-/usr/local/include/boost/spirit/home/support/meta_compiler.hpp:
-
-/usr/local/include/boost/spirit/include/phoenix_limits.hpp:
-
-/usr/local/include/boost/proto/proto.hpp:
-
-/usr/local/include/boost/proto/core.hpp:
-
-/usr/local/include/boost/proto/proto_fwd.hpp:
+/usr/local/include/boost/lexical_cast.hpp:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/climits:
 
@@ -2749,6 +2761,612 @@ RuleManager.o: RuleManager.cpp \
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/stdio_lim.h:
 
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstring:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdio:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libio.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/_G_config.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sys_errlist.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/typeinfo:
+
+/usr/local/include/boost/limits.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/limits:
+
+/usr/local/include/boost/throw_exception.hpp:
+
+/usr/local/include/boost/exception/detail/attribute_noreturn.hpp:
+
+/usr/local/include/boost/exception/exception.hpp:
+
+/usr/local/include/boost/detail/lcast_precision.hpp:
+
+/usr/local/include/boost/integer_traits.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/locale:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ctime:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/time_members.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/messages_members.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libintl.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/codecvt.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/sstream:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/sstream.tcc:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cmath:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/math.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_val.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_valf.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_vall.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/inf.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/nan.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathdef.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathcalls.h:
+
+/usr/local/include/boost/array.hpp:
+
+/usr/local/include/boost/swap.hpp:
+
+/usr/local/include/boost/utility/swap.hpp:
+
+/usr/local/include/boost/functional/hash_fwd.hpp:
+
+/usr/local/include/boost/functional/hash/hash_fwd.hpp:
+
+/usr/local/include/boost/numeric/conversion/cast.hpp:
+
+/usr/local/include/boost/type.hpp:
+
+/usr/local/include/boost/numeric/conversion/converter.hpp:
+
+/usr/local/include/boost/numeric/conversion/conversion_traits.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/conversion_traits.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/meta.hpp:
+
+/usr/local/include/boost/mpl/equal_to.hpp:
+
+/usr/local/include/boost/mpl/aux_/comparison_op.hpp:
+
+/usr/local/include/boost/mpl/aux_/numeric_op.hpp:
+
+/usr/local/include/boost/mpl/numeric_cast.hpp:
+
+/usr/local/include/boost/mpl/tag.hpp:
+
+/usr/local/include/boost/mpl/aux_/has_tag.hpp:
+
+/usr/local/include/boost/mpl/aux_/numeric_cast_utils.hpp:
+
+/usr/local/include/boost/mpl/aux_/config/forwarding.hpp:
+
+/usr/local/include/boost/mpl/aux_/msvc_eti_base.hpp:
+
+/usr/local/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/int_float_mixture.hpp:
+
+/usr/local/include/boost/numeric/conversion/int_float_mixture_enum.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/sign_mixture.hpp:
+
+/usr/local/include/boost/numeric/conversion/sign_mixture_enum.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
+
+/usr/local/include/boost/numeric/conversion/udt_builtin_mixture_enum.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/is_subranged.hpp:
+
+/usr/local/include/boost/mpl/multiplies.hpp:
+
+/usr/local/include/boost/mpl/times.hpp:
+
+/usr/local/include/boost/mpl/aux_/arithmetic_op.hpp:
+
+/usr/local/include/boost/mpl/aux_/largest_int.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessor/default_params.hpp:
+
+/usr/local/include/boost/mpl/less.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/less.hpp:
+
+/usr/local/include/boost/numeric/conversion/converter_policies.hpp:
+
+/usr/local/include/boost/config/no_tr1/cmath.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/functional:
+
+/usr/local/include/boost/numeric/conversion/detail/converter.hpp:
+
+/usr/local/include/boost/numeric/conversion/bounds.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/bounds.hpp:
+
+/usr/local/include/boost/numeric/conversion/numeric_cast_traits.hpp:
+
+/usr/local/include/boost/cstdint.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdint.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdint.h:
+
+/usr/local/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp:
+
+/usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
+
+/usr/local/include/boost/type_traits/make_unsigned.hpp:
+
+/usr/local/include/boost/type_traits/is_signed.hpp:
+
+/usr/local/include/boost/type_traits/is_unsigned.hpp:
+
+/usr/local/include/boost/type_traits/add_volatile.hpp:
+
+/usr/local/include/boost/type_traits/has_left_shift.hpp:
+
+/usr/local/include/boost/type_traits/detail/has_binary_operator.hpp:
+
+/usr/local/include/boost/type_traits/is_base_of.hpp:
+
+/usr/local/include/boost/type_traits/is_fundamental.hpp:
+
+/usr/local/include/boost/type_traits/has_right_shift.hpp:
+
+/usr/local/include/boost/math/special_functions/sign.hpp:
+
+/usr/local/include/boost/math/tools/config.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cfloat:
+
+/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h:
+
+/usr/local/include/boost/math/tools/user.hpp:
+
+/usr/local/include/boost/detail/fenv.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fenv.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fenv.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fenv.h:
+
+/usr/local/include/boost/math/special_functions/math_fwd.hpp:
+
+/usr/local/include/boost/math/special_functions/detail/round_fwd.hpp:
+
+/usr/local/include/boost/math/tools/promotion.hpp:
+
+/usr/local/include/boost/type_traits/is_floating_point.hpp:
+
+/usr/local/include/boost/math/policies/policy.hpp:
+
+/usr/local/include/boost/mpl/list.hpp:
+
+/usr/local/include/boost/mpl/limits/list.hpp:
+
+/usr/local/include/boost/mpl/list/list20.hpp:
+
+/usr/local/include/boost/mpl/list/list10.hpp:
+
+/usr/local/include/boost/mpl/list/list0.hpp:
+
+/usr/local/include/boost/mpl/long.hpp:
+
+/usr/local/include/boost/mpl/long_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/push_front.hpp:
+
+/usr/local/include/boost/mpl/push_front_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/item.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/tag.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/pop_front.hpp:
+
+/usr/local/include/boost/mpl/pop_front_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/push_back.hpp:
+
+/usr/local/include/boost/mpl/push_back_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/front.hpp:
+
+/usr/local/include/boost/mpl/front_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/clear.hpp:
+
+/usr/local/include/boost/mpl/clear_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/O1_size.hpp:
+
+/usr/local/include/boost/mpl/O1_size_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/size.hpp:
+
+/usr/local/include/boost/mpl/size_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/empty.hpp:
+
+/usr/local/include/boost/mpl/empty_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/begin_end.hpp:
+
+/usr/local/include/boost/mpl/begin_end_fwd.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/iterator.hpp:
+
+/usr/local/include/boost/mpl/iterator_tags.hpp:
+
+/usr/local/include/boost/mpl/deref.hpp:
+
+/usr/local/include/boost/mpl/aux_/msvc_type.hpp:
+
+/usr/local/include/boost/mpl/aux_/lambda_spec.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/include_preprocessed.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp:
+
+/usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/list.hpp:
+
+/usr/local/include/boost/mpl/contains.hpp:
+
+/usr/local/include/boost/mpl/contains_fwd.hpp:
+
+/usr/local/include/boost/mpl/sequence_tag.hpp:
+
+/usr/local/include/boost/mpl/sequence_tag_fwd.hpp:
+
+/usr/local/include/boost/mpl/aux_/has_begin.hpp:
+
+/usr/local/include/boost/mpl/aux_/contains_impl.hpp:
+
+/usr/local/include/boost/mpl/begin_end.hpp:
+
+/usr/local/include/boost/mpl/aux_/begin_end_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/traits_lambda_spec.hpp:
+
+/usr/local/include/boost/mpl/find.hpp:
+
+/usr/local/include/boost/mpl/find_if.hpp:
+
+/usr/local/include/boost/mpl/aux_/find_if_pred.hpp:
+
+/usr/local/include/boost/mpl/aux_/iter_apply.hpp:
+
+/usr/local/include/boost/mpl/iter_fold_if.hpp:
+
+/usr/local/include/boost/mpl/pair.hpp:
+
+/usr/local/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
+
+/usr/local/include/boost/mpl/same_as.hpp:
+
+/usr/local/include/boost/mpl/remove_if.hpp:
+
+/usr/local/include/boost/mpl/fold.hpp:
+
+/usr/local/include/boost/mpl/O1_size.hpp:
+
+/usr/local/include/boost/mpl/aux_/O1_size_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/has_size.hpp:
+
+/usr/local/include/boost/mpl/aux_/fold_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
+
+/usr/local/include/boost/mpl/reverse_fold.hpp:
+
+/usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/inserter_algorithm.hpp:
+
+/usr/local/include/boost/mpl/back_inserter.hpp:
+
+/usr/local/include/boost/mpl/push_back.hpp:
+
+/usr/local/include/boost/mpl/aux_/push_back_impl.hpp:
+
+/usr/local/include/boost/mpl/inserter.hpp:
+
+/usr/local/include/boost/mpl/front_inserter.hpp:
+
+/usr/local/include/boost/mpl/push_front.hpp:
+
+/usr/local/include/boost/mpl/aux_/push_front_impl.hpp:
+
+/usr/local/include/boost/mpl/clear.hpp:
+
+/usr/local/include/boost/mpl/aux_/clear_impl.hpp:
+
+/usr/local/include/boost/mpl/vector.hpp:
+
+/usr/local/include/boost/mpl/limits/vector.hpp:
+
+/usr/local/include/boost/mpl/vector/vector20.hpp:
+
+/usr/local/include/boost/mpl/vector/vector10.hpp:
+
+/usr/local/include/boost/mpl/vector/vector0.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/at.hpp:
+
+/usr/local/include/boost/mpl/at_fwd.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/tag.hpp:
+
+/usr/local/include/boost/mpl/aux_/config/typeof.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/front.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/push_front.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/item.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/pop_front.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/push_back.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/pop_back.hpp:
+
+/usr/local/include/boost/mpl/pop_back_fwd.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/back.hpp:
+
+/usr/local/include/boost/mpl/back_fwd.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/clear.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/vector0.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/iterator.hpp:
+
+/usr/local/include/boost/mpl/plus.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
+
+/usr/local/include/boost/mpl/minus.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/minus.hpp:
+
+/usr/local/include/boost/mpl/advance_fwd.hpp:
+
+/usr/local/include/boost/mpl/distance_fwd.hpp:
+
+/usr/local/include/boost/mpl/prior.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/O1_size.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/size.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/empty.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/begin_end.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp:
+
+/usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
+
+/usr/local/include/boost/mpl/at.hpp:
+
+/usr/local/include/boost/mpl/aux_/at_impl.hpp:
+
+/usr/local/include/boost/mpl/advance.hpp:
+
+/usr/local/include/boost/mpl/negate.hpp:
+
+/usr/local/include/boost/mpl/aux_/advance_forward.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp:
+
+/usr/local/include/boost/mpl/aux_/advance_backward.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
+
+/usr/local/include/boost/mpl/size.hpp:
+
+/usr/local/include/boost/mpl/aux_/size_impl.hpp:
+
+/usr/local/include/boost/mpl/distance.hpp:
+
+/usr/local/include/boost/mpl/iter_fold.hpp:
+
+/usr/local/include/boost/mpl/aux_/iter_fold_impl.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp:
+
+/usr/local/include/boost/mpl/iterator_range.hpp:
+
+/usr/local/include/boost/mpl/comparison.hpp:
+
+/usr/local/include/boost/mpl/not_equal_to.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
+
+/usr/local/include/boost/mpl/greater.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp:
+
+/usr/local/include/boost/mpl/less_equal.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp:
+
+/usr/local/include/boost/mpl/greater_equal.hpp:
+
+/usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp:
+
+/usr/local/include/boost/config/no_tr1/complex.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/complex:
+
+/usr/local/include/boost/math/special_functions/detail/fp_traits.hpp:
+
+/usr/local/include/boost/detail/endian.hpp:
+
+/usr/local/include/boost/predef/detail/endian_compat.h:
+
+/usr/local/include/boost/predef/other/endian.h:
+
+/usr/local/include/boost/predef/version_number.h:
+
+/usr/local/include/boost/predef/make.h:
+
+/usr/local/include/boost/predef/detail/test.h:
+
+/usr/local/include/boost/predef/library/c/gnu.h:
+
+/usr/local/include/boost/predef/library/c/_prefix.h:
+
+/usr/local/include/boost/predef/detail/_cassert.h:
+
+/usr/local/include/boost/predef/os/macos.h:
+
+/usr/local/include/boost/predef/os/bsd.h:
+
+/usr/local/include/boost/predef/os/bsd/bsdi.h:
+
+/usr/local/include/boost/predef/os/bsd/dragonfly.h:
+
+/usr/local/include/boost/predef/os/bsd/free.h:
+
+/usr/local/include/boost/predef/os/bsd/open.h:
+
+/usr/local/include/boost/predef/os/bsd/net.h:
+
+/usr/local/include/boost/math/special_functions/fpclassify.hpp:
+
+/usr/local/include/boost/math/tools/real_cast.hpp:
+
+/usr/local/include/boost/range/iterator_range_core.hpp:
+
+/usr/local/include/boost/range/functions.hpp:
+
+/usr/local/include/boost/range/size.hpp:
+
+/usr/local/include/boost/range/size_type.hpp:
+
+/usr/local/include/boost/range/difference_type.hpp:
+
+/usr/local/include/boost/range/distance.hpp:
+
+/usr/local/include/boost/range/empty.hpp:
+
+/usr/local/include/boost/range/algorithm/equal.hpp:
+
+/usr/local/include/boost/range/concepts.hpp:
+
+/usr/local/include/boost/concept_check.hpp:
+
+/usr/local/include/boost/concept/assert.hpp:
+
+/usr/local/include/boost/concept/detail/general.hpp:
+
+/usr/local/include/boost/concept/detail/backward_compatibility.hpp:
+
+/usr/local/include/boost/concept/detail/has_constraints.hpp:
+
+/usr/local/include/boost/type_traits/conversion_traits.hpp:
+
+/usr/local/include/boost/concept/usage.hpp:
+
+/usr/local/include/boost/concept/detail/concept_def.hpp:
+
+/usr/local/include/boost/preprocessor/seq/for_each_i.hpp:
+
+/usr/local/include/boost/preprocessor/seq/seq.hpp:
+
+/usr/local/include/boost/preprocessor/seq/elem.hpp:
+
+/usr/local/include/boost/preprocessor/seq/size.hpp:
+
+/usr/local/include/boost/preprocessor/seq/enum.hpp:
+
+/usr/local/include/boost/concept/detail/concept_undef.hpp:
+
+/usr/local/include/boost/iterator/iterator_concepts.hpp:
+
+/usr/local/include/boost/range/value_type.hpp:
+
+/usr/local/include/boost/range/detail/misc_concept.hpp:
+
+/usr/local/include/boost/range/detail/safe_bool.hpp:
+
+/usr/local/include/boost/container/container_fwd.hpp:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/memory:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_raw_storage_iter.h:
+
+/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/auto_ptr.h:
+
+/usr/local/include/boost/integer.hpp:
+
+/usr/local/include/boost/integer_fwd.hpp:
+
+/usr/local/include/boost/spirit/include/qi.hpp:
+
+/usr/local/include/boost/spirit/home/qi.hpp:
+
+/usr/local/include/boost/spirit/home/qi/action.hpp:
+
+/usr/local/include/boost/spirit/home/qi/action/action.hpp:
+
+/usr/local/include/boost/spirit/home/qi/meta_compiler.hpp:
+
+/usr/local/include/boost/spirit/home/support/meta_compiler.hpp:
+
+/usr/local/include/boost/spirit/include/phoenix_limits.hpp:
+
+/usr/local/include/boost/proto/proto.hpp:
+
+/usr/local/include/boost/proto/core.hpp:
+
+/usr/local/include/boost/proto/proto_fwd.hpp:
+
 /usr/local/include/boost/preprocessor/repetition/enum_params_with_a_default.hpp:
 
 /usr/local/include/boost/preprocessor/facilities/intercept.hpp:
@@ -2760,10 +3378,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
 /usr/local/include/boost/ref.hpp:
-
-/usr/local/include/boost/mpl/long.hpp:
-
-/usr/local/include/boost/mpl/long_fwd.hpp:
 
 /usr/local/include/boost/utility/result_of.hpp:
 
@@ -2790,8 +3404,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/proto/args.hpp:
 
 /usr/local/include/boost/proto/detail/is_noncopyable.hpp:
-
-/usr/local/include/boost/type_traits/is_base_of.hpp:
 
 /usr/local/include/boost/proto/detail/args.hpp:
 
@@ -2875,8 +3487,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/proto/fusion.hpp:
 
-/usr/local/include/boost/mpl/sequence_tag_fwd.hpp:
-
 /usr/local/include/boost/fusion/include/is_view.hpp:
 
 /usr/local/include/boost/fusion/support/is_view.hpp:
@@ -2891,23 +3501,7 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/support/sequence_base.hpp:
 
-/usr/local/include/boost/mpl/begin_end_fwd.hpp:
-
 /usr/local/include/boost/mpl/is_sequence.hpp:
-
-/usr/local/include/boost/mpl/begin_end.hpp:
-
-/usr/local/include/boost/mpl/aux_/begin_end_impl.hpp:
-
-/usr/local/include/boost/mpl/aux_/has_begin.hpp:
-
-/usr/local/include/boost/mpl/aux_/traits_lambda_spec.hpp:
-
-/usr/local/include/boost/mpl/sequence_tag.hpp:
-
-/usr/local/include/boost/mpl/aux_/has_tag.hpp:
-
-/usr/local/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
 
 /usr/local/include/boost/fusion/include/tag_of_fwd.hpp:
 
@@ -3043,44 +3637,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/sequence/intrinsic/detail/segmented_size.hpp:
 
-/usr/local/include/boost/mpl/fold.hpp:
-
-/usr/local/include/boost/mpl/O1_size.hpp:
-
-/usr/local/include/boost/mpl/O1_size_fwd.hpp:
-
-/usr/local/include/boost/mpl/aux_/O1_size_impl.hpp:
-
-/usr/local/include/boost/mpl/aux_/has_size.hpp:
-
-/usr/local/include/boost/mpl/aux_/config/forwarding.hpp:
-
-/usr/local/include/boost/mpl/aux_/fold_impl.hpp:
-
-/usr/local/include/boost/mpl/deref.hpp:
-
-/usr/local/include/boost/mpl/aux_/msvc_type.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
-
-/usr/local/include/boost/mpl/plus.hpp:
-
-/usr/local/include/boost/mpl/aux_/arithmetic_op.hpp:
-
-/usr/local/include/boost/mpl/aux_/largest_int.hpp:
-
-/usr/local/include/boost/mpl/aux_/numeric_op.hpp:
-
-/usr/local/include/boost/mpl/numeric_cast.hpp:
-
-/usr/local/include/boost/mpl/tag.hpp:
-
-/usr/local/include/boost/mpl/aux_/numeric_cast_utils.hpp:
-
-/usr/local/include/boost/mpl/aux_/msvc_eti_base.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
-
 /usr/local/include/boost/fusion/mpl/begin.hpp:
 
 /usr/local/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp:
@@ -3089,45 +3645,9 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/support/detail/mpl_iterator_category.hpp:
 
-/usr/local/include/boost/mpl/prior.hpp:
-
-/usr/local/include/boost/mpl/advance.hpp:
-
-/usr/local/include/boost/mpl/advance_fwd.hpp:
-
-/usr/local/include/boost/mpl/less.hpp:
-
-/usr/local/include/boost/mpl/aux_/comparison_op.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/less.hpp:
-
-/usr/local/include/boost/mpl/negate.hpp:
-
-/usr/local/include/boost/mpl/aux_/advance_forward.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp:
-
-/usr/local/include/boost/mpl/aux_/advance_backward.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
-
-/usr/local/include/boost/mpl/distance.hpp:
-
-/usr/local/include/boost/mpl/distance_fwd.hpp:
-
-/usr/local/include/boost/mpl/iter_fold.hpp:
-
-/usr/local/include/boost/mpl/aux_/iter_fold_impl.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp:
-
-/usr/local/include/boost/mpl/iterator_range.hpp:
-
 /usr/local/include/boost/mpl/begin.hpp:
 
 /usr/local/include/boost/fusion/iterator/mpl/fusion_iterator.hpp:
-
-/usr/local/include/boost/mpl/iterator_tags.hpp:
 
 /usr/local/include/boost/fusion/mpl/end.hpp:
 
@@ -3169,10 +3689,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/view/single_view/detail/deref_impl.hpp:
 
-/usr/local/include/boost/mpl/equal_to.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
-
 /usr/local/include/boost/fusion/view/single_view/detail/next_impl.hpp:
 
 /usr/local/include/boost/fusion/view/single_view/detail/prior_impl.hpp:
@@ -3180,10 +3696,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/fusion/view/single_view/detail/advance_impl.hpp:
 
 /usr/local/include/boost/fusion/view/single_view/detail/distance_impl.hpp:
-
-/usr/local/include/boost/mpl/minus.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/minus.hpp:
 
 /usr/local/include/boost/fusion/view/single_view/detail/equal_to_impl.hpp:
 
@@ -3309,19 +3821,7 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/adapted/mpl/detail/size_impl.hpp:
 
-/usr/local/include/boost/mpl/size.hpp:
-
-/usr/local/include/boost/mpl/size_fwd.hpp:
-
-/usr/local/include/boost/mpl/aux_/size_impl.hpp:
-
 /usr/local/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp:
-
-/usr/local/include/boost/mpl/at.hpp:
-
-/usr/local/include/boost/mpl/at_fwd.hpp:
-
-/usr/local/include/boost/mpl/aux_/at_impl.hpp:
 
 /usr/local/include/boost/fusion/adapted/mpl/detail/at_impl.hpp:
 
@@ -3341,8 +3841,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/mpl/empty.hpp:
 
-/usr/local/include/boost/mpl/empty_fwd.hpp:
-
 /usr/local/include/boost/mpl/aux_/empty_impl.hpp:
 
 /usr/local/include/boost/fusion/mpl/at.hpp:
@@ -3351,17 +3849,9 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/mpl/back.hpp:
 
-/usr/local/include/boost/mpl/back_fwd.hpp:
-
 /usr/local/include/boost/mpl/aux_/back_impl.hpp:
 
 /usr/local/include/boost/fusion/mpl/clear.hpp:
-
-/usr/local/include/boost/mpl/clear.hpp:
-
-/usr/local/include/boost/mpl/clear_fwd.hpp:
-
-/usr/local/include/boost/mpl/aux_/clear_impl.hpp:
 
 /usr/local/include/boost/fusion/mpl/detail/clear.hpp:
 
@@ -3404,58 +3894,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/fusion/container/vector/detail/advance_impl.hpp:
 
 /usr/local/include/boost/fusion/container/vector/detail/end_impl.hpp:
-
-/usr/local/include/boost/mpl/vector/vector10.hpp:
-
-/usr/local/include/boost/mpl/vector/vector0.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/at.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/tag.hpp:
-
-/usr/local/include/boost/mpl/aux_/config/typeof.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/front.hpp:
-
-/usr/local/include/boost/mpl/front_fwd.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/push_front.hpp:
-
-/usr/local/include/boost/mpl/push_front_fwd.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/item.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/pop_front.hpp:
-
-/usr/local/include/boost/mpl/pop_front_fwd.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/push_back.hpp:
-
-/usr/local/include/boost/mpl/push_back_fwd.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/pop_back.hpp:
-
-/usr/local/include/boost/mpl/pop_back_fwd.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/back.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/clear.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/vector0.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/iterator.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/O1_size.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/size.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/empty.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/begin_end.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp:
 
 /usr/local/include/boost/preprocessor/dec.hpp:
 
@@ -3505,16 +3943,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/mpl/aux_/erase_impl.hpp:
 
-/usr/local/include/boost/mpl/push_front.hpp:
-
-/usr/local/include/boost/mpl/aux_/push_front_impl.hpp:
-
-/usr/local/include/boost/mpl/reverse_fold.hpp:
-
-/usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp:
-
 /usr/local/include/boost/fusion/algorithm/transformation/erase.hpp:
 
 /usr/local/include/boost/fusion/sequence/convert.hpp:
@@ -3557,25 +3985,9 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/mpl/copy.hpp:
 
-/usr/local/include/boost/mpl/aux_/inserter_algorithm.hpp:
-
-/usr/local/include/boost/mpl/back_inserter.hpp:
-
-/usr/local/include/boost/mpl/push_back.hpp:
-
-/usr/local/include/boost/mpl/aux_/push_back_impl.hpp:
-
-/usr/local/include/boost/mpl/inserter.hpp:
-
-/usr/local/include/boost/mpl/front_inserter.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessor/default_params.hpp:
-
 /usr/local/include/boost/mpl/joint_view.hpp:
 
 /usr/local/include/boost/mpl/aux_/joint_iter.hpp:
-
-/usr/local/include/boost/mpl/aux_/lambda_spec.hpp:
 
 /usr/local/include/boost/mpl/aux_/iter_push_front.hpp:
 
@@ -3657,17 +4069,7 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/preprocessor/comparison/greater.hpp:
 
-/usr/local/include/boost/preprocessor/seq/size.hpp:
-
-/usr/local/include/boost/preprocessor/seq/enum.hpp:
-
-/usr/local/include/boost/preprocessor/seq/seq.hpp:
-
-/usr/local/include/boost/preprocessor/seq/elem.hpp:
-
 /usr/local/include/boost/preprocessor/seq/to_tuple.hpp:
-
-/usr/local/include/boost/preprocessor/seq/for_each_i.hpp:
 
 /usr/local/include/boost/preprocessor/seq/pop_back.hpp:
 
@@ -3711,8 +4113,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/mpl/map/aux_/contains_impl.hpp:
 
-/usr/local/include/boost/mpl/contains_fwd.hpp:
-
 /usr/local/include/boost/mpl/map/aux_/at_impl.hpp:
 
 /usr/local/include/boost/mpl/map/aux_/tag.hpp:
@@ -3730,8 +4130,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/mpl/map/aux_/insert_impl.hpp:
 
 /usr/local/include/boost/mpl/map/aux_/item.hpp:
-
-/usr/local/include/boost/mpl/pair.hpp:
 
 /usr/local/include/boost/mpl/map/aux_/map0.hpp:
 
@@ -3871,8 +4269,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/detail/sp_typeinfo.hpp:
 
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/typeinfo:
-
 /usr/local/include/boost/proto/context.hpp:
 
 /usr/local/include/boost/proto/context/null.hpp:
@@ -3890,12 +4286,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/get_pointer.hpp:
 
 /usr/local/include/boost/config/no_tr1/memory.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/memory:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_raw_storage_iter.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/backward/auto_ptr.h:
 
 /usr/local/include/boost/typeof/typeof.hpp:
 
@@ -4033,8 +4423,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/proto/functional/range/empty.hpp:
 
-/usr/local/include/boost/range/empty.hpp:
-
 /usr/local/include/boost/proto/functional/range/end.hpp:
 
 /usr/local/include/boost/proto/functional/range/rbegin.hpp:
@@ -4042,20 +4430,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/proto/functional/range/rend.hpp:
 
 /usr/local/include/boost/proto/functional/range/size.hpp:
-
-/usr/local/include/boost/range/size.hpp:
-
-/usr/local/include/boost/range/size_type.hpp:
-
-/usr/local/include/boost/range/difference_type.hpp:
-
-/usr/local/include/boost/type_traits/make_unsigned.hpp:
-
-/usr/local/include/boost/type_traits/is_signed.hpp:
-
-/usr/local/include/boost/type_traits/is_unsigned.hpp:
-
-/usr/local/include/boost/type_traits/add_volatile.hpp:
 
 /usr/local/include/boost/spirit/home/support/make_component.hpp:
 
@@ -4095,17 +4469,9 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/fusion/container/vector/detail/convert_impl.hpp:
 
-/usr/local/include/boost/mpl/vector/vector20.hpp:
-
-/usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
-
 /usr/local/include/boost/spirit/home/phoenix/core/basic_environment.hpp:
 
 /usr/local/include/boost/mpl/remove.hpp:
-
-/usr/local/include/boost/mpl/remove_if.hpp:
-
-/usr/local/include/boost/mpl/same_as.hpp:
 
 /usr/local/include/boost/mpl/transform.hpp:
 
@@ -4175,8 +4541,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/preprocessor/enum_shifted_params.hpp:
 
-/usr/local/include/boost/mpl/limits/list.hpp:
-
 /usr/local/include/boost/variant/detail/substitute_fwd.hpp:
 
 /usr/local/include/boost/variant/detail/backup_holder.hpp:
@@ -4235,46 +4599,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/variant/detail/make_variant_list.hpp:
 
-/usr/local/include/boost/mpl/list.hpp:
-
-/usr/local/include/boost/mpl/list/list20.hpp:
-
-/usr/local/include/boost/mpl/list/list10.hpp:
-
-/usr/local/include/boost/mpl/list/list0.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/push_front.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/item.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/tag.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/pop_front.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/push_back.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/front.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/clear.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/O1_size.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/size.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/empty.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/begin_end.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/iterator.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/include_preprocessed.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp:
-
-/usr/local/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/list.hpp:
-
 /usr/local/include/boost/variant/detail/over_sequence.hpp:
 
 /usr/local/include/boost/variant/detail/visitation_impl.hpp:
@@ -4293,33 +4617,11 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp:
 
-/usr/local/include/boost/functional/hash_fwd.hpp:
-
-/usr/local/include/boost/functional/hash/hash_fwd.hpp:
-
 /usr/local/include/boost/math/common_factor_ct.hpp:
 
 /usr/local/include/boost/math_fwd.hpp:
 
-/usr/local/include/boost/cstdint.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/stdint.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/stdint.h:
-
 /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp:
-
-/usr/local/include/boost/mpl/find_if.hpp:
-
-/usr/local/include/boost/mpl/aux_/find_if_pred.hpp:
-
-/usr/local/include/boost/mpl/aux_/iter_apply.hpp:
-
-/usr/local/include/boost/mpl/iter_fold_if.hpp:
-
-/usr/local/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
 
 /usr/local/include/boost/mpl/max_element.hpp:
 
@@ -4345,16 +4647,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/regex/pending/unicode_iterator.hpp:
 
-/usr/local/include/boost/throw_exception.hpp:
-
-/usr/local/include/boost/exception/detail/attribute_noreturn.hpp:
-
-/usr/local/include/boost/exception/exception.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/sstream:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/sstream.tcc:
-
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/list:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/stl_list.h:
@@ -4379,17 +4671,11 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/optional/optional.hpp:
 
-/usr/local/include/boost/type.hpp:
-
 /usr/local/include/boost/none.hpp:
 
 /usr/local/include/boost/none_t.hpp:
 
-/usr/local/include/boost/utility/swap.hpp:
-
 /usr/local/include/boost/utility/compare_pointees.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/functional:
 
 /usr/local/include/boost/utility/in_place_factory.hpp:
 
@@ -4411,46 +4697,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/range/iterator_range.hpp:
 
-/usr/local/include/boost/range/iterator_range_core.hpp:
-
-/usr/local/include/boost/range/functions.hpp:
-
-/usr/local/include/boost/range/distance.hpp:
-
-/usr/local/include/boost/range/algorithm/equal.hpp:
-
-/usr/local/include/boost/range/concepts.hpp:
-
-/usr/local/include/boost/concept_check.hpp:
-
-/usr/local/include/boost/concept/assert.hpp:
-
-/usr/local/include/boost/concept/detail/general.hpp:
-
-/usr/local/include/boost/concept/detail/backward_compatibility.hpp:
-
-/usr/local/include/boost/concept/detail/has_constraints.hpp:
-
-/usr/local/include/boost/type_traits/conversion_traits.hpp:
-
-/usr/local/include/boost/concept/usage.hpp:
-
-/usr/local/include/boost/concept/detail/concept_def.hpp:
-
-/usr/local/include/boost/concept/detail/concept_undef.hpp:
-
-/usr/local/include/boost/iterator/iterator_concepts.hpp:
-
-/usr/local/include/boost/limits.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/limits:
-
-/usr/local/include/boost/range/value_type.hpp:
-
-/usr/local/include/boost/range/detail/misc_concept.hpp:
-
-/usr/local/include/boost/range/detail/safe_bool.hpp:
-
 /usr/local/include/boost/range/iterator_range_io.hpp:
 
 /usr/local/include/boost/spirit/home/qi/parser.hpp:
@@ -4464,18 +4710,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/spirit/home/support/detail/hold_any.hpp:
 
 /usr/local/include/boost/spirit/home/support/detail/as_variant.hpp:
-
-/usr/local/include/boost/mpl/vector.hpp:
-
-/usr/local/include/boost/mpl/limits/vector.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
-
-/usr/local/include/boost/mpl/contains.hpp:
-
-/usr/local/include/boost/mpl/aux_/contains_impl.hpp:
-
-/usr/local/include/boost/mpl/find.hpp:
 
 /usr/local/include/boost/fusion/include/filter_if.hpp:
 
@@ -4516,10 +4750,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/type_traits/add_cv.hpp:
 
 /usr/local/include/boost/type_traits/remove_volatile.hpp:
-
-/usr/local/include/boost/swap.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstring:
 
 /usr/local/include/boost/spirit/home/support/utree/utree_traits_fwd.hpp:
 
@@ -4647,8 +4877,6 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/spirit/home/support/char_set/range_functions.hpp:
 
-/usr/local/include/boost/integer_traits.hpp:
-
 /usr/local/include/boost/spirit/home/qi/char/char_class.hpp:
 
 /usr/local/include/boost/spirit/home/qi/detail/enable_lit.hpp:
@@ -4661,41 +4889,7 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/spirit/home/support/detail/endian/endian.hpp:
 
-/usr/local/include/boost/detail/endian.hpp:
-
-/usr/local/include/boost/predef/detail/endian_compat.h:
-
-/usr/local/include/boost/predef/other/endian.h:
-
-/usr/local/include/boost/predef/version_number.h:
-
-/usr/local/include/boost/predef/make.h:
-
-/usr/local/include/boost/predef/detail/test.h:
-
-/usr/local/include/boost/predef/library/c/gnu.h:
-
-/usr/local/include/boost/predef/library/c/_prefix.h:
-
-/usr/local/include/boost/predef/detail/_cassert.h:
-
-/usr/local/include/boost/predef/os/macos.h:
-
-/usr/local/include/boost/predef/os/bsd.h:
-
-/usr/local/include/boost/predef/os/bsd/bsdi.h:
-
-/usr/local/include/boost/predef/os/bsd/dragonfly.h:
-
-/usr/local/include/boost/predef/os/bsd/free.h:
-
-/usr/local/include/boost/predef/os/bsd/open.h:
-
-/usr/local/include/boost/predef/os/bsd/net.h:
-
 /usr/local/include/boost/spirit/home/support/detail/endian/cover_operators.hpp:
-
-/usr/local/include/boost/type_traits/is_floating_point.hpp:
 
 /usr/local/include/boost/spirit/home/qi/directive.hpp:
 
@@ -4740,10 +4934,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
 /usr/local/include/boost/function/function_base.hpp:
-
-/usr/local/include/boost/integer.hpp:
-
-/usr/local/include/boost/integer_fwd.hpp:
 
 /usr/local/include/boost/type_traits/composite_traits.hpp:
 
@@ -4915,85 +5105,11 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/spirit/home/qi/numeric/detail/real_impl.hpp:
 
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cmath:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/math.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_val.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_valf.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/huge_vall.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/inf.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/nan.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathdef.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/mathcalls.h:
-
 /usr/local/include/boost/spirit/home/support/detail/pow10.hpp:
-
-/usr/local/include/boost/config/no_tr1/cmath.hpp:
 
 /usr/local/include/boost/spirit/home/support/numeric_traits.hpp:
 
 /usr/local/include/boost/spirit/home/support/detail/sign.hpp:
-
-/usr/local/include/boost/math/special_functions/fpclassify.hpp:
-
-/usr/local/include/boost/math/tools/real_cast.hpp:
-
-/usr/local/include/boost/math/special_functions/math_fwd.hpp:
-
-/usr/local/include/boost/math/special_functions/detail/round_fwd.hpp:
-
-/usr/local/include/boost/math/tools/promotion.hpp:
-
-/usr/local/include/boost/math/tools/config.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cfloat:
-
-/opt/clanton-full/1.4.2/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.7.2/include/float.h:
-
-/usr/local/include/boost/math/tools/user.hpp:
-
-/usr/local/include/boost/detail/fenv.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/fenv.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/fenv.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/fenv.h:
-
-/usr/local/include/boost/math/policies/policy.hpp:
-
-/usr/local/include/boost/mpl/comparison.hpp:
-
-/usr/local/include/boost/mpl/not_equal_to.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
-
-/usr/local/include/boost/mpl/greater.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp:
-
-/usr/local/include/boost/mpl/less_equal.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp:
-
-/usr/local/include/boost/mpl/greater_equal.hpp:
-
-/usr/local/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp:
-
-/usr/local/include/boost/config/no_tr1/complex.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/complex:
-
-/usr/local/include/boost/math/special_functions/detail/fp_traits.hpp:
-
-/usr/local/include/boost/math/special_functions/sign.hpp:
 
 /usr/local/include/boost/spirit/home/qi/operator.hpp:
 
@@ -5014,8 +5130,6 @@ RuleManager.o: RuleManager.cpp \
 /usr/local/include/boost/spirit/home/qi/operator/permutation.hpp:
 
 /usr/local/include/boost/spirit/home/qi/detail/permute_function.hpp:
-
-/usr/local/include/boost/array.hpp:
 
 /usr/local/include/boost/spirit/home/qi/operator/difference.hpp:
 
@@ -5203,35 +5317,11 @@ RuleManager.o: RuleManager.cpp \
 
 /usr/local/include/boost/iostreams/char_traits.hpp:
 
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/cstdio:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libio.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/_G_config.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/bits/sys_errlist.h:
-
 /usr/local/include/boost/iostreams/seek.hpp:
 
 /usr/local/include/boost/iostreams/positioning.hpp:
 
 /usr/local/include/boost/iostreams/detail/config/codecvt.hpp:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/locale:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/ctime:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/time_members.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/i586-poky-linux/bits/messages_members.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/libintl.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/codecvt.h:
-
-/opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/c++/bits/locale_facets_nonio.tcc:
 
 /usr/local/include/boost/iostreams/detail/config/fpos.hpp:
 
@@ -5719,69 +5809,69 @@ Condition.hpp:
 
 RuleManagerObject.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cinterf.h:
+/home/shankar/XSB_galileo/emu/cinterf.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/context.h:
+/home/shankar/XSB_galileo/emu/context.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cell_def_xsb.h:
+/home/shankar/XSB_galileo/emu/cell_def_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/basictypes.h:
+/home/shankar/XSB_galileo/emu/basictypes.h:
 
-/home/ayanami-dummy/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h:
+/home/shankar/XSB_galileo/config/x86_64-unknown-linux-gnu-mt/xsb_config.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/basicdefs.h:
+/home/shankar/XSB_galileo/emu/basicdefs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/setjmp_xsb.h:
+/home/shankar/XSB_galileo/emu/setjmp_xsb.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/setjmp.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/flag_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/flag_defs_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/hashtable_xsb.h:
+/home/shankar/XSB_galileo/emu/hashtable_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/conc_compl.h:
+/home/shankar/XSB_galileo/emu/conc_compl.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debugs/debug_attv.h:
+/home/shankar/XSB_galileo/emu/debugs/debug_attv.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/memory_xsb.h:
+/home/shankar/XSB_galileo/emu/memory_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/memory_defs.h:
+/home/shankar/XSB_galileo/emu/memory_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/export.h:
+/home/shankar/XSB_galileo/emu/export.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/varstring_xsb.h:
+/home/shankar/XSB_galileo/emu/varstring_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/dynamic_stack.h:
+/home/shankar/XSB_galileo/emu/dynamic_stack.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/psc_xsb.h:
+/home/shankar/XSB_galileo/emu/psc_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/psc_defs.h:
+/home/shankar/XSB_galileo/emu/psc_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/incr_xsb_defs.h:
+/home/shankar/XSB_galileo/emu/incr_xsb_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/tries.h:
+/home/shankar/XSB_galileo/emu/tries.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/struct_manager.h:
+/home/shankar/XSB_galileo/emu/struct_manager.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/choice.h:
+/home/shankar/XSB_galileo/emu/choice.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/tab_structs.h:
+/home/shankar/XSB_galileo/emu/tab_structs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debug_xsb.h:
+/home/shankar/XSB_galileo/emu/debug_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/table_status_defs.h:
+/home/shankar/XSB_galileo/emu/table_status_defs.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/slgdelay.h:
+/home/shankar/XSB_galileo/emu/slgdelay.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/debugs/debug_delay.h:
+/home/shankar/XSB_galileo/emu/debugs/debug_delay.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/token_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/token_defs_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/odbc_def_xsb.h:
+/home/shankar/XSB_galileo/emu/odbc_def_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/findall.h:
+/home/shankar/XSB_galileo/emu/findall.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/cinterf_defs.h:
+/home/shankar/XSB_galileo/emu/cinterf_defs.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/errno.h:
 
@@ -5795,11 +5885,11 @@ RuleManagerObject.h:
 
 /opt/clanton-full/1.4.2/sysroots/i586-poky-linux/usr/include/asm-generic/errno-base.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/context.h:
+/home/shankar/XSB_galileo/emu/context.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/thread_xsb.h:
+/home/shankar/XSB_galileo/emu/thread_xsb.h:
 
-/home/ayanami-dummy/XSB_galileo/emu/thread_defs_xsb.h:
+/home/shankar/XSB_galileo/emu/thread_defs_xsb.h:
 
 url_utils.hpp:
 

@@ -72,7 +72,14 @@ am_device_manager_OBJECTS = Subscriber.$(OBJEXT) Event.$(OBJEXT) \
 	NotificationAgentDevice.$(OBJEXT) GyroSensorObject.$(OBJEXT) \
 	GyroSensorDevice.$(OBJEXT) DistanceSensorObject.$(OBJEXT) \
 	DistanceSensorDevice.$(OBJEXT) LightingObject.$(OBJEXT) \
-	LightingDevice.$(OBJEXT) url_utils.$(OBJEXT) main.$(OBJEXT)
+	ledLightingDevice.$(OBJEXT) TemperatureSensorObject.$(OBJEXT) \
+	groveTemperatureSensorDevice.$(OBJEXT) \
+	LightSensorObject.$(OBJEXT) groveLightSensorDevice.$(OBJEXT) \
+	SoundSensorObject.$(OBJEXT) groveSoundSensorDevice.$(OBJEXT) \
+	TouchSensorObject.$(OBJEXT) groveTouchSensorDevice.$(OBJEXT) \
+	SoundObject.$(OBJEXT) groveBuzzerDevice.$(OBJEXT) \
+	groveLightingDevice.$(OBJEXT) testLightingDevice.$(OBJEXT) \
+	url_utils.$(OBJEXT) main.$(OBJEXT)
 device_manager_OBJECTS = $(am_device_manager_OBJECTS)
 device_manager_DEPENDENCIES =
 DEFAULT_INCLUDES = -I.
@@ -116,11 +123,11 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/shankar/smartgateway/device_manager/missing --run aclocal-1.12
+ACLOCAL = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/missing --run aclocal-1.12
 AMTAR = $${TAR-tar}
-AUTOCONF = ${SHELL} /home/shankar/smartgateway/device_manager/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/shankar/smartgateway/device_manager/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/shankar/smartgateway/device_manager/missing --run automake-1.12
+AUTOCONF = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/missing --run automake-1.12
 AWK = gawk
 CC = i586-poky-linux-g++
 CCDEPMODE = depmode=gcc3
@@ -148,7 +155,7 @@ LDFLAGS = -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/shankar/smartgateway/device_manager/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = device_manager
@@ -163,10 +170,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = i586-poky-linux-strip
 VERSION = 0.1
-abs_builddir = /home/shankar/smartgateway/device_manager
-abs_srcdir = /home/shankar/smartgateway/device_manager
-abs_top_builddir = /home/shankar/smartgateway/device_manager
-abs_top_srcdir = /home/shankar/smartgateway/device_manager
+abs_builddir = /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager
+abs_srcdir = /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager
+abs_top_builddir = /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager
+abs_top_srcdir = /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager
 ac_ct_CC = 
 ac_ct_CXX = 
 am__include = include
@@ -194,7 +201,7 @@ host_vendor = poky
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/shankar/smartgateway/device_manager/install-sh
+install_sh = ${SHELL} /home/shankar/Dropbox/ASU_Courses/SmartHome/home_automation/smartgateway/device_manager/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -215,8 +222,8 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 AUTOMAKE_OPTIONS = foreign
-device_manager_SOURCES = Subscriber.cpp Event.cpp DeviceBase.cpp DeviceAgentObject.c DeviceAgent.cpp NotificationAgentObject.c NotificationAgentDevice.cpp GyroSensorObject.c GyroSensorDevice.cpp DistanceSensorObject.c DistanceSensorDevice.cpp LightingObject.c LightingDevice.cpp url_utils.cpp main.cpp
-device_manager_LDADD = -ldbus-glib-1 -ldbus-1 -lpthread -lrt -lgobject-2.0 -lglib-2.0 -lcurl -lthingspeak
+device_manager_SOURCES = Subscriber.cpp Event.cpp DeviceBase.cpp DeviceAgentObject.c DeviceAgent.cpp NotificationAgentObject.c NotificationAgentDevice.cpp GyroSensorObject.c GyroSensorDevice.cpp DistanceSensorObject.c DistanceSensorDevice.cpp LightingObject.c ledLightingDevice.cpp TemperatureSensorObject.c groveTemperatureSensorDevice.cpp LightSensorObject.c groveLightSensorDevice.cpp SoundSensorObject.c groveSoundSensorDevice.cpp TouchSensorObject.c groveTouchSensorDevice.cpp SoundObject.c groveBuzzerDevice.cpp groveLightingDevice.cpp testLightingDevice.cpp url_utils.cpp main.cpp
+device_manager_LDADD = -ldbus-glib-1 -ldbus-1 -lpthread -lrt -lgobject-2.0 -lglib-2.0 -lcurl -lthingspeak -lmraa -lupm-grove -lupm-groveloudness -lupm-ttp223 -lupm-buzzer
 all: all-am
 
 .SUFFIXES:
@@ -313,12 +320,24 @@ include ./$(DEPDIR)/DistanceSensorObject.Po
 include ./$(DEPDIR)/Event.Po
 include ./$(DEPDIR)/GyroSensorDevice.Po
 include ./$(DEPDIR)/GyroSensorObject.Po
-include ./$(DEPDIR)/LightingDevice.Po
+include ./$(DEPDIR)/LightSensorObject.Po
 include ./$(DEPDIR)/LightingObject.Po
 include ./$(DEPDIR)/NotificationAgentDevice.Po
 include ./$(DEPDIR)/NotificationAgentObject.Po
+include ./$(DEPDIR)/SoundObject.Po
+include ./$(DEPDIR)/SoundSensorObject.Po
 include ./$(DEPDIR)/Subscriber.Po
+include ./$(DEPDIR)/TemperatureSensorObject.Po
+include ./$(DEPDIR)/TouchSensorObject.Po
+include ./$(DEPDIR)/groveBuzzerDevice.Po
+include ./$(DEPDIR)/groveLightSensorDevice.Po
+include ./$(DEPDIR)/groveLightingDevice.Po
+include ./$(DEPDIR)/groveSoundSensorDevice.Po
+include ./$(DEPDIR)/groveTemperatureSensorDevice.Po
+include ./$(DEPDIR)/groveTouchSensorDevice.Po
+include ./$(DEPDIR)/ledLightingDevice.Po
 include ./$(DEPDIR)/main.Po
+include ./$(DEPDIR)/testLightingDevice.Po
 include ./$(DEPDIR)/url_utils.Po
 
 .c.o:

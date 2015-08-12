@@ -44,6 +44,13 @@
       <arg type="s" name="response" direction="out"/>
     </method>
 
+	<!-- event handlers -->
+    <method name="insert_event_external">
+      <arg type="s" name="new_event" direction="in"/>
+      <arg type="s" name="response" direction="out"/>
+    </method>
+
+
 	<!--  -->
 	<method name="delete_event">
       <arg type="s" name="event" direction="in"/>

@@ -4,6 +4,7 @@
 #include <string>
 #include <boost/foreach.hpp>
 #include <boost/tokenizer.hpp>
+#include <boost/lexical_cast.hpp>
 #include <boost/spirit/include/qi.hpp>
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_operator.hpp>
@@ -15,6 +16,7 @@ int g_ruleIdx;
 pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t g_cond = PTHREAD_COND_INITIALIZER;
 static bool sig_alarm_flag = 0;
+string g_tsStr;
 
 pthread_mutex_t g_dbus_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t g_dbus_cond = PTHREAD_COND_INITIALIZER;
@@ -39,12 +41,12 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 	/*
 	 * Now query the Prolog engine to find conditions that have been satisfied
 	 */
-	cout << "Querying the XSB Prolog engine.\n";
+	//cout << "Querying the XSB Prolog engine.\n";
 
 	rc = xsb_query_string_string(th_ctx, "do(Dev,Command,Value,Ts,RuleId), lastSeenTs(TsPrev), Ts >= TsPrev.", &return_string, "|");
 	while (rc == XSB_SUCCESS) 
 	{
-		printf("Rule Satisfied: %s\n", (return_string.string));
+	//	printf("Rule Satisfied: %s\n", (return_string.string));
 		string text(return_string.string);
 
 		boost::char_separator<char> sep("|");
@@ -77,10 +79,68 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 		rc = xsb_next_string(th_ctx, &return_string, "|");
 	}
 
-	rc = xsb_query_string_string(th_ctx, "event(EventName,Zero1,Zero2,Ts,RuleId), lastSeenTs(TsPrev), Ts >= TsPrev.", &return_string, "|");
+	rc = xsb_query_string_string(th_ctx, "ont(Subj,Pred,Value,Ts,RuleId), lastSeenTs(TsPrev), Ts >= TsPrev.", &return_string, "|");
 	while (rc == XSB_SUCCESS) 
 	{
-		printf("Rule Satisfied: %s\n", (return_string.string));
+		/*
+		 * Ont-updates are similar to Commands in that they are sent
+		 * to the ContextManager once satisfied.
+		 * Ont-updates are similar to Events in that once satisfied they are 
+		 * asserted back into the Prolog database but not sent to the 
+		 * NotificationAgent.
+		 * Also, they can appear in the LHS of a Rule unlike a Command.
+		 */
+		//printf("Rule Satisfied: %s\n", (return_string.string));
+		string text(return_string.string);
+
+		boost::char_separator<char> sep("|");
+		boost::tokenizer< boost::char_separator<char> > tokens(text, sep);
+		boost::tokenizer< boost::char_separator<char> >::iterator it_tok = tokens.begin();
+
+		string subj = *it_tok;
+		it_tok++;
+
+		string pred = *it_tok;
+		it_tok++;
+
+		string val = *it_tok;
+		it_tok++;
+
+		string ts = *it_tok;
+		it_tok++;
+
+		string ruleId = *it_tok;
+
+		/* TODO: Can make this async if there are performance issues */
+		RULE_MANAGER->OntologyUpdate(subj, pred, val);
+
+		/*
+		 * This ont-update needs to be asserted back to the Prolog Database, so 
+		 * add it to the asserEventVec. (Here we reuse the same eventVec.) 
+		 * But, the rule that caused the event needs 
+		 * to be deleted (in case its a "OneShot" rule otherwise just delete its 
+		 * get conditions just like in the case of normal rules).
+		 */
+		ts = boost::lexical_cast<string>(boost::lexical_cast<long int>(ts)+1);
+
+		char event_str[256];
+		snprintf(event_str, 256, "ont(%s, %s, %s, %s)", 
+						subj.c_str(), pred.c_str(), val.c_str(), ts.c_str());
+		assertEventVec.push_back(string(event_str));
+
+		/*
+		 * Now mark this rule for deletion
+		 */
+		delRuleVec.push_back(ruleId);
+
+		/* Get the next rule that was satisfied (if at all) */
+		rc = xsb_next_string(th_ctx, &return_string, "|");
+	}
+
+	rc = xsb_query_string_string(th_ctx, "event(EventName,Null,Val,Ts,RuleId), lastSeenTs(TsPrev), Ts >= TsPrev.", &return_string, "|");
+	while (rc == XSB_SUCCESS) 
+	{
+		//printf("Rule Satisfied: %s\n", (return_string.string));
 		string text(return_string.string);
 
 		boost::char_separator<char> sep("|");
@@ -90,10 +150,10 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 		string eventName = *it_tok;
 		it_tok++;
 
-		//string com = *it_tok;
+		string msg = *it_tok;
 		it_tok++;
 
-		//string val = *it_tok;
+		string val = *it_tok;
 		it_tok++;
 
 		string ts = *it_tok;
@@ -102,7 +162,19 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 		string ruleId = *it_tok;
 
 		/* TODO: Can make this async if there are performance issues */
-		RULE_MANAGER->PublishEvent(eventName, ts);
+		RULE_MANAGER->PublishEvent(eventName, msg, val, ts);
+
+		/* 
+		 * NOTE: An issue with the current implementation is that when an "event" or "ont" is 
+		 * satisfied, we put it back into the database. But this newly added predicate could 
+		 * be satisfied again when queried. So insert it without the last argument of the 
+		 * predicate(i.e. RuleId). But now other predicates "do" or "event" or "ont" requests may be
+		 * dependent on this "event". Therefore, increment the Ts and then insert the new "event"
+		 * so that it can be used for other satisfactions in the next second. If the Ts is not 
+		 * incremented then the same "event" would be satisfied again and we would enter 
+		 * an infinite loop.
+		 */
+		ts = boost::lexical_cast<string>(boost::lexical_cast<long int>(ts)+1);
 
 		/*
 		 * This event needs to be asserted back to the Prolog Database, so 
@@ -111,7 +183,7 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 		 * get conditions just like in the case of normal rules).
 		 */
 		char event_str[256];
-		snprintf(event_str, 256, "event(%s, 0, 0, %s, %s)", eventName.c_str(), ts.c_str(), ruleId.c_str());
+		snprintf(event_str, 256, "event(%s, event, %s, %s)", eventName.c_str(), val.c_str(), ts.c_str());
 		assertEventVec.push_back(string(event_str));
 
 		delEventVec.push_back(ruleId);
@@ -126,7 +198,7 @@ static void QueryXsbPrologEngine(th_context *th_ctx)
 		 * Assert the events into the Prolog Database
 		 */
 		snprintf(xsb_str, 512, "assert( (%s) ).", s.c_str());
-		cout << "Asserting event " << xsb_str << endl;
+		//cout << "Asserting event " << xsb_str << endl;
 		if (xsb_command_string(th_ctx, xsb_str) == XSB_ERROR)
 		{
 			fprintf(stderr,"++Error asserting condition %s: %s/%s\n", xsb_str,
@@ -176,6 +248,9 @@ void *time_driven_worker_func(void *arg)
 	string xsbCommandStr;
 	char xsb_str[512];
 
+	/* Initialize the time to 0 */
+	g_tsStr.assign("0");
+
 	/* setup SIGALRM to wake up every second */
 	sigfillset(&mask);
 	sigdelset(&mask, SIGALRM);
@@ -184,11 +259,13 @@ void *time_driven_worker_func(void *arg)
 
 	while (1)
 	{
-		cout << "Suspending the thread until next second.\n";
+		//cout << "Suspending the thread until next second. tsStr=" << g_tsStr << endl;
 		//sigsuspend(&mask);
 		pthread_cond_wait(&g_cond, &g_mutex);
 
-		cout << "Worker thread invoked\n";
+		//cout << "Worker thread invoked\n";
+
+		g_tsStr = boost::lexical_cast<string>(boost::lexical_cast<long int>(g_tsStr)+1);
 
 		if (RULE_MANAGER->IsRuleMapEmpty())
 		{
@@ -205,6 +282,12 @@ void *time_driven_worker_func(void *arg)
 		{
 			Condition *c = it->first;
 			xsbCommandStr = RULE_MANAGER->GetData(c->DevStr(), c->CommandStr(), c->TsStr());
+
+			if (xsbCommandStr.empty())
+			{
+				continue;
+			}
+
 			cout << xsbCommandStr << endl;
 			/*
 			 * assert the condition into the Prolog database
@@ -220,8 +303,15 @@ void *time_driven_worker_func(void *arg)
 			/*
 			 * Update the last seen timestamp in the Prolog Database.
 			 */
-			RULE_MANAGER->UpdateTs(c->TsStr());
+			//RULE_MANAGER->UpdateTs(c->TsStr());
+			/* Sync the current time from the resposnse of DataManager */
+			g_tsStr = c->TsStr();
 		}
+		
+		/*
+		 * Update the last seen timestamp in the Prolog Database.
+		 */
+		RULE_MANAGER->UpdateTs(g_tsStr);
 
 		/*
 		 * Now query the Prolog engine to find conditions that have been satisfied
@@ -242,7 +332,7 @@ static void changedStatusSignalHandler(DBusGProxy* proxy,
 	char xsb_str[512];
 	th_context *th_ctx = RULE_MANAGER->XsbWorkerThreadCtx();
 
-	cout << "Signal handler invoked with value " << value << endl;
+	//cout << "Signal handler invoked with value " << value << endl;
 
 	if (url_key_value_to_map(value, m))
 	{
@@ -268,7 +358,7 @@ static void changedStatusSignalHandler(DBusGProxy* proxy,
 	
 	commandStr = it->second;
 
-	cout << "Signal arrived for " << devStr << " " << commandStr << endl;
+	//cout << "Signal arrived for " << devStr << " " << commandStr << endl;
 
 	xsbCommandStr = RULE_MANAGER->GetData(devStr, commandStr, tsStr);
 	cout << xsbCommandStr << endl;
@@ -284,13 +374,14 @@ static void changedStatusSignalHandler(DBusGProxy* proxy,
 				xsb_get_error_type(th_ctx),
 				xsb_get_error_message(th_ctx));
 
+	/* Now check if any action or event is triggered */
+	QueryXsbPrologEngine(th_ctx);
+	
 	/*
 	 * Update the last seen timestamp in the Prolog Database.
 	 */
+	g_tsStr = tsStr;
 	RULE_MANAGER->UpdateTs(tsStr);
-
-	/* Now check if any action or event is triggered */
-	QueryXsbPrologEngine(th_ctx);
 
 	return;
 }
@@ -306,7 +397,7 @@ int RuleManager::UpdateTs(string& tsStr)
 
 	snprintf(xsb_cmd, 128, "retractall( lastSeenTs(_) ). ");
 
-	cout << "Retract Cmd string: " << xsb_cmd << endl;
+	//cout << "Retract Cmd string: " << xsb_cmd << endl;
 	if (xsb_command_string(m_worker_th_ctx, xsb_cmd) == XSB_ERROR)
 	{
 		fprintf(stderr,"++Error retracting conditions. %s/%s\n",	xsb_get_error_type(m_worker_th_ctx),
@@ -317,7 +408,7 @@ int RuleManager::UpdateTs(string& tsStr)
 
 	snprintf(xsb_cmd, 128, "assert( lastSeenTs(%s) ). ", tsStr.c_str());
 
-	cout << "Asserting Cmd string: " << xsb_cmd << endl;
+	//cout << "Asserting Cmd string: " << xsb_cmd << endl;
 	if (xsb_command_string(m_worker_th_ctx, xsb_cmd) == XSB_ERROR)
 	{
 		fprintf(stderr,"++Error asserting conditions. %s/%s\n",	xsb_get_error_type(m_worker_th_ctx),
@@ -326,52 +417,203 @@ int RuleManager::UpdateTs(string& tsStr)
 		return -1;
 	}
 
-	cout << "Successfully updated the timestamp in the XSB Prolog database\n";
+	//cout << "Successfully updated the timestamp in the XSB Prolog database\n";
 	return 0;
 }
 
+static void sendToContextManagerCompleted(DBusGProxy* proxy,
+							 			  DBusGProxyCall* call,
+										  gpointer userData)
+{
+	/* This will hold the GError object (if any). */
+	GError* error = NULL;
+	gchar *resp = NULL;
+
+	cout << "sendToContextManagerCompleted\n";
+
+	if (!dbus_g_proxy_end_call(proxy,
+				/* The call that we're collecting. */
+				call,
+				/* Where to store the error (if any). */
+				&error,
+				/* Return arguments */
+				G_TYPE_STRING,
+				&resp,
+				G_TYPE_INVALID))
+	{
+		/* Some error occurred while collecting the result. */
+		cout << " ERROR: " << error->message << endl;
+		g_error_free(error);
+		return;
+	}
+
+	if (resp) free (resp);
+
+	return;
+}
 int RuleManager::ExecuteCommand(string& devStr, string& commandStr, string& valueStr)
 {
 	char command[512];
-	char *response = NULL;
-	GError *error = NULL;
 	snprintf(command, 511, "DeviceName=%s&%s=%s", devStr.c_str(), commandStr.c_str(), valueStr.c_str());
 
-	dbus_g_proxy_call(m_contextManagerObj,
-					  "dev_command",
-					  &error,
-					  G_TYPE_STRING,
-					  command,
-					  G_TYPE_INVALID,
-					  G_TYPE_STRING,
-					  response,
-					  G_TYPE_INVALID);
-
-	/* TODO: What to do with the response?? */
-	if (response) free (response);
+	dbus_g_proxy_begin_call(m_contextManagerObj,
+			/* Method name. */
+			"dev_command",
+			/* Callback to call on "completion". */
+			sendToContextManagerCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			command,
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
 
 	return 0;
 }
 
-int RuleManager::PublishEvent(string& eventStr, string& tsStr)
+int RuleManager::OntologyUpdate(string& subjStr, string& predStr, string& valueStr)
 {
-	//char event[512];
+	char command[512];
+	snprintf(command, 511, "Subj=%s&Pred=%s&Val=%s&Action=insert", subjStr.c_str(), predStr.c_str(), valueStr.c_str());
+
+	dbus_g_proxy_begin_call(m_contextManagerObj,
+			/* Method name. */
+			"ont_update",
+			/* Callback to call on "completion". */
+			sendToContextManagerCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			command,
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
+
+	return 0;
+}
+
+static void sendToNotificationAgentCompleted(DBusGProxy* proxy,
+											 DBusGProxyCall* call,
+											 gpointer userData)
+{
+	/* This will hold the GError object (if any). */
+	GError* error = NULL;
+	gchar *resp = NULL;
+
+	cout << "sendToNotificationAgentCompleted\n";
+
+	if (!dbus_g_proxy_end_call(proxy,
+				/* The call that we're collecting. */
+				call,
+				/* Where to store the error (if any). */
+				&error,
+				/* Return arguments */
+				G_TYPE_STRING,
+				&resp,
+				G_TYPE_INVALID))
+	{
+		/* Some error occurred while collecting the result. */
+		cout << " ERROR: " << error->message << endl;
+		g_error_free(error);
+		return;
+	}
+
+	if (resp) free (resp);
+
+	return;
+}
+
+int RuleManager::PublishEvent(string& eventStr, string& msgStr, string& val, string& tsStr)
+{
+	char event[512];
+	snprintf(event, 512, "EventName=%s&Message=%s&Val=%s&Ts=%s", 
+				eventStr.c_str(), msgStr.c_str(), val.c_str(), tsStr.c_str());
+
+	dbus_g_proxy_begin_call(m_notificationAgentObj,
+			/* Method name. */
+			"publish_event",
+			/* Callback to call on "completion". */
+			sendToNotificationAgentCompleted,
+			/* User-data to pass to callback. */
+			NULL,
+			/* Function to call to free userData after
+			   callback returns. */
+			NULL,
+			/* Arguments */
+			G_TYPE_STRING,
+			event,
+			/* Terminate argument list. */
+			G_TYPE_INVALID);
+
+	return 0;
+}
+
+int RuleManager::PublishExternalEvent(const char *event_params)
+{
+	/*
+	 * This is an external event that probably arrived from the Cloud
+	 * Insert it into the Prolog KnowledgeBase
+	 */
+	char xsb_str[128];
 	char *response = NULL;
 	GError *error = NULL;
-	//snprintf(event, 512, "EventName=%s&Ts=%s", eventStr.c_str(), tsStr.c_str());
+	map<string, string> m;
+	map<string, string>::iterator it;
+	string eventStr, msgStr, valStr, tsStr;
 
-	dbus_g_proxy_call(m_notificationAgentObj,
-					  "publish_event",
-					  &error,
-					  G_TYPE_STRING,
-					  eventStr.c_str(),
-					  G_TYPE_INVALID,
-					  G_TYPE_STRING,
-					  response,
-					  G_TYPE_INVALID);
+	if (url_key_value_to_map(event_params, m))
+	{
+		cout << "ERROR: Could not parse external event trigger. " << event_params << endl;
+		return -1;
+	}
 
-	/* TODO: What to do with the response?? */
-	if (response) free (response);
+	it = m.find("EventName");
+	if (it == m.end())
+	{
+		cout << "ERROR: Could not parse external event trigger name. " << event_params << endl;
+		return -1;
+	}
+
+	eventStr = it->second;
+
+	it = m.find("Message");
+	if (it == m.end())
+	{
+		cout << "ERROR: Could not parse external event trigger msg. " << event_params << endl;
+		return -1;
+	}
+
+	msgStr = it->second;
+
+	it = m.find("Val");
+	if (it == m.end())
+	{
+		cout << "ERROR: Could not parse external event trigger val. " << event_params << endl;
+		return -1;
+	}
+
+	valStr = it->second;
+
+	tsStr = boost::lexical_cast<string>(boost::lexical_cast<long int>(g_tsStr)+1);
+
+	snprintf(xsb_str, 512, "assert( (event(%s, %s, %s, %s)) ).", 
+				eventStr.c_str(), msgStr.c_str(), valStr.c_str(), tsStr.c_str());
+
+	//cout << "Asserting event " << xsb_str << endl;
+
+	if (xsb_command_string(m_worker_th_ctx, xsb_str) == XSB_ERROR)
+	{
+		fprintf(stderr,"++Error asserting condition %s: %s/%s\n", xsb_str,
+				xsb_get_error_type(m_worker_th_ctx),
+				xsb_get_error_message(m_worker_th_ctx));
+	}
 
 	return 0;
 }
@@ -414,6 +656,12 @@ string RuleManager::GetData(string& devStr, string& commandStr, string& tsStr)
 					  &num_elems,
 					  G_TYPE_INVALID);
 	
+	if (NULL == response)
+	{
+		cout << "ERROR: GetData from dataManager failed\n";
+		return condStr;
+	}
+
 	if (url_key_value_to_map(response, valueMap))
 	{
 		cout << "Response from DataManager is malformed." << response << endl;
@@ -466,7 +714,7 @@ int RuleManager::Init_DBUS()
 		return -1;
 	}
 
-	g_print("got dbus-session-bus successfully.\n");
+	//g_print("got dbus-session-bus successfully.\n");
 
 	busProxy = dbus_g_proxy_new_for_name(m_bus,
 			DBUS_SERVICE_DBUS,
@@ -797,6 +1045,7 @@ int RuleManager::HandleInsertRule(const char *rule_params)
 				break;
 
 			case CONDITION_TYPE_EVENT:
+			case CONDITION_TYPE_ONT:
 				{
 					if (false == parse_condition(c->CondStr(), c))
 					{
@@ -829,6 +1078,14 @@ int RuleManager::HandleInsertRule(const char *rule_params)
 	else if (r->Head()->type() == CONDITION_TYPE_EVENT)
 	{
 		snprintf(head, 256, "event(%s, %s, %s, %s, %d) ", r->Head()->DevStr().c_str(),
+													      r->Head()->CommandStr().c_str(),
+													      r->Head()->ValueStr().c_str(),
+													      "Ts",
+													      r->id());
+	}
+	else if (r->Head()->type() == CONDITION_TYPE_ONT)
+	{
+		snprintf(head, 256, "ont(%s, %s, %s, %s, %d) ", r->Head()->DevStr().c_str(),
 													      r->Head()->CommandStr().c_str(),
 													      r->Head()->ValueStr().c_str(),
 													      "Ts",
@@ -898,7 +1155,7 @@ int RuleManager::GetDeviceInfo(Condition *c)
 		return -1;
 	}
 
-	cout << "Response device info: " << response << endl;
+	//cout << "Response device info: " << response << endl;
 
 	if (url_key_value_to_map(response, m))
 	{
@@ -1052,6 +1309,8 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 {
 	int id = atoi(ruleId);
 
+	//cout << "Deleting Rule " << ruleId << endl;
+
 	RuleMap_t::iterator it;
  	DataReqMap_t::iterator it_cond;
 
@@ -1062,6 +1321,8 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 		cout << "Rule not found. ID=" << ruleId << endl;
 		return -1;
 	}
+
+	//cout << "Found rule to delete" << endl;
 
 	Rule *r = it->second;
 
@@ -1087,9 +1348,11 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 			it_cond = m->find(c);
 			if (it_cond != m->end())
 			{
+				cout << "Found in DataReq Map" << endl;
 				if (r->IsOneShot() || !fromWorkerThread)
 				{
 					/* should exist, decrement consumer count */
+					cout << "Decrementing consumer count" << endl;
 					it_cond->second--;
 				}
 
@@ -1099,6 +1362,14 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 					 * No more consumers
 					 */
 					cout << "No more consumers so erasing from DataReqMap: " << c->DevStr() << "," << c->CommandStr() << endl;
+					if (it_cond->first->PollType() == CONDITION_POLL_TYPE_EVENT_DRIVEN)
+					{
+						/* Unsubscribe for the signal from this device */
+						dbus_g_proxy_disconnect_signal(it_cond->first->DbusObj(), 
+													   SIGNAL_CHANGED_STATUS,
+													   G_CALLBACK(changedStatusSignalHandler),
+													   NULL);
+					}
 					delete it_cond->first;
 					m->erase(it_cond);
 
@@ -1115,13 +1386,7 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 					cout << "Successfully retracted conditions from the XSB Prolog database\n";
 				}
 
-				if (c->PollType() == CONDITION_POLL_TYPE_EVENT_DRIVEN)
-				{
-					/* Unsubscribe for the signal from this device */
-					dbus_g_proxy_disconnect_signal(c->DbusObj(), SIGNAL_CHANGED_STATUS,
-							G_CALLBACK(changedStatusSignalHandler),
-							NULL);
-				}
+				
 			}
 			else
 			{
@@ -1133,7 +1398,7 @@ int RuleManager::DeleteRule(const char *ruleId, bool fromWorkerThread)
 	
 	if ((false == r->IsOneShot()) && fromWorkerThread)
 	{
-		cout << "Recurring rule not deleting\n";
+	//	cout << "Recurring rule not deleting\n";
 		return 0;
 	}
 
@@ -1173,6 +1438,7 @@ int RuleManager::FetchAllRules(char **response)
 		it++;
 	}
 
+	cout << resp << endl;
 	*response = strdup(resp.c_str());
 	return 0;
 }
@@ -1195,14 +1461,14 @@ bool parse_condition(std::string& condStr, Condition *c)
 	using qi::lexeme;
 	using ascii::char_;
 
-	std::cout << "Parsing condition: " << condStr << std::endl;
+	//std::cout << "Parsing condition: " << condStr << std::endl;
 	qi::rule<std::string::iterator, std::string(), ascii::space_type> csv_string;
 	csv_string %= lexeme[+(char_ - ')' - ',')];
 	bool r = phrase_parse(condStr.begin(), condStr.end(),
 
 			//  Begin grammar
 			(
-			 (lit("get") | lit("do") | lit("event")) >> 
+			 (lit("get") | lit("do") | lit("event") | lit("ont")) >> 
 			 '(' >> 
 			 csv_string[ref(c->m_devStr) = _1] >> ',' >>
 			 csv_string[ref(c->m_commandStr) = _1] >> ',' >>

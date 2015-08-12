@@ -20,6 +20,7 @@ int url_key_value_to_map(const char *query, client::pairs_type& m)
 	}
 	else
 	{
+		/*
 		std::cout << "-------------------------------- \n";
 		std::cout << "Parsing succeeded, found entries:\n";
 		client::pairs_type::iterator end = m.end();
@@ -31,6 +32,7 @@ int url_key_value_to_map(const char *query, client::pairs_type& m)
 			std::cout << std::endl;
 		}
 		std::cout << "---------------------------------\n";
+		*/
 	}
 		
 	return 0;

@@ -40,7 +40,7 @@
 
 	<!-- setvalue1(int newValue): sets value1 -->
     <method name="new">
-      <arg type="s" name="devname" direction="in"/>
+      <arg type="s" name="params" direction="in"/>
     </method>
 
     <!-- getvalue1(): returns the first value (int) -->
@@ -49,9 +49,7 @@
                 so that D-Bus introspection tools are more useful.
                 Otherwise the arguments will be automatically named
                 "arg0", "arg1" and so on. -->
-      <arg type="s" name="devname" direction="in"/>
-      <arg type="s" name="command" direction="in"/>
-      <arg type="s" name="value" direction="in"/>
+      <arg type="s" name="params" direction="in"/>
     </method>
 
     <!-- setvalue1(int newValue): sets value1 -->

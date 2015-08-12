@@ -62,6 +62,18 @@
       <arg type="s" name="response" direction="out"/>
     </method>
 
+	<!-- insert external event from HTTPServ. This is a dummy function. -->
+    <method name="insert_event_external">
+      <arg type="s" name="event" direction="in"/>
+      <arg type="s" name="response" direction="out"/>
+    </method>
+
+	<!-- publish external event from HTTPServ -->
+    <method name="publish_event">
+      <arg type="s" name="event" direction="in"/>
+      <arg type="s" name="response" direction="out"/>
+    </method>
+
 	<!-- fetch -->
     <method name="fetch_all_rules">
       <arg type="s" name="dummy" direction="in"/>

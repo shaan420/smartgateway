@@ -55,13 +55,11 @@ GType dataManager_object_get_type(void);
  * table, the functions must be declared before the stub is included.
  */
 gboolean dataManager_object_new(DataManagerObject* obj, 
-							    gchar *key, 
+							    gchar *params, 
 								GError** error);
 
 gboolean dataManager_object_insert(DataManagerObject* obj, 
-								   gchar *devname, 
-								   gchar *command, 
-								   gchar *value, 
+								   gchar *params, 
 								   GError** error);
 
 gboolean dataManager_object_find(DataManagerObject* obj, 

@@ -12,7 +12,7 @@ int NotificationAgentDevice::SendToDevice()
 
 	Event *e = (Event *)m_writeBuf;
 
-	e->Publish();
+	e->Publish(m_val);
 
 	return 0;
 }
@@ -24,7 +24,29 @@ int NotificationAgentDevice::Read(void *mem, int len)
 
 int NotificationAgentDevice::Write(void *mem, int len)
 {
-	char *ev_name = (char *)mem;
+	map<string, string> m;
+	map<string, string>::iterator mit;
+
+	url_key_value_to_map((const char *)mem, m);
+
+	mit = m.find("EventName");
+	if (m.end() == mit)
+	{
+		cout << "ERROR: EventName not found: " << mem << endl;
+		return -1;
+	}
+
+	const char *ev_name = mit->second.c_str();
+
+	mit = m.find("Val");
+	if (m.end() == mit)
+	{
+		cout << "ERROR: Value not found: " << mem << endl;
+		return -1;
+	}
+
+	m_val.assign(mit->second);
+
 	/* 
 	 * Set writeBuf here.
 	 * The WriteBuf should actually point to the 
@@ -132,7 +154,7 @@ int NotificationAgentDevice::AddSubscriberForEvent(const char *sub_params)
 	if (m.end() == mit)
 	{
 		cout << "ERROR: Add sub request malformed\n";
-		return 0;
+		return -1;
 	}
 
 	Event *e;
@@ -144,7 +166,7 @@ int NotificationAgentDevice::AddSubscriberForEvent(const char *sub_params)
 		/* Event not found */
 		// TODO: create if not present ??!
 		cout << "ERROR: event not found\n";
-		return 0;
+		return -1;
 	}
 
 	e = it->second;

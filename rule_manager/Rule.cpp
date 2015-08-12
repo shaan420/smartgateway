@@ -33,6 +33,11 @@ int Rule::StringToRule(const char *str)
 		cout << "EVENT cond\n";
 		m_head->type(CONDITION_TYPE_EVENT);
 	}
+	else if (string::npos != m_head->CondStr().find("ont"))
+	{
+		cout << "ONT cond\n";
+		m_head->type(CONDITION_TYPE_ONT);
+	}
 	else
 	{
 		cout << "ERROR: Head contains unsupported predicate\n";
@@ -58,6 +63,11 @@ int Rule::StringToRule(const char *str)
 		{
 			cout << "EVENT cond\n";
 			c->type(CONDITION_TYPE_EVENT);
+		}
+		else if (string::npos != c->CondStr().find("ont"))
+		{
+			cout << "ONT cond\n";
+			c->type(CONDITION_TYPE_ONT);
 		}
 		else
 		{
@@ -109,9 +119,11 @@ bool Rule::ParseRule(std::string& ruleStr, std::string& headStr, std::vector<std
 	using phoenix::push_back;
 
 	qi::rule<std::string::iterator, std::string(), ascii::space_type> groundTerm, variable, value, ts, body;
-	qi::rule<std::string::iterator, std::string(), ascii::space_type> headCondition, tailCondition, doCondition, getCondition, eventConditionVar, eventConditionVal, generalCondition;
+	qi::rule<std::string::iterator, std::string(), ascii::space_type> headCondition, tailCondition, doCondition;
+	qi::rule<std::string::iterator, std::string(), ascii::space_type> getCondition, eventConditionVar, eventConditionVal;
+	qi::rule<std::string::iterator, std::string(), ascii::space_type> generalCondition, ontCondition;
 
-	headCondition = doCondition | eventConditionVal;
+	headCondition = doCondition | eventConditionVal | ontCondition;
 	doCondition = char_("d") >> char_("o") >>
 		char_("(") >> groundTerm >> char_(",") >> groundTerm >> char_(",") >> value >> char_(",") >> ts >> char_(")");
 
@@ -119,6 +131,9 @@ bool Rule::ParseRule(std::string& ruleStr, std::string& headStr, std::vector<std
 		char_("(") >> groundTerm >> char_(",") >> groundTerm >> char_(",") >> variable >> char_(",") >> ts >> char_(")");
 
 	eventConditionVal = char_("e") >> char_("v") >> char_("e") >> char_("n") >> char_("t") >>
+		char_("(") >> groundTerm >> char_(",") >> groundTerm >> char_(",") >> value >> char_(",") >> ts >> char_(")");
+
+	ontCondition = char_("o") >> char_("n") >> char_("t") >>
 		char_("(") >> groundTerm >> char_(",") >> groundTerm >> char_(",") >> value >> char_(",") >> ts >> char_(")");
 
 	groundTerm = qi::char_("a-z") >> *qi::char_("a-zA-Z_0-9");

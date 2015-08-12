@@ -77,10 +77,10 @@ typedef struct
 
 typedef struct 
 {
-    char api_key[16 + 1];              /* ThingSpeak API key */
+    char api_key[16 + 1];              /* ThingSpeak Channel API key */
+    char user_key[16 + 1];             /* ThingSpeak User key */
     ts_feed_id_t feed_id;              /* ThingSpeak feed ID */
 } ts_context_t;
-
 
 
 typedef struct
@@ -88,11 +88,17 @@ typedef struct
    uint32_t http_retcode;
 } ts_response_t;
 
-
+/* Channel manipulation functions */
+ts_context_t *ts_create_channel(const char *user_key, const char *name);
+int 		  ts_add_channel_field(ts_context_t *ctx, const char *name, int field_id);
+char *get_all_channels(ts_context_t *ctx, char *response);
+ts_context_t *ts_create_context_empty(const char *user_key);
+void ts_clear_channel(ts_context_t *ctx);
 
 /*Context functions*/
-ts_context_t *ts_create_context(char *, ts_feed_id_t);
+ts_context_t *ts_create_context(const char *, ts_feed_id_t);
 void          ts_delete_context(ts_context_t *);
+void 		  ts_context_set_user_key(ts_context_t *ctx, const char *user_key);
 
 
 /*Datapoint values functions */
@@ -108,6 +114,7 @@ char *          ts_get_value_str(ts_datapoint_t *);
 /* Datastream functions */
 int32_t ts_datastream_update(ts_context_t *, ts_feed_id_t, char *, ts_datapoint_t *);
 char   *ts_datastream_get(ts_context_t *, ts_feed_id_t, ts_data_type_t, char *, char *);
+char   *ts_datastream_get_n(ts_context_t *, int, int, int*, char *);
 
 
 /* Datastream functions */

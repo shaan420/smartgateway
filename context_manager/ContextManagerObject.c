@@ -37,7 +37,7 @@ static void contextManager_object_class_init(ContextManagerObjectClass* klass) {
 	   Note that the order here must correspond to the order of the
 	   enumerations before. */
 	const gchar* signalNames[E_CONTEXTMANAGER_OBJECT_SIGNAL_COUNT] = {
-		SIGNAL_CHANGED_STATUS,
+		SIGNAL_NEW_QUERY,
 		SIGNAL_ERROR };
 	/* Loop variable */
 	int i;
@@ -195,6 +195,19 @@ gboolean contextManager_object_dev_command(ContextManagerObject* obj,
 	g_assert(obj != NULL);
 	
 	CONTEXT_MANAGER->HandleDevCommand(command, response);
+
+	return true;
+}
+
+gboolean contextManager_object_ont_update(ContextManagerObject* obj, 
+								   			gchar *params, 
+								   			gchar **response, 
+								   			GError** error)
+{
+	printf("contextManager: ont update =\"%s\" \n", params);
+	g_assert(obj != NULL);
+	
+	CONTEXT_MANAGER->HandleOntUpdate(params, response);
 
 	return true;
 }

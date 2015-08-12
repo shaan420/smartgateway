@@ -37,6 +37,7 @@
 #define SIGNAL_NEW_KEY "new_key"
 #define SIGNAL_NEW_RULE "new_rule"
 #define SIGNAL_NEW_QUERY_URL "new_query_url"
+#define SIGNAL_NEW_QUERY "new_query"
 
 #define DEVICE_STATUS_ON 1
 #define DEVICE_STATUS_OFF 0

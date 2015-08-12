@@ -304,7 +304,7 @@ bool Executor::SendToContextManager(const string& url,
 						  		string& response)
 {
 	GError *error = NULL;
-	gchar *resp;
+	gchar *resp = NULL;
 
 	dbus_g_proxy_call (m_contextManagerObj,
 						"new_query_url",
@@ -317,8 +317,14 @@ bool Executor::SendToContextManager(const string& url,
 						G_TYPE_STRING,
 						&resp,
 						G_TYPE_INVALID);
-	response.assign(resp);
 
+	if (NULL == resp)
+	{
+		response.assign("No response");
+		return true;
+	}
+
+	response.assign(resp);
 	free(resp);
 
 	return true;

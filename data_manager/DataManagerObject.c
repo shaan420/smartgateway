@@ -168,7 +168,7 @@ void dataManager_object_emitSignal(DataManagerObject* obj,
 }
 
 gboolean dataManager_object_new(DataManagerObject* obj, 
-								   gchar *params, 
+								   gchar *params,								   
 								   GError** error)
 {
 	printf("dataManager: new dev=%s\n", params);
@@ -180,15 +180,13 @@ gboolean dataManager_object_new(DataManagerObject* obj,
 }
 
 gboolean dataManager_object_insert(DataManagerObject* obj, 
-								   gchar *devname, 
-								   gchar *command, 
-								   gchar *value, 
+								   gchar *params, 
 								   GError** error)
 {
-	printf("dataManager: insert devname=%s command=%s value=%s\n", devname, command, value);
+//	printf("dataManager: insert params=%s\n", params);
 	g_assert(obj != NULL);
 
-	DATA_MANAGER->Insert(devname, command, value);
+	DATA_MANAGER->Insert(params);
 
 	return true;
 }
@@ -201,7 +199,7 @@ gboolean dataManager_object_find(DataManagerObject* obj,
 								   gint *num_elems,
 								   GError** error)
 {
-	printf("dataManager: find devname=%s command=%s ts=%d\n", devname, command, ts);
+//	printf("dataManager: find devname=%s command=%s ts=%d\n", devname, command, ts);
 	g_assert(obj != NULL);
 
 	DATA_MANAGER->Find(devname, command, ts, value, num_elems);

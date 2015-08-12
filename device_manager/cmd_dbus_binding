@@ -1,0 +1,5 @@
+dbus-binding-tool --mode=glib-server --prefix=lighting_object ../common/device_interface_files/lighting-dbus-interface.xml > lighting-server-stub.h
+dbus-binding-tool --mode=glib-server --prefix=lightsensor_object ../common/device_interface_files/light-sensor-interface.xml > lightsensor-server-stub.h
+dbus-binding-tool --mode=glib-server --prefix=soundsensor_object ../common/device_interface_files/sound-sensor-interface.xml > soundsensor-server-stub.h
+dbus-binding-tool --mode=glib-server --prefix=temperaturesensor_object ../common/device_interface_files/temperature-sensor-interface.xml > temperaturesensor-server-stub.h
+dbus-binding-tool --mode=glib-server --prefix=touchsensor_object ../common/device_interface_files/touch-sensor-interface.xml > touchsensor-server-stub.h

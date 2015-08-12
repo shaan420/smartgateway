@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int Event::Publish()
+int Event::Publish(string& val)
 {
 	SubscriberMap_t::iterator it;
 
@@ -16,7 +16,7 @@ int Event::Publish()
 
 	for (it = m_map.begin(); it != m_map.end(); it++)
 	{
-		it->second->Publish(m_name.c_str());
+		it->second->Publish(m_name.c_str(), val.c_str());
 	}
 	
 	return 0;

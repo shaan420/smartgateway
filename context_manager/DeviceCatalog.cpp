@@ -453,6 +453,7 @@ MethodArgs_t *DeviceObj::ExecuteCommand(const char *command, MethodArgs_t *argsI
 	*m = method;
 
 	cout << "Executing" << endl;
+	cout << method->GetType() << endl;
 	switch (method->GetType())
 	{
 		// for now assume that all out args are strings
@@ -516,6 +517,21 @@ MethodArgs_t *DeviceObj::ExecuteCommand(const char *command, MethodArgs_t *argsI
 	return argsOut;
 }
 
+int DeviceCatalog::OntologyUpdate(string& action, string& subj, string& pred, string& val)
+{
+	if (action == "insert")
+	{
+		ONT_MANAGER->SetData(subj, pred, val);
+	}
+	else
+	{
+		cout << "ERROR: action not yet supported: " << action << endl;
+		return -1;
+	}
+
+	return 0;
+}
+
 MethodArgs_t *DeviceObj::PrepareMethodArgs(const char *name, const map<string, string>& keyvals)
 {
 	return m_devIface->PrepareMethodArgs(name, keyvals);
@@ -536,6 +552,12 @@ int DeviceObj::GetMethodVec(vector<string>& vec)
 	}
 
 	return vec.size();
+}
+
+bool DeviceCatalog::GetInstancesByFilter(const map<string, string>& keyvals,    
+		                                  vector<string>& iVec)
+{
+	return ONT_MANAGER->GetDeviceListByFilter(keyvals, iVec);
 }
 
 MethodArgs_t *DeviceIface::PrepareMethodArgs(const char *name, const map<string, string>& keyvals)
@@ -611,15 +633,20 @@ void DeviceCatalog::InitNewDeviceDbus(string& iface, string& phy_name)
 {
 	GError *error = NULL;
 	char params[256];
-	string retrievalFreq, retrievalMethod, dataStorageLocation, samplingFreq;
+	string retrievalFreq, retrievalMethod, dataStorageLocation, samplingFreq, commMethod, commParams, driverName;
 		
 	GetDataFromOntology(phy_name, "hasDataRetrievalMethod", retrievalMethod);
 	GetDataFromOntology(phy_name, "hasDataRetrievalFrequency", retrievalFreq);
 	GetDataFromOntology(phy_name, "hasInputSamplingFrequency", samplingFreq);
 	GetDataFromOntology(phy_name, "hasDataStorageLocation", dataStorageLocation);
+	GetDataFromOntology(phy_name, "hasCommMethod", commMethod);
+	GetDataFromOntology(phy_name, "hasCommParams", commParams);
+	GetDataFromOntology(phy_name, "hasDriverName", driverName);
 
-	snprintf(params, 256, "DeviceName=%s&InputSamplingRateMsec=%s&RetrievalFreq=%s&RetrievalMethod=%s&DataStorageLocation=%s", 
-					phy_name.c_str(), samplingFreq.c_str(), retrievalFreq.c_str(), retrievalMethod.c_str(), dataStorageLocation.c_str());
+	snprintf(params, 256, "DeviceName=%s&InputSamplingRateMsec=%s&RetrievalFreq=%s&RetrievalMethod=%s&DataStorageLocation=%s&CommMethod=%s&CommParams=%s&DriverName=%s", 
+					phy_name.c_str(), samplingFreq.c_str(), retrievalFreq.c_str(), 
+					retrievalMethod.c_str(), dataStorageLocation.c_str(), commMethod.c_str(), 
+					commParams.c_str(), driverName.c_str());
 
 	cout << "New interface " << iface << " with params " << params << endl;
 

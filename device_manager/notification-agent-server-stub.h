@@ -111,16 +111,17 @@ G_END_DECLS
 #include <dbus/dbus-glib.h>
 static const DBusGMethodInfo dbus_glib_notificationagent_object_methods[] = {
   { (GCallback) notificationagent_object_insert_event, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 0 },
-  { (GCallback) notificationagent_object_delete_event, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 96 },
-  { (GCallback) notificationagent_object_publish_event, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 188 },
-  { (GCallback) notificationagent_object_add_subscriber, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 288 },
-  { (GCallback) notificationagent_object_remove_subscriber, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 384 },
+  { (GCallback) notificationagent_object_insert_event_external, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 96 },
+  { (GCallback) notificationagent_object_delete_event, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 201 },
+  { (GCallback) notificationagent_object_publish_event, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 293 },
+  { (GCallback) notificationagent_object_add_subscriber, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 393 },
+  { (GCallback) notificationagent_object_remove_subscriber, dbus_glib_marshal_notificationagent_object_BOOLEAN__STRING_POINTER_POINTER, 489 },
 };
 
 const DBusGObjectInfo dbus_glib_notificationagent_object_object_info = {  1,
   dbus_glib_notificationagent_object_methods,
-  5,
-"org.asu.smarthome.smartgateway.NotificationAgent\0insert_event\0S\0new_event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0delete_event\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0publish_event\0S\0event_params\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0add_subscriber\0S\0new_sub\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0remove_subscriber\0S\0sub\0I\0s\0response\0O\0F\0N\0s\0\0\0",
+  6,
+"org.asu.smarthome.smartgateway.NotificationAgent\0insert_event\0S\0new_event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0insert_event_external\0S\0new_event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0delete_event\0S\0event\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0publish_event\0S\0event_params\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0add_subscriber\0S\0new_sub\0I\0s\0response\0O\0F\0N\0s\0\0org.asu.smarthome.smartgateway.NotificationAgent\0remove_subscriber\0S\0sub\0I\0s\0response\0O\0F\0N\0s\0\0\0",
 "org.asu.smarthome.smartgateway.NotificationAgent\0changed_status\0org.asu.smarthome.smartgateway.NotificationAgent\0error_detected\0\0",
 "\0"
 };

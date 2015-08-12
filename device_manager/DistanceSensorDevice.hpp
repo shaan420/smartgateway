@@ -9,7 +9,7 @@
 
 #include "DistanceSensorObject.h"
 
-class DistanceSensorDevice : public DeviceDbus<DistanceSensorObject, int>
+class DistanceSensorDevice : public DeviceDbus<DistanceSensorObject>
 {
 	protected:
 		int RecvFromDevice();

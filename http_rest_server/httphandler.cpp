@@ -12,28 +12,43 @@ using std::map;
 using std::string;
 
 #define PAGE "<html><head><title>Error</title></head><body>Bad data</body></html>"
+#define PORT            8888
+#define POSTBUFFERSIZE  512
+#define MAXNAMESIZE     20
+#define MAXANSWERSIZE   512
+
+#define GET             0
+#define POST            1
 
 REST::RestAPI g_rest_api;
 
 static int shouldNotExit = 1;
 
-static int send_bad_response( struct MHD_Connection *connection)
+struct connection_info_struct
 {
-	static char *bad_response = (char *)PAGE;
-	int bad_response_len = strlen(bad_response);
+	struct MHD_Connection *con;
+	const char *url;
+	int connectiontype;
+	char *answerstring;
+};
+
+static int send_page (struct MHD_Connection *connection, const char *page)
+{
 	int ret;
 	struct MHD_Response *response;
 
-	response = MHD_create_response_from_data (bad_response_len,
-			bad_response, MHD_NO, MHD_NO);
-	if (response == 0){
+
+	response =
+		MHD_create_response_from_buffer (strlen (page), (void *) page,
+				MHD_RESPMEM_PERSISTENT);
+	if (!response)
 		return MHD_NO;
-	}
+
 	ret = MHD_queue_response (connection, MHD_HTTP_OK, response);
 	MHD_destroy_response (response);
+
 	return ret;
 }
-
 
 static int get_url_args_map(void *cls, MHD_ValueKind kind,
 		const char *key , const char* value)
@@ -68,85 +83,106 @@ static int get_url_args_string(void *cls, MHD_ValueKind kind,
 	return MHD_YES;
 
 }
+
+static int process_post_request(struct connection_info_struct *con_info, 
+							    const char *upload_data, 
+								int upload_data_size)
+{
+	string url_string;
+	map<string, string> url_args;
+	string respdata;
+
+	if (MHD_get_connection_values (con_info->con, MHD_GET_ARGUMENT_KIND, 
+				get_url_args_map, &url_args) < 0) 
+	{
+		return MHD_NO;
+	}
+
+	if (MHD_get_connection_values (con_info->con, MHD_GET_ARGUMENT_KIND, 
+				get_url_args_string, &url_string) < 0) 
+	{
+		return MHD_NO;
+	}
+
+	printf("url=<%s>\n", con_info->url);
+
+	g_rest_api.executeRestAPI(con_info->url, url_string, url_args, upload_data, upload_data_size, respdata);
+	std::cout << "RespData: " << respdata << std::endl;
+
+	if ((respdata.length() > 0) && (respdata.length() <= MAXNAMESIZE))
+	{
+		char *answerstring;
+		answerstring = (char *)malloc(MAXANSWERSIZE);
+		if (!answerstring)
+			return MHD_NO;
+
+		snprintf (answerstring, MAXANSWERSIZE, "%s", respdata.c_str());
+		con_info->answerstring = answerstring;
+	}
+	else
+		con_info->answerstring = NULL;
+
+	return MHD_NO;
+}
+
 static int url_handler (void *cls,
 		struct MHD_Connection *connection,
 		const char *url,
 		const char *method,
 		const char *version,
-		const char *upload_data, size_t *upload_data_size, void **ptr)
+		const char *upload_data, size_t *upload_data_size, void **con_cls)
 {
-	static int aptr;
-	char *me;
-	const char *typexml = "xml";
-	const char *typejson = "json";
-	const char *type = typejson;
+	if (NULL == *con_cls)
+	{
+		struct connection_info_struct *con_info;
 
-	struct MHD_Response *response;
-	int ret;
-	string url_string;
-	map<string, string> url_args;
-	map<string, string>::iterator it;
-	//REST::RestAPI rest_api;
-	string respdata;
+		con_info = (struct connection_info_struct *)malloc(sizeof (struct connection_info_struct));
+		if (NULL == con_info)
+			return MHD_NO;
+		con_info->answerstring = NULL;
+		con_info->url = url;
+		con_info->con = connection;
+		con_info->connectiontype = -1;
+
+		if (0 == strcmp (method, "POST"))
+		{
+			con_info->connectiontype = POST;
+		}
+		else
+		{
+			con_info->connectiontype = GET;
+		}
+
+		*con_cls = (void *) con_info;
+
+		return MHD_YES;
+	}
+
+	struct connection_info_struct *con_info = *(struct connection_info_struct **)con_cls;
 
 	// Support only GET and POST for demonstration
-	if ((0 != strcmp (method, "GET")) && (0 != strcmp (method, "POST")))
+	if (con_info->connectiontype == -1)
 	{
 		return MHD_NO; 
 	}
 
-	if (&aptr != *ptr) 
+	if (con_info->connectiontype == POST)
 	{
-		*ptr = &aptr;
-		return MHD_YES;
+		if (*upload_data_size != 0)
+		{
+			process_post_request (con_info, upload_data,
+					*upload_data_size);
+			*upload_data_size = 0;
+
+			return MHD_YES;
+		}
+		else if (NULL != con_info->answerstring)
+		{
+			return send_page(connection, con_info->answerstring);
+		}
 	}
 
-	if (MHD_get_connection_values (connection, MHD_GET_ARGUMENT_KIND, 
-									get_url_args_map, &url_args) < 0) 
-	{
-		return send_bad_response(connection);
-	}
-
-	if (MHD_get_connection_values (connection, MHD_GET_ARGUMENT_KIND, 
-				get_url_args_string, &url_string) < 0) 
-	{
-		return send_bad_response(connection);
-	}
-
-	printf("url=<%s>\n", url);
-
-	g_rest_api.executeRestAPI(url, url_string, url_args, upload_data, *(int *)upload_data_size, respdata);
-
-	*ptr = 0;                  /* reset when done */
-	MHD_lookup_connection_value (connection, MHD_GET_ARGUMENT_KIND, "q");
-	me = (char *)malloc (respdata.size() + 1);
-	if (me == 0)
-	{
-		return MHD_NO;
-	}
-
-	strncpy(me, respdata.c_str(), respdata.size() + 1);
-	response = MHD_create_response_from_data (strlen (me), me,
-			MHD_YES, MHD_NO);
-
-	if (response == 0)
-	{
-		free (me);
-		return MHD_NO;
-	}
-
-	it = url_args.find("type");
-	if (it != url_args.end() && strcasecmp(it->second.c_str(), "xml") == 0)
-	{
-		type = typexml;
-	}
-
-	MHD_add_response_header(response, "Content-Type", "text");
-	MHD_add_response_header(response, "OurHeader", type);
-
-	ret = MHD_queue_response (connection, MHD_HTTP_OK, response);
-	MHD_destroy_response (response);
-	return ret;
+	return send_page(connection, PAGE);
 }
 
 void handle_term(int signo)
@@ -154,15 +190,30 @@ void handle_term(int signo)
 	shouldNotExit = 0;
 }
 
+void request_completed (void *cls, struct MHD_Connection *connection, 
+					    void **con_cls,
+						enum MHD_RequestTerminationCode toe)
+{
+	struct connection_info_struct *con_info = *(struct connection_info_struct **)con_cls;
+
+	if (NULL == con_info) return;
+	if (con_info->connectiontype == POST)
+	{
+		if (con_info->answerstring) free (con_info->answerstring);
+	}
+
+	free (con_info);
+	*con_cls = NULL;   
+}
+
 void* http(void *arg)
 {
 	int *port = (int *)arg;
 	struct MHD_Daemon *d;
 
-	d = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY,
-						  *port,
-						  0, 0, &url_handler, 
-						  (void *)PAGE, 
+	d = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY, *port, NULL, NULL,
+						  &url_handler, (void *)PAGE, 
+						  MHD_OPTION_NOTIFY_COMPLETED, &request_completed, NULL,
 						  MHD_OPTION_END);
 
 	if (d == 0)

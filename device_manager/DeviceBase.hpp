@@ -25,6 +25,9 @@ typedef enum
 	DEVICE_COMM_METHOD_USB,
 	DEVICE_COMM_METHOD_SPI,
 	DEVICE_COMM_METHOD_GPIO,
+	DEVICE_COMM_METHOD_TCP,
+	DEVICE_COMM_METHOD_HTTP,
+	DEVICE_COMM_METHOD_CUSTOM,
 	DEVICE_COMM_METHOD_UNSET
 } DeviceCommMethod_t;
 
@@ -43,6 +46,27 @@ typedef struct
 	DeviceDataRetrievalFreq_t m_retrievalFreq;
 	DeviceDataRetrievalMethod_t m_retrievalMethod;
 	DeviceCommMethod_t m_commMethod;
+	/*
+	 * commParams denote the parameters that the device uses
+	 * to communicate with the actual device instance.
+	 * For example, lighting1 is a GPIO LED that uses the 
+	 * ledLightingDevice Driver. commParams would be the 
+	 * GPIO PIN number. Similarly, for TCP it would be
+	 * ip:port or for Bluetooth it would be its address.
+	 */
+	string m_commParams;
+
+	/*
+	 * The driverName must match the registered device class name
+	 * that implements all its functions.
+	 */
+	string m_driverName;
+
+	/*
+	 * TODO: The driver for the device could be dynamically selected based on
+	 * commMethod and commParams. For example, for commMethod=gpio, we could have 
+	 * a dedicated gpio driver (just like ledLightingDevice).
+	 */
 } DeviceConf_t;
 
 class DeviceBase
@@ -53,10 +77,13 @@ class DeviceBase
 		DeviceConf_t m_deviceConf;
 		void *m_readBuf;
 		void *m_writeBuf;
+		void *m_handler;
 
 	private:
 		GThread *m_sendThread;
 		GThread *m_recvThread;
+		//pthread_t m_sendThread;
+		//pthread_t m_recvThread;
 		sem_t m_recvSem;
 		sem_t m_sendSem;
 
@@ -73,6 +100,7 @@ class DeviceBase
 			m_deviceConf.m_commMethod = DEVICE_COMM_METHOD_UNSET;
 			m_readBuf = NULL;
 			m_writeBuf = NULL;
+			m_handler = NULL;
 		}
 
 		DeviceBase(const string& name, const string& desc, DeviceConf_t &conf)

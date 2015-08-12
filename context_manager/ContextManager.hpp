@@ -43,8 +43,9 @@ class ContextManager
 		int HandleQueryUrl(const char *query_type, const char *params, char **response);
 		int HandleRule(const char *params, char **response);
 		int HandleEventRequest(const char *params, char **response);
-		int ResolveDeviceReferences(const char *params, string& ruleStr);
+		int ResolveReferences(const char *params, string& ruleStr);
 		int HandleDevCommand(const char *params, char **response);
+		int HandleOntUpdate(const char *params, char **resp);
 		int HandleDeviceInfo(const char *params, char **response);
 		int HandleQuery(const char *params, char **response);
 		int HandleDevDataRequest(const char *params, char **response);
